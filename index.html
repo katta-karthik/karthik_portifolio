@@ -6,10 +6,14 @@
   <title>Katta Karthik — AI Engineer</title>
   <meta name="description" content="Portfolio of Katta Karthik — AI Engineer specializing in Autonomous Multi-Agent Systems, Production RAG, and Agentic Data Analytics. Graduated from Vellore Institute of Technology.">
 
-  <!-- Google Fonts -->
+  <meta name="theme-color" content="#090d16">
+
+  <!-- Speed Optimizations: DNS Prefetch & Lean Fonts -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -29,8 +33,8 @@
       --violet: #a78bfa;
       --violet-glow: rgba(167, 139, 250, 0.15);
       --amber: #fbbf24;
-      --font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      --mono: 'JetBrains Mono', monospace;
+      --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -39,14 +43,24 @@
     body {
       font-family: var(--font);
       background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+
+    /* GPU-accelerated fixed ambient layer (zero repaint lag on scroll) */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
       background-image: 
         radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.08) 0%, transparent 45%),
         radial-gradient(circle at 100% 30%, rgba(167, 139, 250, 0.05) 0%, transparent 40%),
         radial-gradient(circle at 0% 70%, rgba(52, 211, 153, 0.04) 0%, transparent 40%);
-      background-attachment: fixed;
-      color: var(--text);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
+      pointer-events: none;
+      z-index: -1;
+      transform: translateZ(0);
     }
 
     ::selection { background: rgba(56, 189, 248, 0.25); color: #fff; }
@@ -300,18 +314,8 @@
       font-size: 0.78rem;
       font-weight: 600;
       color: var(--accent);
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      display: inline-block;
       margin-bottom: 6px;
-    }
-
-    .section-tag::after {
-      content: '';
-      flex: 1;
-      max-width: 160px;
-      height: 1px;
-      background: var(--border);
     }
 
     .section-title {
