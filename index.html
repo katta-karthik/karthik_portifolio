@@ -3,420 +3,689 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Karthik Katta — Portfolio</title>
-  <meta name="description" content="Portfolio of Katta Karthik — AI Engineer building intelligent agents, document search, and self-healing analytics.">
+  <title>Katta Karthik — AI Engineer</title>
+  <meta name="description" content="Katta Karthik — AI Engineer specializing in autonomous multi-agent systems, production RAG platforms, and agentic data analytics.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --bg: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-alt: #162032;
+      --border: #334155;
+      --border-light: #1e293b;
+      --text: #e2e8f0;
+      --text-dim: #94a3b8;
+      --text-faint: #64748b;
+      --white: #f8fafc;
+      --accent: #38bdf8;
+      --accent-dim: rgba(56,189,248,0.12);
+      --green: #4ade80;
+      --green-dim: rgba(74,222,128,0.12);
+      --violet: #a78bfa;
+      --violet-dim: rgba(167,139,250,0.12);
+      --amber: #fbbf24;
+      --amber-dim: rgba(251,191,36,0.12);
+      --rose: #fb7185;
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+      --mono: 'JetBrains Mono', 'Fira Code', monospace;
+    }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #171717;
-      color: #d4d4d4;
-      line-height: 1.7;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    a { color: #93c5fd; text-decoration: none; transition: color 0.15s; }
-    a:hover { color: #bfdbfe; }
+    ::selection { background: rgba(56,189,248,0.3); }
+    a { color: var(--accent); text-decoration: none; transition: all 0.2s; }
+    a:hover { color: var(--white); }
 
-    .container { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
 
-    /* Nav */
-    .nav {
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(23,23,23,0.85);
-      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid #262626;
-      padding: 0 24px;
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(15,23,42,0.82);
+      backdrop-filter: saturate(180%) blur(16px);
+      -webkit-backdrop-filter: saturate(180%) blur(16px);
+      border-bottom: 1px solid rgba(51,65,85,0.5);
     }
-    .nav-inner {
-      max-width: 920px; margin: 0 auto;
+    .nav-bar {
+      max-width: 1100px; margin: 0 auto; padding: 0 32px;
       display: flex; align-items: center; justify-content: space-between;
-      height: 56px;
+      height: 64px;
     }
-    .nav-name { font-weight: 600; font-size: 0.95rem; color: #e5e5e5; text-decoration: none; }
-    .nav-links { display: flex; gap: 20px; list-style: none; }
-    .nav-links a { color: #a3a3a3; font-size: 0.85rem; font-weight: 500; text-decoration: none; }
-    .nav-links a:hover { color: #e5e5e5; }
-    .menu-btn { display: none; background: none; border: none; color: #a3a3a3; cursor: pointer; padding: 4px; }
+    .nav-logo {
+      font-family: var(--mono); font-weight: 700; font-size: 0.95rem;
+      color: var(--accent); text-decoration: none; letter-spacing: -0.02em;
+    }
+    .nav-items { display: flex; align-items: center; gap: 6px; list-style: none; }
+    .nav-items a {
+      font-family: var(--mono); font-size: 0.78rem; font-weight: 500;
+      color: var(--text-dim); padding: 6px 12px; border-radius: 6px;
+      text-decoration: none; transition: all 0.15s;
+    }
+    .nav-items a:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+    .nav-items .num { color: var(--accent); margin-right: 4px; }
+    .nav-resume {
+      font-family: var(--mono); font-size: 0.78rem; font-weight: 500;
+      color: var(--accent); border: 1px solid var(--accent);
+      padding: 6px 16px; border-radius: 6px; text-decoration: none;
+      transition: all 0.2s; margin-left: 8px;
+    }
+    .nav-resume:hover { background: var(--accent-dim); color: var(--accent); }
+    .mob-btn { display: none; background: none; border: none; color: var(--text-dim); cursor: pointer; }
 
-    /* Hero */
-    .hero { padding: 72px 0 56px; }
-    .hero-inner { max-width: 620px; }
-    .tag { display: inline-block; font-size: 0.75rem; font-weight: 600; color: #6ee7b7; background: rgba(110,231,183,0.1); border: 1px solid rgba(110,231,183,0.2); padding: 3px 10px; border-radius: 20px; margin-bottom: 18px; }
-    .hero h1 { font-size: 2.4rem; font-weight: 700; color: #f5f5f5; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 18px; }
-    .hero-text { font-size: 1.05rem; color: #a3a3a3; margin-bottom: 28px; line-height: 1.7; }
-    .hero-text strong { color: #d4d4d4; }
-    .hero-btns { display: flex; gap: 10px; flex-wrap: wrap; }
-
-    .btn {
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 120px 0 80px;
+    }
+    .hero-content { max-width: 720px; }
+    .hero-hi {
+      font-family: var(--mono); font-size: 0.95rem; font-weight: 500;
+      color: var(--accent); margin-bottom: 20px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .hero-hi::before {
+      content: ''; width: 32px; height: 1px; background: var(--accent);
+    }
+    .hero h1 {
+      font-size: 3.2rem; font-weight: 800; color: var(--white);
+      letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 24px;
+    }
+    .hero h1 .hl { color: var(--text-dim); }
+    .hero-p {
+      font-size: 1.1rem; color: var(--text-dim); max-width: 580px;
+      line-height: 1.75; margin-bottom: 40px;
+    }
+    .hero-p strong { color: var(--text); font-weight: 600; }
+    .hero-links { display: flex; gap: 12px; flex-wrap: wrap; }
+    .h-btn {
       display: inline-flex; align-items: center; gap: 6px;
-      padding: 9px 18px; border-radius: 8px;
-      font-size: 0.88rem; font-weight: 600;
-      text-decoration: none; transition: all 0.15s; border: 1px solid transparent;
+      padding: 12px 24px; border-radius: 8px; font-weight: 600;
+      font-size: 0.9rem; transition: all 0.2s; text-decoration: none;
     }
-    .btn:hover { text-decoration: none; transform: translateY(-1px); }
-    .btn-fill { background: #e5e5e5; color: #171717; }
-    .btn-fill:hover { background: #f5f5f5; color: #171717; }
-    .btn-ghost { background: transparent; color: #d4d4d4; border-color: #404040; }
-    .btn-ghost:hover { border-color: #525252; background: rgba(255,255,255,0.04); color: #e5e5e5; }
-    .btn-blue { background: #3b82f6; color: #fff; }
-    .btn-blue:hover { background: #2563eb; color: #fff; }
-    .btn-sm { padding: 5px 12px; font-size: 0.8rem; }
+    .h-btn:hover { transform: translateY(-2px); text-decoration: none; }
+    .h-btn-primary { background: var(--accent); color: var(--bg); }
+    .h-btn-primary:hover { background: #7dd3fc; color: var(--bg); box-shadow: 0 8px 24px rgba(56,189,248,0.2); }
+    .h-btn-ghost { color: var(--text-dim); border: 1px solid var(--border); }
+    .h-btn-ghost:hover { color: var(--white); border-color: var(--text-dim); }
 
-    /* Sections */
-    .section { padding: 64px 0; border-top: 1px solid #262626; }
-    .sec-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #6ee7b7; margin-bottom: 6px; }
-    .sec-title { font-size: 1.5rem; font-weight: 700; color: #f5f5f5; letter-spacing: -0.02em; margin-bottom: 6px; }
-    .sec-sub { font-size: 0.95rem; color: #737373; margin-bottom: 36px; max-width: 560px; }
-
-    /* About */
-    .about-text { max-width: 640px; color: #a3a3a3; font-size: 0.98rem; }
-    .about-text p { margin-bottom: 14px; }
-    .about-text strong { color: #d4d4d4; }
-
-    .stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 28px; }
-    .stat-card {
-      background: #1e1e1e; border: 1px solid #262626; border-radius: 10px;
-      padding: 20px 16px; text-align: center;
-      transition: border-color 0.15s;
+    .hero-status {
+      margin-top: 48px; display: flex; align-items: center; gap: 10px;
+      font-size: 0.82rem; color: var(--text-faint);
     }
-    .stat-card:hover { border-color: #404040; }
-    .stat-num { font-size: 1.5rem; font-weight: 700; color: #f5f5f5; }
-    .stat-label { font-size: 0.78rem; color: #737373; margin-top: 2px; }
-
-    /* Projects */
-    .projects-list { display: flex; flex-direction: column; gap: 20px; }
-    .p-card {
-      background: #1e1e1e; border: 1px solid #262626; border-radius: 12px;
-      padding: 28px; transition: border-color 0.2s, box-shadow 0.2s;
+    .pulse {
+      width: 8px; height: 8px; border-radius: 50%; background: var(--green);
+      box-shadow: 0 0 8px var(--green);
+      animation: pulse 2s infinite;
     }
-    .p-card:hover { border-color: #404040; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
-    .p-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
-    .p-badge { display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; padding: 2px 8px; border-radius: 4px; margin-bottom: 6px; }
-    .p-badge-v { background: rgba(168,85,247,0.12); color: #c084fc; }
-    .p-badge-g { background: rgba(52,211,153,0.12); color: #6ee7b7; }
-    .p-badge-a { background: rgba(251,191,36,0.12); color: #fbbf24; }
-    .p-name { font-size: 1.2rem; font-weight: 700; color: #f5f5f5; letter-spacing: -0.01em; }
-    .p-btns { display: flex; gap: 6px; flex-shrink: 0; }
-
-    .p-body { font-size: 0.92rem; color: #a3a3a3; line-height: 1.65; margin-bottom: 16px; }
-    .p-body strong { color: #d4d4d4; }
-    .p-body em { color: #737373; }
-    .p-body p + p { margin-top: 8px; }
-
-    .p-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 16px; }
-    .p-tag { font-size: 0.72rem; font-weight: 500; color: #a3a3a3; background: #262626; border: 1px solid #333; padding: 2px 8px; border-radius: 4px; }
-    .p-tech { font-size: 0.78rem; color: #525252; padding-top: 14px; border-top: 1px solid #262626; }
-
-    /* Other projects */
-    .other-h { font-size: 1rem; font-weight: 600; color: #e5e5e5; margin: 32px 0 14px; }
-    .other-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .o-card {
-      background: #1e1e1e; border: 1px solid #262626; border-radius: 10px;
-      padding: 18px; transition: border-color 0.15s;
+    @keyframes pulse {
+      0%, 100% { opacity: 1; } 50% { opacity: 0.4; }
     }
-    .o-card:hover { border-color: #404040; }
-    .o-card h4 { font-size: 0.9rem; font-weight: 600; color: #d4d4d4; margin-bottom: 4px; }
-    .o-card h4 a { color: #d4d4d4; }
-    .o-card h4 a:hover { color: #93c5fd; }
-    .o-card p { font-size: 0.82rem; color: #737373; line-height: 1.5; }
 
-    /* Timeline */
-    .tl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-    .tl-col-title { font-size: 1rem; font-weight: 600; color: #e5e5e5; margin-bottom: 18px; }
-    .tl-item { padding-left: 16px; border-left: 2px solid #333; padding-bottom: 24px; }
-    .tl-item:last-child { padding-bottom: 0; }
-    .tl-date { font-size: 0.75rem; font-weight: 600; color: #6ee7b7; }
-    .tl-role { font-size: 0.95rem; font-weight: 600; color: #e5e5e5; margin: 2px 0; }
-    .tl-org { font-size: 0.85rem; color: #737373; margin-bottom: 4px; }
-    .tl-org a { color: #93c5fd; }
-    .tl-text { font-size: 0.85rem; color: #a3a3a3; line-height: 1.55; }
-    .tl-grade { display: inline-block; font-size: 0.78rem; font-weight: 600; color: #6ee7b7; background: rgba(110,231,183,0.08); padding: 1px 8px; border-radius: 4px; margin-top: 4px; }
-
-    /* Skills */
-    .sk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .sk-card { background: #1e1e1e; border: 1px solid #262626; border-radius: 10px; padding: 22px; transition: border-color 0.15s; }
-    .sk-card:hover { border-color: #404040; }
-    .sk-card h4 { font-size: 0.9rem; font-weight: 700; color: #e5e5e5; margin-bottom: 2px; }
-    .sk-card .sk-sub { font-size: 0.75rem; color: #525252; margin-bottom: 12px; }
-    .sk-pills { display: flex; flex-wrap: wrap; gap: 5px; }
-    .sk-pills span {
-      font-size: 0.78rem; font-weight: 500; color: #a3a3a3;
-      background: #262626; border: 1px solid #333; padding: 3px 9px; border-radius: 5px;
-      transition: all 0.12s;
+    /* ── SECTION FRAMEWORK ── */
+    .sect { padding: 100px 0; }
+    .sect-head { margin-bottom: 48px; }
+    .sect-num {
+      font-family: var(--mono); font-size: 0.82rem; font-weight: 600;
+      color: var(--accent); margin-bottom: 8px;
+      display: flex; align-items: center; gap: 12px;
     }
-    .sk-pills span:hover { border-color: #6ee7b7; color: #6ee7b7; background: rgba(110,231,183,0.06); }
-
-    /* Certs */
-    .certs { display: flex; flex-direction: column; gap: 8px; margin-top: 20px; }
-    .cert {
-      display: flex; justify-content: space-between; align-items: center;
-      background: #1e1e1e; border: 1px solid #262626; border-radius: 8px;
-      padding: 14px 18px; text-decoration: none; transition: border-color 0.15s;
+    .sect-num::after { content: ''; flex: 1; height: 1px; background: var(--border); max-width: 300px; }
+    .sect-title {
+      font-size: 1.8rem; font-weight: 700; color: var(--white);
+      letter-spacing: -0.03em;
     }
-    .cert:hover { border-color: #404040; text-decoration: none; }
-    .cert-name { font-size: 0.88rem; font-weight: 600; color: #d4d4d4; }
-    .cert-by { font-size: 0.78rem; color: #525252; }
-    .cert-arrow { font-size: 0.8rem; color: #525252; }
+    .sect-desc {
+      font-size: 1rem; color: var(--text-dim); margin-top: 8px;
+      max-width: 600px; line-height: 1.7;
+    }
 
-    /* Contact */
-    .contact-text { font-size: 0.95rem; color: #a3a3a3; margin-bottom: 24px; max-width: 540px; line-height: 1.65; }
-    .contact-text strong { color: #d4d4d4; }
-    .c-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .c-card {
-      display: block; background: #1e1e1e; border: 1px solid #262626;
-      border-radius: 8px; padding: 16px 18px; text-decoration: none;
+    /* ── ABOUT ── */
+    .about-body {
+      display: grid; grid-template-columns: 3fr 2fr; gap: 48px;
+      align-items: start;
+    }
+    .about-prose { font-size: 1rem; color: var(--text-dim); line-height: 1.8; }
+    .about-prose p { margin-bottom: 16px; }
+    .about-prose strong { color: var(--text); font-weight: 600; }
+    .about-prose a { color: var(--accent); }
+
+    .about-aside { display: flex; flex-direction: column; gap: 12px; }
+    .aside-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 20px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .aside-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .aside-val { font-size: 1.6rem; font-weight: 800; color: var(--white); }
+    .aside-label { font-size: 0.78rem; color: var(--text-faint); margin-top: 2px; }
+
+    /* ── PROJECTS ── */
+    .proj-list { display: flex; flex-direction: column; gap: 32px; }
+
+    .proj {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 36px;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+      position: relative; overflow: hidden;
+    }
+    .proj::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; opacity: 0; transition: opacity 0.25s;
+    }
+    .proj:hover {
+      border-color: rgba(255,255,255,0.1);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+      transform: translateY(-4px);
+    }
+    .proj:hover::before { opacity: 1; }
+    .proj-v::before { background: linear-gradient(90deg, var(--violet), transparent); }
+    .proj-g::before { background: linear-gradient(90deg, var(--green), transparent); }
+    .proj-a::before { background: linear-gradient(90deg, var(--amber), transparent); }
+
+    .proj-header {
+      display: flex; justify-content: space-between;
+      align-items: flex-start; margin-bottom: 20px;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .proj-label {
+      font-family: var(--mono); font-size: 0.72rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      padding: 3px 10px; border-radius: 4px; display: inline-block;
+      margin-bottom: 8px;
+    }
+    .label-v { color: var(--violet); background: var(--violet-dim); }
+    .label-g { color: var(--green); background: var(--green-dim); }
+    .label-a { color: var(--amber); background: var(--amber-dim); }
+
+    .proj-name {
+      font-size: 1.4rem; font-weight: 700; color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    .proj-actions { display: flex; gap: 8px; flex-shrink: 0; }
+    .proj-btn {
+      font-family: var(--mono); font-size: 0.76rem; font-weight: 600;
+      padding: 6px 14px; border-radius: 6px; text-decoration: none;
       transition: all 0.15s;
     }
-    .c-card:hover { border-color: #6ee7b7; text-decoration: none; transform: translateY(-1px); }
-    .c-label { display: block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #525252; margin-bottom: 2px; }
-    .c-val { display: block; font-size: 0.88rem; font-weight: 500; color: #d4d4d4; }
+    .proj-btn:hover { text-decoration: none; transform: translateY(-1px); }
+    .pb-live { background: var(--accent); color: var(--bg); }
+    .pb-live:hover { background: #7dd3fc; color: var(--bg); }
+    .pb-code { color: var(--text-dim); border: 1px solid var(--border); }
+    .pb-code:hover { color: var(--white); border-color: var(--text-dim); }
 
-    /* Footer */
-    .footer { border-top: 1px solid #262626; padding: 24px 0; text-align: center; font-size: 0.8rem; color: #525252; }
+    .proj-desc {
+      font-size: 0.95rem; color: var(--text-dim); line-height: 1.75;
+      margin-bottom: 24px; max-width: 640px;
+    }
+    .proj-desc strong { color: var(--text); }
 
-    /* Mobile */
-    @media (max-width: 700px) {
-      .hero h1 { font-size: 1.85rem; }
-      .stats, .tl-grid, .sk-grid, .other-grid, .c-grid { grid-template-columns: 1fr; }
-      .p-card { padding: 20px; }
-      .p-top { flex-direction: column; }
-      .nav-links { display: none; }
-      .menu-btn { display: block; }
-      .nav-links.open {
+    .proj-highlights {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+      margin-bottom: 24px;
+    }
+    .proj-hl {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: 0.85rem; color: var(--text-dim);
+    }
+    .proj-hl-dot {
+      width: 5px; height: 5px; border-radius: 50%; margin-top: 8px;
+      flex-shrink: 0;
+    }
+    .dot-v { background: var(--violet); }
+    .dot-g { background: var(--green); }
+    .dot-a { background: var(--amber); }
+
+    .proj-stack {
+      font-family: var(--mono); font-size: 0.75rem; color: var(--text-faint);
+      padding-top: 20px; border-top: 1px solid rgba(51,65,85,0.5);
+      display: flex; flex-wrap: wrap; gap: 16px;
+    }
+
+    /* Other projects */
+    .other-title {
+      font-size: 1.1rem; font-weight: 600; color: var(--white);
+      margin: 48px 0 16px;
+    }
+    .other-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .other-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 22px;
+      transition: all 0.2s;
+    }
+    .other-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .other-card h4 { font-size: 0.92rem; font-weight: 600; margin-bottom: 6px; }
+    .other-card h4 a { color: var(--white); }
+    .other-card h4 a:hover { color: var(--accent); }
+    .other-card p { font-size: 0.82rem; color: var(--text-faint); line-height: 1.55; }
+
+    /* ── EXPERIENCE ── */
+    .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .exp-col-title {
+      font-size: 1rem; font-weight: 700; color: var(--white);
+      margin-bottom: 24px; padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .tl-entry {
+      position: relative; padding-left: 20px; margin-bottom: 28px;
+      border-left: 2px solid var(--border);
+    }
+    .tl-entry::before {
+      content: ''; position: absolute; left: -5px; top: 6px;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--accent); border: 2px solid var(--bg);
+    }
+    .tl-entry:last-child { margin-bottom: 0; }
+    .tl-when { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 2px; }
+    .tl-what { font-size: 0.95rem; font-weight: 600; color: var(--white); }
+    .tl-where { font-size: 0.85rem; color: var(--text-faint); margin-bottom: 6px; }
+    .tl-where a { color: var(--accent); }
+    .tl-how { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
+    .tl-score {
+      display: inline-block; font-family: var(--mono);
+      font-size: 0.78rem; font-weight: 600;
+      color: var(--green); background: var(--green-dim);
+      padding: 2px 10px; border-radius: 4px; margin-top: 6px;
+    }
+
+    /* ── SKILLS ── */
+    .sk-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .sk-box {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 24px;
+      transition: border-color 0.2s;
+    }
+    .sk-box:hover { border-color: rgba(56,189,248,0.3); }
+    .sk-box h4 { font-size: 0.88rem; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .sk-box .sk-note { font-size: 0.72rem; color: var(--text-faint); margin-bottom: 14px; }
+    .pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pills span {
+      font-family: var(--mono); font-size: 0.75rem; font-weight: 500;
+      color: var(--text-dim); background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border); padding: 4px 10px;
+      border-radius: 5px; transition: all 0.15s;
+    }
+    .pills span:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-dim); }
+
+    /* ── CERTS ── */
+    .certs-list { display: flex; flex-direction: column; gap: 10px; }
+    .cert-row {
+      display: flex; justify-content: space-between; align-items: center;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 8px; padding: 16px 20px;
+      text-decoration: none; color: inherit; transition: all 0.2s;
+    }
+    .cert-row:hover { border-color: var(--accent); transform: translateX(4px); text-decoration: none; }
+    .cert-title { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+    .cert-org { font-size: 0.78rem; color: var(--text-faint); }
+    .cert-go { font-family: var(--mono); font-size: 0.78rem; color: var(--text-faint); }
+
+    /* ── CONTACT ── */
+    .contact-wrap { max-width: 640px; }
+    .contact-p { font-size: 1rem; color: var(--text-dim); line-height: 1.75; margin-bottom: 32px; }
+    .contact-p strong { color: var(--text); }
+    .c-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .c-item {
+      display: block; background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 20px; text-decoration: none;
+      transition: all 0.2s;
+    }
+    .c-item:hover { border-color: var(--accent); transform: translateY(-3px); text-decoration: none; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .c-type { display: block; font-family: var(--mono); font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-faint); margin-bottom: 4px; }
+    .c-val { display: block; font-size: 0.92rem; font-weight: 600; color: var(--text); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border); padding: 32px 0;
+      text-align: center;
+    }
+    footer p { font-size: 0.8rem; color: var(--text-faint); }
+    footer a { color: var(--accent); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .about-body, .exp-grid, .sk-row, .other-row, .c-grid,
+      .proj-highlights { grid-template-columns: 1fr; }
+      .proj { padding: 24px; }
+      .proj-header { flex-direction: column; }
+      .nav-items { display: none; }
+      .nav-resume { display: none; }
+      .mob-btn { display: block; }
+      .nav-items.open {
         display: flex; flex-direction: column;
-        position: absolute; top: 56px; left: 0; right: 0;
-        background: #171717; border-bottom: 1px solid #262626;
-        padding: 16px 24px; gap: 10px;
+        position: absolute; top: 64px; left: 0; right: 0;
+        background: var(--bg); border-bottom: 1px solid var(--border);
+        padding: 16px 32px; gap: 4px;
       }
     }
   </style>
 </head>
 <body>
 
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="#" class="nav-name">Karthik Katta</a>
-      <ul class="nav-links" id="nl">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#journey">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
+  <nav>
+    <div class="nav-bar">
+      <a href="#" class="nav-logo">katta karthik</a>
+      <ul class="nav-items" id="nm">
+        <li><a href="#about"><span class="num">01.</span>About</a></li>
+        <li><a href="#work"><span class="num">02.</span>Projects</a></li>
+        <li><a href="#journey"><span class="num">03.</span>Journey</a></li>
+        <li><a href="#skills"><span class="num">04.</span>Skills</a></li>
+        <li><a href="#contact"><span class="num">05.</span>Contact</a></li>
       </ul>
-      <button class="menu-btn" onclick="document.getElementById('nl').classList.toggle('open')">
-        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h14M4 11h14M4 16h14"/></svg>
+      <a href="mailto:kattakarthik8008@gmail.com" class="nav-resume">Say Hello</a>
+      <button class="mob-btn" onclick="document.getElementById('nm').classList.toggle('open')">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
   </nav>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <section class="hero">
-    <div class="container">
-      <div class="hero-inner">
-        <span class="tag">👋 Open to AI & software engineering roles</span>
-        <h1>Hi, I'm Karthik.</h1>
-        <p class="hero-text">
-          I'm an <strong>AI Engineer</strong> and Integrated M.Tech student at <strong>VIT Amaravati</strong>. I build practical AI systems — research agents that browse the web and verify facts, document search platforms that never hallucinate, and business analytics tools that fix their own errors.
+    <div class="wrap">
+      <div class="hero-content">
+        <div class="hero-hi">Hello, my name is</div>
+        <h1>
+          Katta Karthik.<br>
+          <span class="hl">I engineer intelligent AI systems.</span>
+        </h1>
+        <p class="hero-p">
+          I'm an AI engineer specializing in <strong>autonomous multi-agent architectures</strong>, <strong>production-grade retrieval systems</strong>, and <strong>agentic data analytics</strong>. Currently pursuing my Integrated M.Tech in Computer Science at <strong>Vellore Institute of Technology</strong>, I design AI workflows that reason through complex problems, self-correct on failure, and deliver verified, citation-backed results.
         </p>
-        <div class="hero-btns">
-          <a href="#projects" class="btn btn-fill">See my projects ↓</a>
-          <a href="https://github.com/katta-karthik" target="_blank" class="btn btn-ghost">GitHub</a>
-          <a href="https://www.linkedin.com/in/katta-karthik/" target="_blank" class="btn btn-ghost">LinkedIn</a>
+        <div class="hero-links">
+          <a href="#work" class="h-btn h-btn-primary">Explore my work</a>
+          <a href="https://github.com/katta-karthik" target="_blank" rel="noopener" class="h-btn h-btn-ghost">GitHub</a>
+          <a href="https://www.linkedin.com/in/katta-karthik/" target="_blank" rel="noopener" class="h-btn h-btn-ghost">LinkedIn</a>
+        </div>
+        <div class="hero-status">
+          <span class="pulse"></span>
+          Currently seeking AI Engineering & Software Engineering opportunities
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About -->
-  <section class="section" id="about">
-    <div class="container">
-      <div class="sec-label">About</div>
-      <h2 class="sec-title">A bit about me</h2>
-      <div class="about-text">
-        <p>I'm passionate about making AI actually useful and trustworthy. While many AI tools today are simple chatbot wrappers that make things up, I focus on building systems with real reliability — verified citations, self-correcting error loops, and multi-agent collaboration.</p>
-        <p>I'm completing my <strong>Integrated M.Tech in Computer Science</strong> at VIT Amaravati (2021–2026) and have hands-on experience with <strong>LangGraph, LangChain, vector databases</strong>, and modern LLM inference. I've also worked on AI safety evaluation as a freelance contributor at Soul AI.</p>
-        <p>When I'm not coding, I enjoy playing chess ♟️ and watching films.</p>
+  <!-- ABOUT -->
+  <section class="sect" id="about">
+    <div class="wrap">
+      <div class="sect-head">
+        <div class="sect-num">01. About</div>
+        <h2 class="sect-title">Background & Motivation</h2>
       </div>
-      <div class="stats">
-        <div class="stat-card"><div class="stat-num">8.3</div><div class="stat-label">CGPA at VIT</div></div>
-        <div class="stat-card"><div class="stat-num">3</div><div class="stat-label">AI Systems Built</div></div>
-        <div class="stat-card"><div class="stat-num">97.4%</div><div class="stat-label">12th Grade Score</div></div>
+
+      <div class="about-body">
+        <div class="about-prose">
+          <p>
+            I've spent the last several years at <strong>Vellore Institute of Technology</strong> building a deep foundation in computer science — from core data structures and algorithm design to applied machine learning and natural language processing. What drives me is the gap between what AI <em>promises</em> and what it actually <em>delivers</em> in production.
+          </p>
+          <p>
+            Most AI applications today are thin wrappers around language models. They hallucinate, break on edge cases, and provide no verifiable evidence. I focus on the engineering that bridges this gap: <strong>multi-agent orchestration</strong> that mirrors how expert teams collaborate, <strong>hybrid retrieval pipelines</strong> that combine semantic understanding with precision keyword matching, and <strong>self-correcting execution loops</strong> that diagnose and recover from runtime failures autonomously.
+          </p>
+          <p>
+            Beyond the technical work, I've contributed to AI safety evaluation through freelance work at <a href="https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing" target="_blank">Soul AI's Project Shield</a>, where I conducted adversarial red-teaming and structured annotation to benchmark model reliability. I also enjoy competitive problem-solving, chess, and a good film.
+          </p>
+        </div>
+
+        <div class="about-aside">
+          <div class="aside-card">
+            <div class="aside-val">8.3</div>
+            <div class="aside-label">CGPA — Vellore Institute of Technology</div>
+          </div>
+          <div class="aside-card">
+            <div class="aside-val">3</div>
+            <div class="aside-label">Production-Grade AI Systems Shipped</div>
+          </div>
+          <div class="aside-card">
+            <div class="aside-val">97.4%</div>
+            <div class="aside-label">Intermediate (12th Grade)</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section class="section" id="projects">
-    <div class="container">
-      <div class="sec-label">Projects</div>
-      <h2 class="sec-title">What I've built</h2>
-      <p class="sec-sub">Each project solves a real-world AI problem. Click to see the code or try live demos.</p>
+  <!-- PROJECTS -->
+  <section class="sect" id="work">
+    <div class="wrap">
+      <div class="sect-head">
+        <div class="sect-num">02. Projects</div>
+        <h2 class="sect-title">Featured Work</h2>
+        <p class="sect-desc">Three flagship systems — each addressing a fundamental limitation in how AI applications are built today.</p>
+      </div>
 
-      <div class="projects-list">
+      <div class="proj-list">
 
-        <div class="p-card">
-          <div class="p-top">
-            <div><span class="p-badge p-badge-v">Multi-Agent Research</span><h3 class="p-name">DeepScope</h3></div>
-            <div class="p-btns"><a href="https://github.com/katta-karthik/DeepScope" target="_blank" class="btn btn-sm btn-ghost">GitHub →</a></div>
+        <!-- DeepScope -->
+        <article class="proj proj-v">
+          <div class="proj-header">
+            <div>
+              <span class="proj-label label-v">Multi-Agent Research System</span>
+              <h3 class="proj-name">DeepScope</h3>
+            </div>
+            <div class="proj-actions">
+              <a href="https://github.com/katta-karthik/DeepScope" target="_blank" class="proj-btn pb-code">Source Code →</a>
+            </div>
           </div>
-          <div class="p-body">
-            <p><strong>The problem:</strong> Ask a chatbot a complex research question and it gives a shallow summary or makes things up — because it tries to process too much at once.</p>
-            <p><strong>My solution:</strong> DeepScope works like a small research team. A lead coordinator breaks the question into focused tasks, assigns them to specialist AI agents who search the web and store findings in files (keeping their memory clean), then a fact-checker verifies everything before generating the final report.</p>
+          <div class="proj-desc">
+            <p>
+              Conventional chatbots attempt to answer complex research questions in a single pass — cramming thousands of words into their context window until they lose focus, hallucinate, or produce superficial summaries. <strong>DeepScope</strong> takes a fundamentally different approach by decomposing research into a coordinated multi-agent workflow.
+            </p>
+            <p style="margin-top:10px">
+              A lead coordinator agent creates a structured investigation plan and delegates focused subtasks to specialized researcher agents. Each agent searches the web independently, persisting its raw findings to a <strong>disk-backed workspace</strong> rather than holding everything in memory. A dedicated fact-verification agent then audits the collected evidence for gaps and unsupported claims before the system synthesizes a comprehensive, citation-grounded Markdown report.
+            </p>
           </div>
-          <div class="p-tags"><span class="p-tag">Team of AI Agents</span><span class="p-tag">Web Research</span><span class="p-tag">Fact Checking</span><span class="p-tag">Auto Reports</span></div>
-          <div class="p-tech">Python · LangChain Deep Agents · LangGraph</div>
-        </div>
+          <div class="proj-highlights">
+            <div class="proj-hl"><span class="proj-hl-dot dot-v"></span>Autonomous task decomposition and parallel delegation</div>
+            <div class="proj-hl"><span class="proj-hl-dot dot-v"></span>Filesystem-backed context isolation to prevent hallucination</div>
+            <div class="proj-hl"><span class="proj-hl-dot dot-v"></span>Dedicated fact-verification and gap-analysis agent</div>
+            <div class="proj-hl"><span class="proj-hl-dot dot-v"></span>Publication-quality structured research reports</div>
+          </div>
+          <div class="proj-stack"><span>Python</span><span>LangChain Deep Agents</span><span>LangGraph</span><span>FilesystemBackend</span><span>TodoListMiddleware</span></div>
+        </article>
 
-        <div class="p-card">
-          <div class="p-top">
-            <div><span class="p-badge p-badge-g">Document Intelligence</span><h3 class="p-name">NexusRAG</h3></div>
-            <div class="p-btns"><a href="https://nexus-doc-rag.streamlit.app/" target="_blank" class="btn btn-sm btn-blue">Live Demo ↗</a><a href="https://github.com/katta-karthik/Nexus_RAG" target="_blank" class="btn btn-sm btn-ghost">GitHub →</a></div>
+        <!-- NexusRAG -->
+        <article class="proj proj-g">
+          <div class="proj-header">
+            <div>
+              <span class="proj-label label-g">Advanced RAG Platform</span>
+              <h3 class="proj-name">NexusRAG</h3>
+            </div>
+            <div class="proj-actions">
+              <a href="https://nexus-doc-rag.streamlit.app/" target="_blank" class="proj-btn pb-live">Live Demo ↗</a>
+              <a href="https://github.com/katta-karthik/Nexus_RAG" target="_blank" class="proj-btn pb-code">Source Code →</a>
+            </div>
           </div>
-          <div class="p-body">
-            <p><strong>The problem:</strong> Upload a document and ask AI for a specific number (like a GPA or revenue) — it often gets it wrong because it only searches by meaning, not exact words.</p>
-            <p><strong>My solution:</strong> NexusRAG uses a dual search strategy — searching by both the <em>meaning</em> of your question AND <em>exact keywords</em>. A secondary AI re-scores for relevance, and every answer includes the exact page number so you can verify it yourself.</p>
+          <div class="proj-desc">
+            <p>
+              Standard vector-only retrieval systems consistently fail on precision-dependent queries — ask for a specific GPA, a financial figure, or an exact date, and the system often returns semantically similar but factually incorrect content. <strong>NexusRAG</strong> addresses this through a complete retrieval-augmented generation lifecycle with a <strong>dense-sparse hybrid search</strong> architecture.
+            </p>
+            <p style="margin-top:10px">
+              Documents pass through a visual <strong>7-stage ingestion pipeline</strong> (parsing, cleaning, recursive chunking, embedding, hybrid indexing, and AI-powered question synthesis). At query time, the system fuses results from ChromaDB vector search and BM25 lexical matching using <strong>Reciprocal Rank Fusion</strong>, then applies <strong>FlashRank cross-encoder reranking</strong> to surface the most relevant evidence. Every response includes verified page-level citations.
+            </p>
           </div>
-          <div class="p-tags"><span class="p-tag">Upload & Chat with Docs</span><span class="p-tag">Dual Search</span><span class="p-tag">Page-Level Proof</span><span class="p-tag">Instant Answers</span></div>
-          <div class="p-tech">Python · ChromaDB · BM25 · FlashRank · Groq · Streamlit</div>
-        </div>
+          <div class="proj-highlights">
+            <div class="proj-hl"><span class="proj-hl-dot dot-g"></span>Interactive 7-stage ingestion with real-time visual progress</div>
+            <div class="proj-hl"><span class="proj-hl-dot dot-g"></span>Dense + sparse hybrid retrieval with Reciprocal Rank Fusion</div>
+            <div class="proj-hl"><span class="proj-hl-dot dot-g"></span>FlashRank cross-encoder reranking for precision</div>
+            <div class="proj-hl"><span class="proj-hl-dot dot-g"></span>Sub-second Groq LPU inference with page-level citations</div>
+          </div>
+          <div class="proj-stack"><span>Python</span><span>LangChain</span><span>ChromaDB</span><span>BM25</span><span>FlashRank</span><span>Groq LPU</span><span>Streamlit</span></div>
+        </article>
 
-        <div class="p-card">
-          <div class="p-top">
-            <div><span class="p-badge p-badge-a">Business Analytics</span><h3 class="p-name">E-commerce AI Analytics</h3></div>
-            <div class="p-btns"><a href="https://ecommerce-data-agent.streamlit.app/" target="_blank" class="btn btn-sm btn-blue">Live Demo ↗</a><a href="https://github.com/katta-karthik/ai_agent_for_ecommerce-data" target="_blank" class="btn btn-sm btn-ghost">GitHub →</a></div>
+        <!-- E-commerce -->
+        <article class="proj proj-a">
+          <div class="proj-header">
+            <div>
+              <span class="proj-label label-a">Agentic Data Analytics</span>
+              <h3 class="proj-name">E-commerce AI Analytics</h3>
+            </div>
+            <div class="proj-actions">
+              <a href="https://ecommerce-data-agent.streamlit.app/" target="_blank" class="proj-btn pb-live">Live Demo ↗</a>
+              <a href="https://github.com/katta-karthik/ai_agent_for_ecommerce-data" target="_blank" class="proj-btn pb-code">Source Code →</a>
+            </div>
           </div>
-          <div class="p-body">
-            <p><strong>The problem:</strong> Store owners need answers about their sales data but don't know SQL. When basic AI-to-SQL tools make a mistake, they just show an error with no recovery.</p>
-            <p><strong>My solution:</strong> Ask any business question in plain English — the AI writes the query, runs it safely, and if a mistake occurs, it <strong>automatically figures out what went wrong and fixes the query itself</strong>. Then it creates clean charts and business tips.</p>
+          <div class="proj-desc">
+            <p>
+              Typical text-to-SQL implementations are fragile single-shot pipelines — the moment a column name is misspelled, a table alias is wrong, or a syntax error occurs, the system returns a cryptic database traceback and the user is stuck. This project re-imagines text-to-SQL as a <strong>stateful, self-healing agent</strong>.
+            </p>
+            <p style="margin-top:10px">
+              Built on a <strong>LangGraph StateGraph</strong>, the agent plans structured queries, executes them within a strict read-only SQLite sandbox (protected by <strong>Meta Prompt Guard 86M</strong>), and upon failure, enters an automated <strong>diagnosis-and-repair loop</strong> that inspects the error, identifies the root cause, and rewrites corrective SQL. Successful results are synthesized into executive-ready response cards with autonomous chart generation.
+            </p>
           </div>
-          <div class="p-tags"><span class="p-tag">Ask in English</span><span class="p-tag">Self-Fixing Queries</span><span class="p-tag">Auto Charts</span><span class="p-tag">Safety Protected</span></div>
-          <div class="p-tech">LangGraph · Google Gemini · Groq · SQLite · Streamlit</div>
-        </div>
+          <div class="proj-highlights">
+            <div class="proj-hl"><span class="proj-hl-dot dot-a"></span>Self-healing retry loop with automatic error diagnosis</div>
+            <div class="proj-hl"><span class="proj-hl-dot dot-a"></span>Read-only sandbox with Meta Prompt Guard 86M</div>
+            <div class="proj-hl"><span class="proj-hl-dot dot-a"></span>Autonomous chart type selection and rendering</div>
+            <div class="proj-hl"><span class="proj-hl-dot dot-a"></span>Model Context Protocol (MCP) server integration</div>
+          </div>
+          <div class="proj-stack"><span>LangGraph</span><span>Google Gemini</span><span>Groq LPU</span><span>Prompt Guard</span><span>MCP</span><span>SQLite</span><span>Streamlit</span></div>
+        </article>
 
       </div>
 
-      <h3 class="other-h">Other work</h3>
-      <div class="other-grid">
-        <div class="o-card">
+      <h3 class="other-title">Other Notable Projects</h3>
+      <div class="other-row">
+        <div class="other-card">
           <h4><a href="https://github.com/katta-karthik/credit_card_fraud_detection" target="_blank">Credit Card Fraud Detection</a></h4>
-          <p>ML models (Random Forest, ensemble techniques, SMOTE) to detect fraudulent transactions with 96%+ accuracy.</p>
+          <p>Ensemble classification pipeline using Random Forest, SVM, and Voting classifiers with SMOTE oversampling to detect fraudulent transactions in highly imbalanced datasets. Achieved 96%+ accuracy with strong recall.</p>
         </div>
-        <div class="o-card">
+        <div class="other-card">
           <h4><a href="https://github.com/katta-karthik/cookmate_ai" target="_blank">CookMate AI</a></h4>
-          <p>A cooking assistant using a PyTorch Vision-Language model to identify ingredients from photos and suggest recipes.</p>
+          <p>Generative AI cooking assistant powered by a PyTorch Vision-Language Model for real-time ingredient recognition from camera input, with Flask API backend and step-by-step recipe generation.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Journey -->
-  <section class="section" id="journey">
-    <div class="container">
-      <div class="sec-label">Journey</div>
-      <h2 class="sec-title">Experience & Education</h2>
-      <p class="sec-sub">My professional experience and academic path.</p>
+  <!-- JOURNEY -->
+  <section class="sect" id="journey">
+    <div class="wrap">
+      <div class="sect-head">
+        <div class="sect-num">03. Journey</div>
+        <h2 class="sect-title">Experience & Education</h2>
+      </div>
 
-      <div class="tl-grid">
+      <div class="exp-grid">
         <div>
-          <div class="tl-col-title">💼 Work</div>
-          <div class="tl-item">
-            <div class="tl-date">April 2025</div>
-            <div class="tl-role">AI Task Contributor (Freelance)</div>
-            <div class="tl-org"><a href="https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing" target="_blank">Soul AI — Project Shield ↗</a></div>
-            <p class="tl-text">Evaluated AI responses for safety and accuracy. Performed adversarial prompt testing and structured annotation to improve model reliability.</p>
+          <div class="exp-col-title">Professional Experience</div>
+          <div class="tl-entry">
+            <div class="tl-when">April 2025</div>
+            <div class="tl-what">AI Task Contributor — Project Shield</div>
+            <div class="tl-where"><a href="https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing" target="_blank">Soul AI (Freelance) ↗</a></div>
+            <p class="tl-how">Conducted adversarial prompt testing and structured red-teaming exercises to evaluate LLM output safety and instruction-following accuracy. Applied rigorous annotation guidelines to benchmark model reliability across multi-turn evaluation scenarios.</p>
           </div>
         </div>
         <div>
-          <div class="tl-col-title">🎓 Education</div>
-          <div class="tl-item">
-            <div class="tl-date">2021 — 2026</div>
-            <div class="tl-role">Integrated M.Tech in CSE</div>
-            <div class="tl-org">VIT Amaravati</div>
-            <span class="tl-grade">CGPA: 8.3</span>
+          <div class="exp-col-title">Education</div>
+          <div class="tl-entry">
+            <div class="tl-when">2021 — 2026</div>
+            <div class="tl-what">Integrated M.Tech in Computer Science & Engineering</div>
+            <div class="tl-where">Vellore Institute of Technology, Amaravati</div>
+            <span class="tl-score">CGPA: 8.3 / 10</span>
           </div>
-          <div class="tl-item">
-            <div class="tl-date">2019 — 2021</div>
-            <div class="tl-role">Intermediate (MPC)</div>
-            <div class="tl-org">NRI Junior College, Ongole</div>
-            <span class="tl-grade">97.4%</span>
+          <div class="tl-entry">
+            <div class="tl-when">2019 — 2021</div>
+            <div class="tl-what">Intermediate (Mathematics, Physics, Chemistry)</div>
+            <div class="tl-where">NRI Junior College, Ongole</div>
+            <span class="tl-score">97.4%</span>
           </div>
-          <div class="tl-item">
-            <div class="tl-date">2019</div>
-            <div class="tl-role">10th Standard</div>
-            <div class="tl-org">Z.P High School, Rajampalli</div>
-            <span class="tl-grade">CGPA: 9.7</span>
+          <div class="tl-entry">
+            <div class="tl-when">2019</div>
+            <div class="tl-what">Secondary School Certificate</div>
+            <div class="tl-where">Z.P High School, Rajampalli</div>
+            <span class="tl-score">CGPA: 9.7</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills -->
-  <section class="section" id="skills">
-    <div class="container">
-      <div class="sec-label">Skills</div>
-      <h2 class="sec-title">Technologies I work with</h2>
-      <p class="sec-sub">My toolkit — focused on AI agents, retrieval systems, and software engineering.</p>
-      <div class="sk-grid">
-        <div class="sk-card">
+  <!-- SKILLS -->
+  <section class="sect" id="skills">
+    <div class="wrap">
+      <div class="sect-head">
+        <div class="sect-num">04. Skills</div>
+        <h2 class="sect-title">Technical Toolkit</h2>
+      </div>
+
+      <div class="sk-row">
+        <div class="sk-box">
           <h4>AI Agents & Orchestration</h4>
-          <div class="sk-sub">Building reasoning, self-directing AI systems</div>
-          <div class="sk-pills"><span>LangGraph</span><span>LangChain</span><span>Multi-Agent Systems</span><span>Deep Agents</span><span>Tool Calling</span><span>MCP</span></div>
+          <div class="sk-note">Designing autonomous, stateful reasoning systems</div>
+          <div class="pills"><span>LangGraph</span><span>LangChain</span><span>Multi-Agent Systems</span><span>Deep Agents</span><span>Tool Calling</span><span>Self-Healing Loops</span><span>MCP</span><span>Pydantic</span></div>
         </div>
-        <div class="sk-card">
-          <h4>Search & RAG</h4>
-          <div class="sk-sub">Connecting AI to real documents & data</div>
-          <div class="sk-pills"><span>Hybrid Search</span><span>BM25</span><span>ChromaDB</span><span>FlashRank</span><span>Embeddings</span><span>Chunking</span></div>
+        <div class="sk-box">
+          <h4>Advanced RAG & Retrieval</h4>
+          <div class="sk-note">Precision retrieval with grounded evidence</div>
+          <div class="pills"><span>Hybrid Search</span><span>BM25</span><span>ChromaDB</span><span>FlashRank</span><span>RRF</span><span>Embeddings</span><span>Semantic Chunking</span></div>
         </div>
-        <div class="sk-card">
-          <h4>AI Models & Safety</h4>
-          <div class="sk-sub">The brains and guardrails</div>
-          <div class="sk-pills"><span>LLaMA 3.x</span><span>Gemini</span><span>Groq LPU</span><span>Prompt Guard</span><span>PyTorch</span><span>Scikit-Learn</span></div>
+        <div class="sk-box">
+          <h4>LLMs & Machine Learning</h4>
+          <div class="sk-note">Models, inference, and safety evaluation</div>
+          <div class="pills"><span>LLaMA 3.x</span><span>Gemini</span><span>Groq LPU</span><span>Prompt Guard</span><span>HITL Evaluation</span><span>Hugging Face</span><span>PyTorch</span><span>Scikit-Learn</span></div>
         </div>
-        <div class="sk-card">
-          <h4>Engineering & Tools</h4>
-          <div class="sk-sub">Building fast, reliable software</div>
-          <div class="sk-pills"><span>Python</span><span>Java</span><span>SQL</span><span>FastAPI</span><span>Streamlit</span><span>Git</span><span>Docker</span><span>DSA</span></div>
+        <div class="sk-box">
+          <h4>Engineering & Fundamentals</h4>
+          <div class="sk-note">Building reliable, deployable software</div>
+          <div class="pills"><span>Python</span><span>Java</span><span>SQL</span><span>FastAPI</span><span>Streamlit</span><span>Docker</span><span>Git</span><span>GitHub Actions</span><span>DSA</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Certs -->
-  <section class="section">
-    <div class="container">
-      <div class="sec-label">Certifications</div>
-      <h2 class="sec-title">Credentials</h2>
-      <div class="certs">
-        <a href="https://static.takeuforward.org/certificate-dSicL1.pdf" target="_blank" class="cert"><div><div class="cert-name">Data Structures and Algorithms</div><div class="cert-by">Take U Forward (Striver)</div></div><span class="cert-arrow">View →</span></a>
-        <a href="https://www.udemy.com/certificate/UC-2e9f2e98-ea1d-4491-973a-c0f1f902d246/" target="_blank" class="cert"><div><div class="cert-name">Data Science, ML & Deep Learning</div><div class="cert-by">KrishAI Technologies</div></div><span class="cert-arrow">View →</span></a>
-        <a href="https://www.udemy.com/certificate/UC-e668f427-ff2c-4ad2-bae1-731067820410/" target="_blank" class="cert"><div><div class="cert-name">Generative AI</div><div class="cert-by">KrishAI Technologies</div></div><span class="cert-arrow">View →</span></a>
+  <!-- CERTS -->
+  <section class="sect">
+    <div class="wrap">
+      <div class="sect-head">
+        <div class="sect-num">&nbsp;</div>
+        <h2 class="sect-title">Certifications</h2>
+      </div>
+      <div class="certs-list">
+        <a href="https://static.takeuforward.org/certificate-dSicL1.pdf" target="_blank" class="cert-row"><div><div class="cert-title">Data Structures and Algorithms</div><div class="cert-org">Take U Forward (Striver)</div></div><span class="cert-go">Verify →</span></a>
+        <a href="https://www.udemy.com/certificate/UC-2e9f2e98-ea1d-4491-973a-c0f1f902d246/" target="_blank" class="cert-row"><div><div class="cert-title">Data Science, Machine Learning & Deep Learning</div><div class="cert-org">KrishAI Technologies</div></div><span class="cert-go">Verify →</span></a>
+        <a href="https://www.udemy.com/certificate/UC-e668f427-ff2c-4ad2-bae1-731067820410/" target="_blank" class="cert-row"><div><div class="cert-title">Generative AI</div><div class="cert-org">KrishAI Technologies</div></div><span class="cert-go">Verify →</span></a>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="sec-label">Contact</div>
-      <h2 class="sec-title">Let's connect</h2>
-      <p class="contact-text">I'm actively looking for <strong>AI Engineering</strong> and <strong>Software Engineering</strong> roles. Whether it's a job, a collaboration, or just a hello — I'd love to hear from you.</p>
-      <div class="c-grid">
-        <a href="mailto:kattakarthik8008@gmail.com" class="c-card"><span class="c-label">Email</span><span class="c-val">kattakarthik8008@gmail.com</span></a>
-        <a href="https://www.linkedin.com/in/katta-karthik/" target="_blank" class="c-card"><span class="c-label">LinkedIn</span><span class="c-val">katta-karthik</span></a>
-        <a href="https://github.com/katta-karthik" target="_blank" class="c-card"><span class="c-label">GitHub</span><span class="c-val">katta-karthik</span></a>
-        <a href="tel:+918008456790" class="c-card"><span class="c-label">Phone</span><span class="c-val">+91-8008456790</span></a>
+  <!-- CONTACT -->
+  <section class="sect" id="contact">
+    <div class="wrap">
+      <div class="sect-head">
+        <div class="sect-num">05. Contact</div>
+        <h2 class="sect-title">Get In Touch</h2>
+      </div>
+      <div class="contact-wrap">
+        <p class="contact-p">
+          I'm currently seeking <strong>AI Engineering</strong>, <strong>Agentic AI</strong>, and <strong>Software Engineering</strong> roles where I can contribute to building reliable, production-quality intelligent systems. Whether you have an open position, a collaboration idea, or simply want to discuss multi-agent architectures and retrieval systems — I'd genuinely appreciate hearing from you.
+        </p>
+        <div class="c-grid">
+          <a href="mailto:kattakarthik8008@gmail.com" class="c-item"><span class="c-type">Email</span><span class="c-val">kattakarthik8008@gmail.com</span></a>
+          <a href="https://www.linkedin.com/in/katta-karthik/" target="_blank" class="c-item"><span class="c-type">LinkedIn</span><span class="c-val">in/katta-karthik</span></a>
+          <a href="https://github.com/katta-karthik" target="_blank" class="c-item"><span class="c-type">GitHub</span><span class="c-val">katta-karthik</span></a>
+          <a href="tel:+918008456790" class="c-item"><span class="c-type">Phone</span><span class="c-val">+91 800 845 6790</span></a>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer class="footer"><div class="container">© 2026 Katta Karthik · Amaravati, India</div></footer>
+  <footer>
+    <div class="wrap">
+      <p>Designed & built by <a href="https://github.com/katta-karthik" target="_blank">Katta Karthik</a></p>
+    </div>
+  </footer>
 
 </body>
 </html>
