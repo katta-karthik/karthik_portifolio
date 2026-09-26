@@ -3,282 +3,1012 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Katta Karthik — Portfolio</title>
-  <meta name="description" content="Personal portfolio of Katta Karthik. AI Engineer and Integrated M.Tech student at VIT Amaravati.">
-  <link rel="stylesheet" href="style.css">
+  <title>Karthik Katta — AI Engineer</title>
+  <meta name="description" content="Portfolio of Katta Karthik — AI Engineer building intelligent agents, document search systems, and self-healing analytics tools.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #fafaf9;
+      color: #1c1917;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 250, 249, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e7e5e4;
+    }
+
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #1c1917;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #57534e;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: #1c1917; }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .mobile-menu-btn svg { display: block; }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 80px 0 64px;
+    }
+
+    .hero-inner {
+      max-width: 640px;
+    }
+
+    .hero-greeting {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #2563eb;
+      background: #eff6ff;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1.15;
+      color: #0c0a09;
+      margin-bottom: 20px;
+    }
+
+    .hero-desc {
+      font-size: 1.12rem;
+      color: #57534e;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .hero-desc strong { color: #1c1917; }
+
+    .hero-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+
+    .btn-dark {
+      background: #1c1917;
+      color: #fff;
+    }
+
+    .btn-dark:hover {
+      background: #292524;
+      text-decoration: none;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+
+    .btn-outline {
+      background: #fff;
+      color: #1c1917;
+      border-color: #d6d3d1;
+    }
+
+    .btn-outline:hover {
+      background: #f5f5f4;
+      border-color: #a8a29e;
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .btn-blue {
+      background: #2563eb;
+      color: #fff;
+    }
+
+    .btn-blue:hover {
+      background: #1d4ed8;
+      text-decoration: none;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(37,99,235,0.25);
+    }
+
+    .btn-sm {
+      padding: 6px 14px;
+      font-size: 0.82rem;
+    }
+
+    /* ===== SECTIONS ===== */
+    .section {
+      padding: 72px 0;
+    }
+
+    .section + .section {
+      border-top: 1px solid #e7e5e4;
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #2563eb;
+      margin-bottom: 8px;
+    }
+
+    .section-heading {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: #0c0a09;
+      margin-bottom: 8px;
+    }
+
+    .section-sub {
+      font-size: 1.02rem;
+      color: #78716c;
+      margin-bottom: 40px;
+      max-width: 600px;
+    }
+
+    /* ===== ABOUT CARDS ===== */
+    .about-text {
+      max-width: 680px;
+      color: #44403c;
+      font-size: 1.05rem;
+    }
+
+    .about-text p { margin-bottom: 16px; }
+    .about-text strong { color: #1c1917; }
+
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .highlight-card {
+      background: #fff;
+      border: 1px solid #e7e5e4;
+      border-radius: 12px;
+      padding: 24px 20px;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .highlight-card:hover {
+      border-color: #d6d3d1;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+      transform: translateY(-2px);
+    }
+
+    .highlight-number {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #1c1917;
+    }
+
+    .highlight-label {
+      font-size: 0.82rem;
+      color: #78716c;
+      margin-top: 4px;
+    }
+
+    /* ===== PROJECTS ===== */
+    .projects-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .project-card {
+      background: #fff;
+      border: 1px solid #e7e5e4;
+      border-radius: 14px;
+      padding: 32px;
+      transition: all 0.2s;
+    }
+
+    .project-card:hover {
+      border-color: #d6d3d1;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .project-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+
+    .badge-purple { background: #f3e8ff; color: #7c3aed; }
+    .badge-green { background: #ecfdf5; color: #059669; }
+    .badge-amber { background: #fffbeb; color: #d97706; }
+
+    .project-btns { display: flex; gap: 8px; }
+
+    .project-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #0c0a09;
+      letter-spacing: -0.015em;
+      margin-bottom: 16px;
+    }
+
+    .project-explain {
+      font-size: 0.96rem;
+      color: #57534e;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .project-explain strong { color: #1c1917; }
+    .project-explain em { font-style: italic; color: #78716c; }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .ptag {
+      font-size: 0.78rem;
+      font-weight: 500;
+      background: #f5f5f4;
+      color: #57534e;
+      border: 1px solid #e7e5e4;
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+
+    .project-tech {
+      font-size: 0.82rem;
+      color: #a8a29e;
+      padding-top: 16px;
+      border-top: 1px solid #f5f5f4;
+    }
+
+    /* Other projects */
+    .other-projects {
+      margin-top: 40px;
+    }
+
+    .other-projects h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #1c1917;
+    }
+
+    .other-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .other-card {
+      background: #fff;
+      border: 1px solid #e7e5e4;
+      border-radius: 10px;
+      padding: 20px;
+      transition: all 0.2s;
+    }
+
+    .other-card:hover {
+      border-color: #d6d3d1;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .other-card h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .other-card h4 a {
+      color: #1c1917;
+    }
+
+    .other-card p {
+      font-size: 0.85rem;
+      color: #78716c;
+      line-height: 1.55;
+    }
+
+    /* ===== EXPERIENCE & EDUCATION ===== */
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+
+    .timeline-col h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1c1917;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tl-item {
+      position: relative;
+      padding-left: 20px;
+      padding-bottom: 28px;
+      border-left: 2px solid #e7e5e4;
+    }
+
+    .tl-item:last-child { padding-bottom: 0; }
+
+    .tl-item::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #2563eb;
+    }
+
+    .tl-date {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #2563eb;
+      margin-bottom: 2px;
+    }
+
+    .tl-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1c1917;
+    }
+
+    .tl-org {
+      font-size: 0.9rem;
+      color: #78716c;
+      margin-bottom: 6px;
+    }
+
+    .tl-org a { color: #2563eb; }
+
+    .tl-desc {
+      font-size: 0.88rem;
+      color: #57534e;
+      line-height: 1.6;
+    }
+
+    .tl-grade {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #059669;
+      background: #ecfdf5;
+      padding: 2px 10px;
+      border-radius: 6px;
+      margin-top: 4px;
+    }
+
+    /* ===== SKILLS ===== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .skill-card {
+      background: #fff;
+      border: 1px solid #e7e5e4;
+      border-radius: 12px;
+      padding: 24px;
+      transition: all 0.2s;
+    }
+
+    .skill-card:hover {
+      border-color: #d6d3d1;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+
+    .skill-card h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #1c1917;
+      margin-bottom: 4px;
+    }
+
+    .skill-card .skill-sub {
+      font-size: 0.8rem;
+      color: #a8a29e;
+      margin-bottom: 12px;
+    }
+
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .skill-pills span {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: #44403c;
+      background: #f5f5f4;
+      border: 1px solid #e7e5e4;
+      padding: 4px 10px;
+      border-radius: 6px;
+      transition: all 0.15s;
+    }
+
+    .skill-pills span:hover {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+      color: #1d4ed8;
+    }
+
+    /* ===== CERTIFICATIONS ===== */
+    .certs-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .cert-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      border: 1px solid #e7e5e4;
+      border-radius: 10px;
+      padding: 16px 20px;
+      transition: all 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .cert-item:hover {
+      border-color: #d6d3d1;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .cert-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1c1917;
+    }
+
+    .cert-provider {
+      font-size: 0.82rem;
+      color: #78716c;
+    }
+
+    .cert-arrow {
+      font-size: 0.85rem;
+      color: #a8a29e;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact-content {
+      max-width: 560px;
+    }
+
+    .contact-text {
+      font-size: 1.02rem;
+      color: #57534e;
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .contact-card {
+      display: block;
+      background: #fff;
+      border: 1px solid #e7e5e4;
+      border-radius: 10px;
+      padding: 18px 20px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .contact-card:hover {
+      border-color: #2563eb;
+      box-shadow: 0 4px 16px rgba(37,99,235,0.08);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    .contact-label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #a8a29e;
+      margin-bottom: 2px;
+    }
+
+    .contact-val {
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: #1c1917;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      border-top: 1px solid #e7e5e4;
+      padding: 28px 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #a8a29e;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.1rem; }
+      .highlights, .timeline-grid, .skills-grid, .other-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .project-card { padding: 24px; }
+      .project-top { flex-direction: column; }
+      .nav-links { display: none; }
+      .mobile-menu-btn { display: block; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #fafaf9;
+        border-bottom: 1px solid #e7e5e4;
+        padding: 16px 24px;
+        gap: 12px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <div class="wrapper">
+  <!-- Nav -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="nav-brand">Karthik Katta</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#journey">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="mobile-menu-btn" onclick="document.getElementById('navLinks').classList.toggle('open')">
+        <svg width="24" height="24" fill="none" stroke="#1c1917" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </nav>
 
-    <!-- Top Header -->
-    <header class="header">
-      <div class="profile-header">
-        <div class="avatar">KK</div>
-        <div class="profile-info">
-          <h1 class="name">Katta Karthik</h1>
-          <p class="role">AI Engineer &amp; Integrated M.Tech Student</p>
-          <p class="location">VIT Amaravati · Amaravati, India</p>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-greeting">👋 Open to opportunities</div>
+        <h1>Hi, I'm Karthik.<br>I build intelligent AI systems.</h1>
+        <p class="hero-desc">
+          I'm an <strong>AI Engineer</strong> and Integrated M.Tech student at <strong>VIT Amaravati</strong>. I create practical AI systems — from research agents that browse the web and verify facts, to document search platforms that find exact answers with proof, to business analytics tools that fix their own errors.
+        </p>
+        <div class="hero-links">
+          <a href="#projects" class="btn btn-dark">See my work ↓</a>
+          <a href="https://github.com/katta-karthik" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub</a>
+          <a href="https://www.linkedin.com/in/katta-karthik/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="header-links">
-        <a href="mailto:kattakarthik8008@gmail.com" class="link-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          Email
-        </a>
-        <a href="https://github.com/katta-karthik" target="_blank" rel="noopener noreferrer" class="link-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-          GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/katta-karthik/" target="_blank" rel="noopener noreferrer" class="link-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-          LinkedIn
-        </a>
-        <a href="https://takeuforward.org/profile/karthik0712" target="_blank" rel="noopener noreferrer" class="link-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-          Coding Profile
-        </a>
-      </div>
-    </header>
-
-    <!-- Navigation Bar -->
-    <nav class="subnav">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-      <h2 class="section-title">About Me</h2>
-      <div class="bio-text">
+  <!-- About -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-label">About</div>
+      <h2 class="section-heading">A bit about me</h2>
+      <div class="about-text">
         <p>
-          Hi! I'm Karthik, an Integrated M.Tech student in Computer Science &amp; Engineering at <strong>Vellore Institute of Technology (VIT Amaravati)</strong>, graduating in 2026.
+          I'm passionate about making AI actually useful and trustworthy. While many AI applications today are simple chatbot wrappers that frequently hallucinate or give vague responses, I focus on building systems with real <strong>reliability guarantees</strong> — verified citations, self-correcting error loops, and multi-agent collaboration.
         </p>
         <p>
-          I build practical artificial intelligence systems and software applications. My main focus is on <strong>AI Agents</strong> and <strong>Retrieval-Augmented Generation (RAG)</strong> — creating systems that can research topics online, accurately find information in documents without making things up, and help business owners query their data using simple everyday English.
+          I'm completing my <strong>Integrated M.Tech in Computer Science</strong> at VIT Amaravati (2021–2026) and have hands-on experience with <strong>LangGraph</strong>, <strong>LangChain</strong>, <strong>vector databases</strong>, and modern LLM inference engines. I've also contributed to AI safety evaluation as a freelance contributor at Soul AI.
         </p>
         <p>
-          Outside of software development, I enjoy playing chess, studying data structures, and watching films.
+          When I'm not coding, you'll find me playing chess ♟️ or catching up on films.
         </p>
       </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-      <h2 class="section-title">Featured Projects</h2>
-      <p class="section-subtitle">Here are the three main projects I have built recently:</p>
+      <div class="highlights">
+        <div class="highlight-card">
+          <div class="highlight-number">8.3</div>
+          <div class="highlight-label">CGPA at VIT Amaravati</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-number">3</div>
+          <div class="highlight-label">Production AI Systems Built</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-number">97.4%</div>
+          <div class="highlight-label">12th Grade Score</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <div class="project-list">
+  <!-- Projects -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-label">Projects</div>
+      <h2 class="section-heading">What I've built</h2>
+      <p class="section-sub">Each project solves a real-world AI problem. Click through to see the code or try the live demos.</p>
 
-        <!-- Project 1: DeepScope -->
-        <article class="project-card">
-          <div class="project-card-header">
+      <div class="projects-grid">
+
+        <!-- DeepScope -->
+        <div class="project-card">
+          <div class="project-top">
             <div>
-              <h3 class="project-name">DeepScope — Autonomous Deep Research Agent</h3>
-              <div class="project-meta-tech">Python · LangChain Deep Agents · LangGraph</div>
+              <span class="project-badge badge-purple">Multi-Agent Research</span>
+              <h3 class="project-title">DeepScope</h3>
             </div>
-            <div class="project-actions">
-              <a href="https://github.com/katta-karthik/DeepScope" target="_blank" rel="noopener noreferrer" class="btn-link">GitHub ↗</a>
+            <div class="project-btns">
+              <a href="https://github.com/katta-karthik/DeepScope" target="_blank" class="btn btn-sm btn-outline">GitHub →</a>
             </div>
           </div>
-          <div class="project-desc">
-            <p>
-              <strong>The Problem:</strong> When you ask standard AI chatbots complex questions (like <em>"Compare the top 3 approaches for RAG reliability with trade-offs"</em>), they usually give short, superficial summaries or get confused and make up facts.
-            </p>
-            <p>
-              <strong>How it works:</strong> DeepScope works like an automated research team. A lead coordinator creates an investigation plan and delegates topics to specialized subagents. These subagents browse the web, write detailed notes to files on disk (keeping memory clean), double-check their facts with a verifier agent, and generate a verified, publication-grade research report.
-            </p>
+          <div class="project-explain">
+            <p><strong>The problem:</strong> Ask a chatbot a complex research question and it either gives a shallow summary or makes things up because it tries to process too much information at once.</p>
+            <p style="margin-top:10px"><strong>My solution:</strong> DeepScope works like a small research team. A lead coordinator breaks the question into focused tasks, assigns them to specialist AI agents who search the web and store their findings in files (keeping their memory clean), then a fact-checker verifies everything before generating the final report.</p>
           </div>
-          <div class="tags">
-            <span class="tag">Multi-Agent System</span>
-            <span class="tag">Fact Verification</span>
-            <span class="tag">Disk Workspace</span>
-            <span class="tag">Deep Research</span>
+          <div class="project-tags">
+            <span class="ptag">Team of AI Agents</span>
+            <span class="ptag">Web Research</span>
+            <span class="ptag">Fact Checking</span>
+            <span class="ptag">Auto Report Writing</span>
           </div>
-        </article>
+          <div class="project-tech">Built with Python · LangChain Deep Agents · LangGraph</div>
+        </div>
 
-        <!-- Project 2: NexusRAG -->
-        <article class="project-card">
-          <div class="project-card-header">
+        <!-- NexusRAG -->
+        <div class="project-card">
+          <div class="project-top">
             <div>
-              <h3 class="project-name">NexusRAG — Document Search &amp; QA Platform</h3>
-              <div class="project-meta-tech">Python · ChromaDB · BM25 · FlashRank · Groq · Streamlit</div>
+              <span class="project-badge badge-green">Document Intelligence</span>
+              <h3 class="project-title">NexusRAG</h3>
             </div>
-            <div class="project-actions">
-              <a href="https://nexus-doc-rag.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn-link btn-accent">Live Demo ↗</a>
-              <a href="https://github.com/katta-karthik/Nexus_RAG" target="_blank" rel="noopener noreferrer" class="btn-link">GitHub ↗</a>
+            <div class="project-btns">
+              <a href="https://nexus-doc-rag.streamlit.app/" target="_blank" class="btn btn-sm btn-blue">Live Demo ↗</a>
+              <a href="https://github.com/katta-karthik/Nexus_RAG" target="_blank" class="btn btn-sm btn-outline">GitHub →</a>
             </div>
           </div>
-          <div class="project-desc">
-            <p>
-              <strong>The Problem:</strong> Regular document search with AI often misses exact figures (like a specific grade, date, or revenue number) because it only searches by conceptual meaning rather than exact words.
-            </p>
-            <p>
-              <strong>How it works:</strong> NexusRAG allows you to upload any document (PDF, resume, or report) and chat with it. It uses <strong>hybrid search</strong> — combining conceptual search with exact keyword search — and cross-grades the matches so answers are instant, reliable, and backed up with exact page citations.
-            </p>
+          <div class="project-explain">
+            <p><strong>The problem:</strong> Upload a document to ChatGPT and ask for a specific number (like a GPA or revenue figure) — it often gets it wrong because it only searches by meaning, not by exact words.</p>
+            <p style="margin-top:10px"><strong>My solution:</strong> NexusRAG uses a dual search strategy — searching by both the <em>meaning</em> of your question AND the <em>exact keywords</em>. A secondary AI re-scores the results for relevance, and every answer includes the exact page number so you can verify it yourself.</p>
           </div>
-          <div class="tags">
-            <span class="tag">Document Search</span>
-            <span class="tag">Hybrid Retrieval</span>
-            <span class="tag">Exact Citations</span>
-            <span class="tag">Fast Groq Inference</span>
+          <div class="project-tags">
+            <span class="ptag">Upload & Chat with Docs</span>
+            <span class="ptag">Dual Search Strategy</span>
+            <span class="ptag">Page-Level Proof</span>
+            <span class="ptag">Instant Answers</span>
           </div>
-        </article>
+          <div class="project-tech">Built with Python · ChromaDB · BM25 · FlashRank · Groq · Streamlit</div>
+        </div>
 
-        <!-- Project 3: E-commerce AI Analytics -->
-        <article class="project-card">
-          <div class="project-card-header">
+        <!-- E-commerce -->
+        <div class="project-card">
+          <div class="project-top">
             <div>
-              <h3 class="project-name">E-commerce AI Analytics — Self-Healing Data Analyst</h3>
-              <div class="project-meta-tech">LangGraph · Gemini Flash · Groq · SQLite · Streamlit · MCP</div>
+              <span class="project-badge badge-amber">Business Analytics</span>
+              <h3 class="project-title">E-commerce AI Analytics</h3>
             </div>
-            <div class="project-actions">
-              <a href="https://ecommerce-data-agent.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn-link btn-accent">Live Demo ↗</a>
-              <a href="https://github.com/katta-karthik/ai_agent_for_ecommerce-data" target="_blank" rel="noopener noreferrer" class="btn-link">GitHub ↗</a>
+            <div class="project-btns">
+              <a href="https://ecommerce-data-agent.streamlit.app/" target="_blank" class="btn btn-sm btn-blue">Live Demo ↗</a>
+              <a href="https://github.com/katta-karthik/ai_agent_for_ecommerce-data" target="_blank" class="btn btn-sm btn-outline">GitHub →</a>
             </div>
           </div>
-          <div class="project-desc">
-            <p>
-              <strong>The Problem:</strong> Non-technical store owners usually have to wait for a database specialist just to see basic sales numbers or customer trends.
-            </p>
-            <p>
-              <strong>How it works:</strong> The store owner asks a question in plain English (e.g. <em>"Which products brought in the highest revenue?"</em>). The AI turns the question into a database query, runs it safely, and if a syntax or column error occurs, it <strong>diagnoses the error and rewrites the query itself</strong>, returning clean charts and business recommendations.
-            </p>
+          <div class="project-explain">
+            <p><strong>The problem:</strong> Store owners need answers about their sales data but don't know SQL. And when basic AI-to-SQL tools make a mistake, they just show an error message with no recovery.</p>
+            <p style="margin-top:10px"><strong>My solution:</strong> Ask any business question in plain English — the AI writes the database query, runs it safely, and if a mistake occurs, it <strong>automatically figures out what went wrong and fixes the query itself</strong>. Then it creates clean charts and actionable business tips.</p>
           </div>
-          <div class="tags">
-            <span class="tag">Self-Healing SQL</span>
-            <span class="tag">Natural Language to Query</span>
-            <span class="tag">Auto Charts</span>
-            <span class="tag">Prompt Guard 86M</span>
+          <div class="project-tags">
+            <span class="ptag">Ask in English</span>
+            <span class="ptag">Self-Fixing Queries</span>
+            <span class="ptag">Auto Charts</span>
+            <span class="ptag">Safety Protected</span>
           </div>
-        </article>
+          <div class="project-tech">Built with LangGraph · Google Gemini · Groq · SQLite · Streamlit</div>
+        </div>
 
       </div>
 
-      <!-- Other Projects -->
+      <!-- Other projects -->
       <div class="other-projects">
-        <h4 class="sub-heading">Other Projects</h4>
-        <ul class="simple-project-list">
-          <li>
-            <strong><a href="https://github.com/katta-karthik/credit_card_fraud_detection" target="_blank" rel="noopener noreferrer">Credit Card Fraud Detection</a></strong> — Machine learning classification models (Random Forest, SVM, Voting Ensemble) with SMOTE for handling imbalanced transaction data; achieved 96%+ accuracy.
-          </li>
-          <li>
-            <strong><a href="https://github.com/katta-karthik/cookmate_ai" target="_blank" rel="noopener noreferrer">CookMate AI</a></strong> — A cooking assistant using a PyTorch Vision-Language Model to identify food ingredients from photos and suggest step-by-step recipes.
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-      <h2 class="section-title">Work Experience</h2>
-      
-      <div class="experience-item">
-        <div class="exp-header">
-          <div>
-            <h3 class="exp-role">AI Task Contributor (Freelance)</h3>
-            <div class="exp-company"><a href="https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing" target="_blank" rel="noopener noreferrer">Soul AI (Project Shield) ↗</a></div>
+        <h3>Other work</h3>
+        <div class="other-grid">
+          <div class="other-card">
+            <h4><a href="https://github.com/katta-karthik/credit_card_fraud_detection" target="_blank">Credit Card Fraud Detection</a></h4>
+            <p>ML classification system using Random Forest and ensemble techniques with SMOTE to detect fraudulent transactions with 96%+ accuracy.</p>
           </div>
-          <div class="exp-date">April 2025</div>
-        </div>
-        <ul class="exp-points">
-          <li>Evaluated and stress-tested AI-generated outputs for safety, accuracy, and adherence to complex instructions.</li>
-          <li>Performed prompt red-teaming and followed detailed annotation guidelines to improve dataset quality for model training.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="section">
-      <h2 class="section-title">Education</h2>
-
-      <div class="edu-item">
-        <div class="exp-header">
-          <div>
-            <h3 class="exp-role">Integrated M.Tech in Computer Science &amp; Engineering</h3>
-            <div class="exp-company">Vellore Institute of Technology (VIT Amaravati)</div>
+          <div class="other-card">
+            <h4><a href="https://github.com/katta-karthik/cookmate_ai" target="_blank">CookMate AI</a></h4>
+            <p>A cooking assistant that identifies ingredients from photos using a PyTorch Vision-Language model and suggests recipes.</p>
           </div>
-          <div class="exp-date">2021 — 2026</div>
         </div>
-        <p class="edu-grade">Current CGPA: <strong>8.3 / 10</strong></p>
       </div>
+    </div>
+  </section>
 
-      <div class="edu-item">
-        <div class="exp-header">
-          <div>
-            <h3 class="exp-role">Intermediate (Maths, Physics, Chemistry)</h3>
-            <div class="exp-company">NRI Junior College, Ongole</div>
+  <!-- Experience + Education -->
+  <section class="section" id="journey">
+    <div class="container">
+      <div class="section-label">Journey</div>
+      <h2 class="section-heading">Experience & Education</h2>
+      <p class="section-sub">My professional experience and academic path.</p>
+
+      <div class="timeline-grid">
+        <!-- Experience -->
+        <div class="timeline-col">
+          <h3>💼 Work Experience</h3>
+          <div class="tl-item">
+            <div class="tl-date">April 2025</div>
+            <div class="tl-title">AI Task Contributor (Freelance)</div>
+            <div class="tl-org"><a href="https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing" target="_blank">Soul AI — Project Shield ↗</a></div>
+            <p class="tl-desc">Evaluated AI-generated responses for safety and accuracy. Performed adversarial prompt testing and followed structured annotation guidelines to improve model reliability and training data quality.</p>
           </div>
-          <div class="exp-date">2021</div>
         </div>
-        <p class="edu-grade">Score: <strong>97.4%</strong></p>
-      </div>
 
-      <div class="edu-item">
-        <div class="exp-header">
-          <div>
-            <h3 class="exp-role">Secondary School Certificate (10th)</h3>
-            <div class="exp-company">Z.P High School, Rajampalli</div>
+        <!-- Education -->
+        <div class="timeline-col">
+          <h3>🎓 Education</h3>
+          <div class="tl-item">
+            <div class="tl-date">2021 — 2026</div>
+            <div class="tl-title">Integrated M.Tech in CSE</div>
+            <div class="tl-org">VIT Amaravati</div>
+            <span class="tl-grade">CGPA: 8.3 / 10</span>
           </div>
-          <div class="exp-date">2019</div>
+          <div class="tl-item">
+            <div class="tl-date">2019 — 2021</div>
+            <div class="tl-title">Intermediate (MPC)</div>
+            <div class="tl-org">NRI Junior College, Ongole</div>
+            <span class="tl-grade">97.4%</span>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2019</div>
+            <div class="tl-title">10th Standard</div>
+            <div class="tl-org">Z.P High School, Rajampalli</div>
+            <span class="tl-grade">CGPA: 9.7</span>
+          </div>
         </div>
-        <p class="edu-grade">CGPA: <strong>9.7 / 10</strong></p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-      <h2 class="section-title">Skills &amp; Technologies</h2>
+  <!-- Skills -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-label">Skills</div>
+      <h2 class="section-heading">Technologies I work with</h2>
+      <p class="section-sub">My technical toolkit — focused on AI agents, retrieval systems, and software engineering.</p>
 
       <div class="skills-grid">
-        <div class="skill-group">
-          <h4 class="skill-group-title">AI &amp; Agents</h4>
-          <p>LangGraph, LangChain, Multi-Agent Systems, Deep Agents, Tool/Function Calling, Self-Healing Loops, Model Context Protocol (MCP)</p>
+        <div class="skill-card">
+          <h4>AI Agents & Orchestration</h4>
+          <div class="skill-sub">Building reasoning, self-directing AI systems</div>
+          <div class="skill-pills">
+            <span>LangGraph</span>
+            <span>LangChain</span>
+            <span>Multi-Agent Systems</span>
+            <span>Deep Agents</span>
+            <span>Tool Calling</span>
+            <span>MCP</span>
+          </div>
         </div>
-
-        <div class="skill-group">
-          <h4 class="skill-group-title">Search &amp; RAG</h4>
-          <p>Hybrid Search (BM25 + Dense), ChromaDB, FlashRank Cross-Encoder Reranking, Vector Embeddings, Semantic Chunking, Citation Grounding</p>
+        <div class="skill-card">
+          <h4>Search & RAG</h4>
+          <div class="skill-sub">Connecting AI to real documents & data</div>
+          <div class="skill-pills">
+            <span>Hybrid Search</span>
+            <span>BM25</span>
+            <span>ChromaDB</span>
+            <span>FlashRank</span>
+            <span>Embeddings</span>
+            <span>Chunking</span>
+          </div>
         </div>
-
-        <div class="skill-group">
-          <h4 class="skill-group-title">LLMs &amp; Machine Learning</h4>
-          <p>LLaMA 3.x, Google Gemini, Groq LPU, Prompt Engineering, Meta Prompt Guard 86M, Human-in-the-Loop Evaluation, PyTorch, Scikit-Learn</p>
+        <div class="skill-card">
+          <h4>AI Models & Safety</h4>
+          <div class="skill-sub">The brains and guardrails</div>
+          <div class="skill-pills">
+            <span>LLaMA 3.x</span>
+            <span>Gemini</span>
+            <span>Groq LPU</span>
+            <span>Prompt Guard</span>
+            <span>PyTorch</span>
+            <span>Scikit-Learn</span>
+          </div>
         </div>
-
-        <div class="skill-group">
-          <h4 class="skill-group-title">Programming &amp; Tools</h4>
-          <p>Python, Java, SQL (SQLite / Postgres), FastAPI, Streamlit, Git, GitHub Actions, Docker, Data Structures &amp; Algorithms</p>
+        <div class="skill-card">
+          <h4>Engineering & Tools</h4>
+          <div class="skill-sub">Building fast, reliable software</div>
+          <div class="skill-pills">
+            <span>Python</span>
+            <span>Java</span>
+            <span>SQL</span>
+            <span>FastAPI</span>
+            <span>Streamlit</span>
+            <span>Git</span>
+            <span>Docker</span>
+            <span>DSA</span>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-      <h2 class="section-title">Get in Touch</h2>
-      <p class="contact-intro">
-        I am currently looking for AI Engineering, Agentic AI, and Software Engineering internships or full-time opportunities. Feel free to reach out directly:
-      </p>
-
-      <div class="contact-box">
-        <p><strong>Email:</strong> <a href="mailto:kattakarthik8008@gmail.com">kattakarthik8008@gmail.com</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/katta-karthik/" target="_blank" rel="noopener noreferrer">linkedin.com/in/katta-karthik</a></p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/katta-karthik" target="_blank" rel="noopener noreferrer">github.com/katta-karthik</a></p>
-        <p><strong>Phone:</strong> +91-8008456790</p>
+  <!-- Certifications -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">Certifications</div>
+      <h2 class="section-heading">Verified credentials</h2>
+      <div class="certs-list" style="margin-top:24px">
+        <a href="https://static.takeuforward.org/certificate-dSicL1.pdf" target="_blank" class="cert-item">
+          <div>
+            <div class="cert-name">Data Structures and Algorithms</div>
+            <div class="cert-provider">Take U Forward (Striver)</div>
+          </div>
+          <span class="cert-arrow">View →</span>
+        </a>
+        <a href="https://www.udemy.com/certificate/UC-2e9f2e98-ea1d-4491-973a-c0f1f902d246/" target="_blank" class="cert-item">
+          <div>
+            <div class="cert-name">Data Science, Machine Learning & Deep Learning</div>
+            <div class="cert-provider">KrishAI Technologies</div>
+          </div>
+          <span class="cert-arrow">View →</span>
+        </a>
+        <a href="https://www.udemy.com/certificate/UC-e668f427-ff2c-4ad2-bae1-731067820410/" target="_blank" class="cert-item">
+          <div>
+            <div class="cert-name">Generative AI</div>
+            <div class="cert-provider">KrishAI Technologies</div>
+          </div>
+          <span class="cert-arrow">View →</span>
+        </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <p>© 2026 Katta Karthik · Built cleanly with HTML &amp; CSS</p>
-    </footer>
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-label">Contact</div>
+      <h2 class="section-heading">Let's connect</h2>
+      <div class="contact-content">
+        <p class="contact-text">
+          I'm actively looking for <strong>AI Engineering</strong> and <strong>Software Engineering</strong> roles. Whether it's a job opportunity, a project collaboration, or just a hello — I'd love to hear from you.
+        </p>
+        <div class="contact-grid">
+          <a href="mailto:kattakarthik8008@gmail.com" class="contact-card">
+            <span class="contact-label">Email</span>
+            <span class="contact-val">kattakarthik8008@gmail.com</span>
+          </a>
+          <a href="https://www.linkedin.com/in/katta-karthik/" target="_blank" class="contact-card">
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-val">katta-karthik</span>
+          </a>
+          <a href="https://github.com/katta-karthik" target="_blank" class="contact-card">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-val">katta-karthik</span>
+          </a>
+          <a href="tel:+918008456790" class="contact-card">
+            <span class="contact-label">Phone</span>
+            <span class="contact-val">+91-8008456790</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">© 2026 Katta Karthik · Amaravati, India</div>
+  </footer>
 
 </body>
 </html>
