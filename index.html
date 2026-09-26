@@ -152,24 +152,10 @@
     }
 
     /* ── ABOUT ── */
-    .about-body {
-      display: grid; grid-template-columns: 3fr 2fr; gap: 48px;
-      align-items: start;
-    }
-    .about-prose { font-size: 1rem; color: var(--text-dim); line-height: 1.8; }
+    .about-prose { font-size: 1rem; color: var(--text-dim); line-height: 1.8; max-width: 720px; }
     .about-prose p { margin-bottom: 16px; }
     .about-prose strong { color: var(--text); font-weight: 600; }
     .about-prose a { color: var(--accent); }
-
-    .about-aside { display: flex; flex-direction: column; gap: 12px; }
-    .aside-card {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: 10px; padding: 20px;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .aside-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-    .aside-val { font-size: 1.6rem; font-weight: 800; color: var(--white); }
-    .aside-label { font-size: 0.78rem; color: var(--text-faint); margin-top: 2px; }
 
     /* ── PROJECTS ── */
     .proj-list { display: flex; flex-direction: column; gap: 32px; }
@@ -399,19 +385,20 @@
         <div class="hero-hi">Hello, my name is</div>
         <h1>
           Katta Karthik.<br>
-          <span class="hl">I engineer intelligent AI systems.</span>
+          <span class="hl">I build AI that actually works.</span>
         </h1>
         <p class="hero-p">
-          I'm an AI engineer specializing in <strong>autonomous multi-agent architectures</strong>, <strong>production-grade retrieval systems</strong>, and <strong>agentic data analytics</strong>. Currently pursuing my Integrated M.Tech in Computer Science at <strong>Vellore Institute of Technology</strong>, I design AI workflows that reason through complex problems, self-correct on failure, and deliver verified, citation-backed results.
+          AI engineer with a focus on <strong>multi-agent systems</strong>, <strong>retrieval-augmented generation</strong>, and <strong>self-healing data pipelines</strong>. Integrated M.Tech in Computer Science at <strong>Vellore Institute of Technology</strong>, graduating 2026.
         </p>
         <div class="hero-links">
           <a href="#work" class="h-btn h-btn-primary">Explore my work</a>
           <a href="https://github.com/katta-karthik" target="_blank" rel="noopener" class="h-btn h-btn-ghost">GitHub</a>
           <a href="https://www.linkedin.com/in/katta-karthik/" target="_blank" rel="noopener" class="h-btn h-btn-ghost">LinkedIn</a>
+          <a href="https://takeuforward.org/profile/karthik0712" target="_blank" rel="noopener" class="h-btn h-btn-ghost">DSA Profile</a>
         </div>
         <div class="hero-status">
           <span class="pulse"></span>
-          Currently seeking AI Engineering & Software Engineering opportunities
+          Open to AI Engineering & Software Engineering roles
         </div>
       </div>
     </div>
@@ -425,8 +412,7 @@
         <h2 class="sect-title">Background & Motivation</h2>
       </div>
 
-      <div class="about-body">
-        <div class="about-prose">
+      <div class="about-prose">
           <p>
             I've spent the last several years at <strong>Vellore Institute of Technology</strong> building a deep foundation in computer science — from core data structures and algorithm design to applied machine learning and natural language processing. What drives me is the gap between what AI <em>promises</em> and what it actually <em>delivers</em> in production.
           </p>
@@ -434,24 +420,8 @@
             Most AI applications today are thin wrappers around language models. They hallucinate, break on edge cases, and provide no verifiable evidence. I focus on the engineering that bridges this gap: <strong>multi-agent orchestration</strong> that mirrors how expert teams collaborate, <strong>hybrid retrieval pipelines</strong> that combine semantic understanding with precision keyword matching, and <strong>self-correcting execution loops</strong> that diagnose and recover from runtime failures autonomously.
           </p>
           <p>
-            Beyond the technical work, I've contributed to AI safety evaluation through freelance work at <a href="https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing" target="_blank">Soul AI's Project Shield</a>, where I conducted adversarial red-teaming and structured annotation to benchmark model reliability. I also enjoy competitive problem-solving, chess, and a good film.
+            Beyond the technical work, I've contributed to AI safety evaluation through freelance work at <a href="https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing" target="_blank">Soul AI's Project Shield</a>, where I conducted adversarial red-teaming and structured annotation to benchmark model reliability. I also maintain an active <a href="https://takeuforward.org/profile/karthik0712" target="_blank">competitive programming profile</a>, and enjoy chess and a good film when I'm away from the terminal.
           </p>
-        </div>
-
-        <div class="about-aside">
-          <div class="aside-card">
-            <div class="aside-val">8.3</div>
-            <div class="aside-label">CGPA — Vellore Institute of Technology</div>
-          </div>
-          <div class="aside-card">
-            <div class="aside-val">3</div>
-            <div class="aside-label">Production-Grade AI Systems Shipped</div>
-          </div>
-          <div class="aside-card">
-            <div class="aside-val">97.4%</div>
-            <div class="aside-label">Intermediate (12th Grade)</div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
