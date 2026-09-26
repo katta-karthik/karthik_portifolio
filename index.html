@@ -543,56 +543,7 @@
       border-radius: 4px;
     }
 
-    /* Secondary Projects */
-    .other-section-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #fff;
-      margin: 48px 0 20px;
-      letter-spacing: -0.01em;
-    }
 
-    .other-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .other-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      transition: all 0.2s ease;
-    }
-
-    .other-card:hover {
-      border-color: rgba(56, 189, 248, 0.3);
-      transform: translateY(-2px);
-    }
-
-    .other-card h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .other-card h4 a {
-      color: #fff;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .other-card h4 a:hover {
-      color: var(--accent);
-    }
-
-    .other-card p {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
 
     /* ── EXPERIENCE & EDUCATION ── */
     .journey-grid {
@@ -888,7 +839,7 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 820px) {
       .hero-title { font-size: 2.3rem; }
-      .journey-grid, .skills-grid, .other-grid, .contact-cards, .project-highlights {
+      .journey-grid, .skills-grid, .contact-cards, .project-highlights {
         grid-template-columns: 1fr;
       }
       .nav-links { display: none; }
@@ -1139,35 +1090,6 @@
         </article>
 
       </div>
-
-      <!-- Other Projects -->
-      <h3 class="other-section-title">Additional Notable Work</h3>
-      <div class="other-grid">
-        <div class="other-card">
-          <h4>
-            <a href="https://github.com/katta-karthik/credit_card_fraud_detection" target="_blank" rel="noopener noreferrer">
-              Credit Card Fraud Detection
-              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-            </a>
-          </h4>
-          <p>
-            Ensemble machine learning pipeline using Random Forest, SVM, and Voting Classifiers with SMOTE oversampling to reliably identify fraudulent transactions across highly skewed datasets with 96%+ accuracy.
-          </p>
-        </div>
-
-        <div class="other-card">
-          <h4>
-            <a href="https://github.com/katta-karthik/cookmate_ai" target="_blank" rel="noopener noreferrer">
-              CookMate AI
-              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-            </a>
-          </h4>
-          <p>
-            Generative culinary assistant utilizing PyTorch Vision-Language Models for multi-ingredient visual recognition and automated recipe planning via a lightweight Flask API backend.
-          </p>
-        </div>
-      </div>
-
     </div>
   </section>
 
