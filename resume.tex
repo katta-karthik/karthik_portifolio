@@ -1,0 +1,127 @@
+\documentclass[a4paper,10pt]{article}
+%-----------------------------------------------------------
+\usepackage[top=0.45in, bottom=0.45in, left=0.55in, right=0.85in]{geometry}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{palatino}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\fontfamily{garamond}
+\selectfont
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=black,
+    citecolor=black,
+    pdftitle={Resume - Katta Karthik},
+    pdfpagemode=FullScreen,
+}
+
+\urlstyle{same}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\definecolor{mygrey}{gray}{0.75}
+
+\textheight=10.2in
+\raggedbottom
+
+\setlength{\tabcolsep}{0in}
+\renewcommand{\labelitemii}{$\circ$}
+
+\pagestyle{empty}
+%-----------------------------------------------------------
+% Custom commands (Original layout & exact 6.62in alignment)
+\newcommand{\resheading}[1]{\\[-0.2cm]{\small \colorbox{mygrey}{\begin{minipage}{0.975\textwidth}{\textbf{#1}}\end{minipage}}}}
+\newcommand{\ressubheading}[3]{
+\begin{tabular*}{6.62in}{l @{\extracolsep{\fill}} r}
+    \textsc{\textbf{#1}} \,|\, \href{#3}{Link} & \textsc{\textit{#2}} \\
+\end{tabular*}\vspace{-0.2cm}}
+
+%-----------------------------------------------------------
+
+\begin{document}
+
+\hspace{0.5cm}\\[-1.8cm]
+
+\textbf{Katta Karthik} \hspace{10cm} \href{mailto:kattakarthik8008@gmail.com}{kattakarthik8008@gmail.com}\\
+\indent {\bf Integrated MTech CSE } \hspace{10.53cm} {+91-8008456790} \\
+\indent {\bf Vellore Institute of Technology} \hspace{5.8cm}
+\href{https://github.com/katta-karthik}{GitHub} \,|\, \href{https://www.linkedin.com/in/katta-karthik/}{LinkedIn} \,|\, \href{https://takeuforward.org/profile/karthik0712}{Portfolio} \\
+\vspace{-0.3cm}
+
+%-----------------------------------------------------------
+\resheading{\textbf{EDUCATION}}
+
+\begin{itemize}
+
+\item
+\textbf{Vellore Institute of Technology} \hfill Amaravati, India \\
+\textit{Integrated M.Tech in Computer Science \& Engineering; \textbf{CGPA: 8.3}} \hfill \textit{2021 -- 2026}
+
+\item
+\textbf{NRI Junior College} \hfill Ongole, India \\
+\textit{Intermediate (Mathematics, Physics, Chemistry); \textbf{Percentage: 97.4\%}} \hfill \textit{2021}
+
+\item
+\textbf{Z.P High School} \hfill Rajampalli, India \\
+\textit{10th Standard; \textbf{CGPA: 9.7}} \hfill \textit{2019}
+
+\end{itemize}
+
+%-----------------------------------------------------------
+\resheading{\textbf{WORK EXPERIENCE}}
+
+\begin{itemize}
+\item \ressubheading{AI Task Contributor (Freelance) -- Project Shield}{[Soul AI, Apr 2025]}{https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing}
+\begin{itemize}
+\item Conducted \textbf{adversarial prompt testing}, red-teaming, and structured response verification to optimize LLM safety and instruction alignment.
+\item Followed rigorous annotation guidelines on a secure platform, executing \textbf{Human-in-the-Loop (HITL)} evaluation to benchmark NLP model reliability.
+\end{itemize}
+\end{itemize}
+
+%-----------------------------------------------------------
+\resheading{\textbf{PROJECTS}}
+
+\begin{itemize}
+\item \ressubheading{DeepScope -- Autonomous Multi-Agent Deep Research System}{[Feb 2026]}{https://github.com/katta-karthik/DeepScope}
+\begin{itemize}
+\item Architected an autonomous multi-agent research workflow using \textbf{LangChain Deep Agents} and \textbf{LangGraph}, coordinating specialized subagents (\textit{Lead, Topic Researcher, Fact Verifier}) to conduct parallel web investigations.
+\item Implemented a disk-backed \textbf{Filesystem Workspace} to isolate raw findings from LLM context memory (mitigating hallucination) and synthesized verified Markdown research reports.
+\end{itemize}
+
+\item \ressubheading{NexusRAG -- Enterprise-Grade RAG Lifecycle Platform}{[Jan 2026]}{https://github.com/katta-karthik/Nexus_RAG}
+\begin{itemize}
+\item Built an end-to-end RAG platform with a \textbf{7-stage visual ingestion pipeline}, implementing \textbf{Dense + Sparse Hybrid Search} (ChromaDB + BM25 via Reciprocal Rank Fusion) for semantic and keyword retrieval.
+\item Integrated \textbf{FlashRank cross-encoder reranking} and \textbf{Groq LPU inference}, delivering sub-second query latency and grounded answers with verifiable page citations.
+\end{itemize}
+
+\item \ressubheading{E-commerce AI Analytics -- Autonomous Agentic Data Analyst}{[July 2025]}{https://github.com/katta-karthik/ai_agent_for_ecommerce-data}
+\begin{itemize}
+\item Developed a text-to-SQL analytics agent using \textbf{LangGraph StateGraph}, \textbf{Groq}, and \textbf{Gemini Flash Lite}, featuring a \textbf{self-healing retry loop} that auto-diagnoses SQLite errors and corrects SQL.
+\item Enforced security via \textbf{Meta Prompt Guard 86M} and read-only DB sandboxing, exposing analytics tools via \textbf{Streamlit} and \textbf{Model Context Protocol (MCP)}.
+\end{itemize}
+\end{itemize}
+
+%-----------------------------------------------------------
+\resheading{\textbf{TECHNICAL SKILLS}}
+
+\begin{itemize}
+\item \textbf{Agentic AI \& Orchestration:} LangGraph, LangChain, Multi-Agent Systems, Deep Agents, Tool/Function Calling, Self-Healing Loops, Model Context Protocol (MCP)
+\item \textbf{Advanced RAG \& Retrieval:} Dense + Sparse Hybrid Search, BM25, Reciprocal Rank Fusion (RRF), Cross-Encoder Re-ranking (FlashRank), ChromaDB, Semantic Chunking
+\item \textbf{LLMs \& Machine Learning:} Meta LLaMA 3.x, Google Gemini, Groq LPU, Prompt Engineering, Meta Prompt Guard 86M, HITL Evaluation, PyTorch, Scikit-Learn
+\item \textbf{Engineering Tools \& Languages:} Python, Java, SQL, C/C++, FastAPI, Streamlit, SQLite, Git, GitHub Actions, Docker, Data Structures \& Algorithms
+\end{itemize}
+
+%-----------------------------------------------------------
+\resheading{\textbf{CERTIFICATIONS}}
+
+\begin{itemize}
+\item \textbf{Data Structures and Algorithms} --- \href{https://static.takeuforward.org/certificate-dSicL1.pdf}{Take U Forward}
+\item \textbf{Data Science, Machine Learning, Deep Learning} --- \href{https://www.udemy.com/certificate/UC-2e9f2e98-ea1d-4491-973a-c0f1f902d246/}{KrishAI Technologies}
+\item \textbf{Generative AI} --- \href{https://www.udemy.com/certificate/UC-e668f427-ff2c-4ad2-bae1-731067820410/}{KrishAI Technologies}
+\end{itemize}
+
+\end{document}
