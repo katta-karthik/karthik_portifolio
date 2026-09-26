@@ -2,7 +2,7 @@
 
 Welcome to my personal developer portfolio website, showcasing my work in **Autonomous AI Agents**, **Multi-Agent Orchestration**, and **Production RAG Systems**.
 
-🌐 **Target URL:** `https://katta-karthik.github.io/karthik_portifolio/`
+🌐 **Target URL:** `https://katta-karthik.github.io/`
 
 ---
 
