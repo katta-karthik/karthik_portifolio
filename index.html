@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Katta Karthik — AI Engineer</title>
   <meta name="description" content="Portfolio of Katta Karthik — AI Engineer specializing in Autonomous Multi-Agent Systems, Production RAG, and Agentic Data Analytics. Graduated from Vellore Institute of Technology.">
+  <meta name="author" content="Katta Karthik">
+  <link rel="canonical" href="https://katta-karthik.github.io/">
+
+  <!-- Favicon (Inline SVG for zero network request latency) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230f172a'/><text x='16' y='22' font-family='monospace' font-weight='800' font-size='18' fill='%2338bdf8' text-anchor='middle'>K</text></svg>">
+
+  <!-- Open Graph & Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://katta-karthik.github.io/">
+  <meta property="og:title" content="Katta Karthik — AI Engineer">
+  <meta property="og:description" content="AI Engineer specializing in Autonomous Multi-Agent Systems, Production RAG Platforms, and Self-Healing Analytics. Integrated M.Tech graduate from Vellore Institute of Technology.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Katta Karthik — AI Engineer">
+  <meta name="twitter:description" content="AI Engineer specializing in Autonomous Multi-Agent Systems, Production RAG Platforms, and Self-Healing Analytics.">
 
   <meta name="theme-color" content="#090d16">
 
@@ -126,9 +140,11 @@
       transition: all 0.2s ease;
     }
 
-    .nav-links a:hover {
-      color: var(--text);
-      background: rgba(255, 255, 255, 0.05);
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent);
+      background: rgba(56, 189, 248, 0.08);
+      border-color: rgba(56, 189, 248, 0.2);
     }
 
     .nav-links .num {
@@ -303,6 +319,7 @@
     .section {
       padding: 56px 0;
       border-top: 1px solid rgba(255, 255, 255, 0.05);
+      scroll-margin-top: 68px;
     }
 
     .section-head {
@@ -1377,12 +1394,55 @@
 
   <!-- Footer -->
   <footer>
-    <div class="wrap">
+    <div class="wrap" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
       <p>
         Crafted by <a href="https://github.com/katta-karthik" target="_blank" rel="noopener noreferrer">Katta Karthik</a> · Vellore Institute of Technology
       </p>
+      <a href="#" style="font-family: var(--mono); font-size: 0.8rem; color: var(--text-faint);">Back to top ↑</a>
     </div>
   </footer>
+
+  <script>
+    // 1. Mobile Menu: Auto-close on navigation item click
+    const navMenu = document.getElementById('navMenu');
+    document.querySelectorAll('#navMenu a').forEach(item => {
+      item.addEventListener('click', () => {
+        if (navMenu) navMenu.classList.remove('open');
+      });
+    });
+
+    // 2. Keyboard Accessibility: Close mobile menu on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu && navMenu.classList.contains('open')) {
+        navMenu.classList.remove('open');
+      }
+    });
+
+    // 3. Scrollspy: Highlight active navigation link smoothly (Zero CPU overhead via IntersectionObserver)
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+              if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          }
+        });
+      }, {
+        rootMargin: '-20% 0px -70% 0px'
+      });
+
+      sections.forEach(section => observer.observe(section));
+    }
+  </script>
 
 </body>
 </html>
