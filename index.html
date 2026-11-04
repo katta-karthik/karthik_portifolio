@@ -418,12 +418,51 @@
 
     .about-summary strong { color: var(--text); font-weight: 600; }
 
-    .about-highlights {
+    .about-pillars {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px 16px;
-      padding-top: 12px;
+      gap: 10px 14px;
+      margin-top: 14px;
+      padding-top: 14px;
       border-top: 1px solid var(--border);
+    }
+
+    .about-pillar {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 10px 14px;
+      transition: all 0.2s ease;
+    }
+
+    .about-pillar:hover {
+      border-color: rgba(56, 189, 248, 0.25);
+      background: rgba(56, 189, 248, 0.03);
+      transform: translateY(-1px);
+    }
+
+    .pillar-label {
+      font-family: var(--mono);
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pillar-text {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .pillar-text strong {
+      color: var(--text);
+      font-weight: 600;
     }
 
     .bullet-accent { background: var(--accent); }
@@ -1010,7 +1049,7 @@
       .wrap { padding: 0 20px; }
       .hero { padding: 80px 0 20px; }
       .section { padding: 20px 0; }
-      .journey-grid, .skills-grid, .contact-cards, .project-highlights, .os-grid, .about-highlights {
+      .journey-grid, .skills-grid, .contact-cards, .project-highlights, .os-grid, .about-pillars {
         grid-template-columns: 1fr;
       }
       .os-lead { grid-column: 1; }
@@ -1167,7 +1206,7 @@
     </div>
   </header>
 
-  <!-- About Section (Compact Card - Balanced Density) -->
+  <!-- About Section (Structured Pillars & Balanced Density) -->
   <section class="section" id="about">
     <div class="wrap">
       <div class="section-head">
@@ -1188,14 +1227,26 @@
         </div>
 
         <p class="about-summary">
-          Integrated M.Tech graduate in Computer Science & Engineering from <strong>Vellore Institute of Technology</strong> specializing in autonomous multi-agent systems and production-grade retrieval architectures. My engineering focuses on eradicating GenAI failure modes—building stateful <strong>LangGraph</strong> agent graphs with context isolation, dense-sparse hybrid RAG (<strong>ChromaDB + BM25 + FlashRank</strong>) for zero-hallucination citations, and self-healing SQL execution loops. Active upstream contributor to <strong>LangChain</strong>, <strong>CopilotKit</strong>, and <strong>OpenHands</strong>, with AI safety red-teaming background at <a href="https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing" target="_blank">Soul AI</a>.
+          Integrated M.Tech graduate in Computer Science & Engineering from <strong>Vellore Institute of Technology</strong> specializing in autonomous multi-agent architectures and production retrieval systems. I build stateful <strong>LangGraph</strong> workflows with context isolation, dense-sparse hybrid RAG (<strong>ChromaDB + BM25 + FlashRank</strong>) for zero-hallucination citations, and self-healing SQL agents. Active upstream contributor to <strong>LangChain</strong>, <strong>CopilotKit</strong>, and <strong>OpenHands</strong>, with AI safety red-teaming experience at <a href="https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing" target="_blank">Soul AI</a>.
         </p>
 
-        <div class="about-highlights">
-          <div class="highlight-item"><span class="highlight-bullet bullet-accent"></span><strong>Multi-Agent Systems:</strong> LangGraph state graphs with isolated subagent memory and supervisor orchestration.</div>
-          <div class="highlight-item"><span class="highlight-bullet bullet-accent"></span><strong>Production Hybrid RAG:</strong> ChromaDB vectors + BM25 keyword matching fused via Reciprocal Rank Fusion.</div>
-          <div class="highlight-item"><span class="highlight-bullet bullet-accent"></span><strong>Upstream OSS:</strong> Merged PRs and runtime features shipped across LangChain, CopilotKit, and OpenHands.</div>
-          <div class="highlight-item"><span class="highlight-bullet bullet-accent"></span><strong>Safety & Reliability:</strong> Adversarial red-teaming, prompt injection defense, and self-healing SQL loops.</div>
+        <div class="about-pillars">
+          <div class="about-pillar">
+            <div class="pillar-label"><span class="highlight-bullet bullet-accent"></span>Multi-Agent Systems</div>
+            <div class="pillar-text">Stateful <strong>LangGraph</strong> graphs with isolated subagent memory and supervisor orchestration.</div>
+          </div>
+          <div class="about-pillar">
+            <div class="pillar-label"><span class="highlight-bullet bullet-emerald"></span>Production Hybrid RAG</div>
+            <div class="pillar-text"><strong>ChromaDB</strong> dense vectors + <strong>BM25</strong> keyword matching fused via Reciprocal Rank Fusion.</div>
+          </div>
+          <div class="about-pillar">
+            <div class="pillar-label"><span class="highlight-bullet bullet-violet"></span>Upstream OSS</div>
+            <div class="pillar-text">Merged PRs and runtime features shipped across <strong>LangChain</strong>, <strong>CopilotKit</strong>, and <strong>OpenHands</strong>.</div>
+          </div>
+          <div class="about-pillar">
+            <div class="pillar-label"><span class="highlight-bullet bullet-amber"></span>Safety & Reliability</div>
+            <div class="pillar-text">Adversarial red-teaming (Soul AI), prompt injection defense, and self-healing SQL loops.</div>
+          </div>
         </div>
       </div>
     </div>
