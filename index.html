@@ -8,7 +8,7 @@
   <meta name="author" content="Katta Karthik">
   <link rel="canonical" href="https://katta-karthik.github.io/">
 
-  <!-- Favicon (Inline SVG: 0ms network latency) -->
+  <!-- Favicon (Inline SVG: 0ms latency) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23070a13'/><path d='M9 8v16M9 16l7-8M9 16l7 8M19 8h4M19 24h4' stroke='%2338bdf8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 
   <!-- Open Graph & Social Cards -->
@@ -34,11 +34,12 @@
       --bg-surface: #0c1224;
       --bg-card: #10192e;
       --bg-card-hover: #14203a;
-      --bg-alt: #0a0f1d;
+      --bg-terminal: #050811;
       --border: rgba(255, 255, 255, 0.08);
       --border-accent: rgba(56, 189, 248, 0.4);
       --border-emerald: rgba(52, 211, 153, 0.35);
       --border-purple: rgba(192, 132, 252, 0.35);
+      --border-amber: rgba(251, 191, 36, 0.35);
       --text: #f1f5f9;
       --text-muted: #94a3b8;
       --text-faint: #64748b;
@@ -91,7 +92,7 @@
     }
 
     .wrap {
-      max-width: 1060px;
+      max-width: 1080px;
       margin: 0 auto;
       padding: 0 24px;
     }
@@ -109,13 +110,14 @@
     }
 
     .nav-bar {
-      max-width: 1060px;
+      max-width: 1080px;
       margin: 0 auto;
       padding: 0 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 62px;
+      height: 64px;
+      gap: 12px;
     }
 
     .nav-logo {
@@ -126,6 +128,7 @@
       display: inline-flex;
       align-items: center;
       gap: 7px;
+      flex-shrink: 0;
     }
 
     .nav-logo span.tag-bracket {
@@ -152,9 +155,10 @@
       font-size: 0.78rem;
       font-weight: 500;
       color: var(--text-muted);
-      padding: 6px 12px;
+      padding: 6px 10px;
       border-radius: 6px;
       transition: all 0.15s ease;
+      white-space: nowrap;
     }
 
     .nav-links a:hover,
@@ -166,7 +170,8 @@
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
+      flex-shrink: 0;
     }
 
     .btn-cmd {
@@ -179,10 +184,11 @@
       color: var(--text-muted);
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid var(--border);
-      padding: 5px 10px;
+      padding: 6px 10px;
       border-radius: 6px;
       cursor: pointer;
       transition: all 0.15s ease;
+      white-space: nowrap;
     }
 
     .btn-cmd:hover {
@@ -195,7 +201,7 @@
       background: rgba(0, 0, 0, 0.4);
       padding: 1px 5px;
       border-radius: 4px;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       border: 1px solid rgba(255, 255, 255, 0.12);
       color: var(--accent);
     }
@@ -205,14 +211,15 @@
       align-items: center;
       gap: 6px;
       font-family: var(--mono);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 600;
       color: var(--accent);
       background: rgba(56, 189, 248, 0.09);
       border: 1px solid rgba(56, 189, 248, 0.35);
-      padding: 5px 14px;
+      padding: 6px 12px;
       border-radius: 6px;
       transition: all 0.15s ease;
+      white-space: nowrap;
     }
 
     .btn-resume:hover {
@@ -223,16 +230,25 @@
 
     .mob-toggle {
       display: none;
-      background: none;
-      border: none;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: 6px;
       color: var(--text);
       cursor: pointer;
       padding: 6px;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+    }
+
+    .mob-toggle:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
     }
 
     /* ── HERO ── */
     .hero {
-      padding: 104px 0 44px;
+      padding: 104px 0 40px;
     }
 
     .hero-hud {
@@ -240,7 +256,7 @@
       align-items: center;
       gap: 10px;
       flex-wrap: wrap;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     .hud-pill {
@@ -284,7 +300,7 @@
     }
 
     .hero-title {
-      font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+      font-size: clamp(2.3rem, 5.2vw, 3.8rem);
       font-weight: 800;
       letter-spacing: -0.04em;
       line-height: 1.08;
@@ -300,7 +316,7 @@
     }
 
     .hero-subtitle {
-      font-size: clamp(1.2rem, 2.6vw, 1.55rem);
+      font-size: clamp(1.15rem, 2.5vw, 1.55rem);
       font-weight: 600;
       color: var(--text-muted);
       letter-spacing: -0.02em;
@@ -316,8 +332,8 @@
       font-size: 1.02rem;
       color: var(--text-muted);
       line-height: 1.7;
-      margin-bottom: 26px;
-      max-width: 700px;
+      margin-bottom: 24px;
+      max-width: 720px;
     }
 
     .hero-desc strong {
@@ -336,12 +352,13 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: 0.86rem;
+      font-size: 0.85rem;
       font-weight: 600;
-      padding: 9px 18px;
+      padding: 9px 16px;
       border-radius: 8px;
       transition: all 0.15s ease;
       cursor: pointer;
+      text-decoration: none;
     }
 
     .btn-primary {
@@ -371,14 +388,14 @@
       transform: translateY(-2px);
     }
 
-    /* ── CREATIVE COCKPIT: AGENT RUNTIME & REPL SIMULATOR ── */
+    /* ── CREATIVE COCKPIT: AGENT RUNTIME & INTERACTIVE REPL CLI ── */
     .cockpit-container {
-      margin: 36px 0 20px;
+      margin: 34px 0 16px;
       background: var(--bg-surface);
       border: 1px solid var(--border);
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.5);
       transform: translateZ(0);
     }
 
@@ -386,9 +403,10 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 11px 16px;
+      padding: 10px 16px;
       background: rgba(255, 255, 255, 0.02);
       border-bottom: 1px solid var(--border);
+      gap: 12px;
     }
 
     .cockpit-dots {
@@ -422,9 +440,10 @@
       display: flex;
       gap: 6px;
       padding: 8px 16px;
-      background: rgba(0, 0, 0, 0.25);
+      background: rgba(0, 0, 0, 0.3);
       border-bottom: 1px solid var(--border);
       overflow-x: auto;
+      scrollbar-width: thin;
     }
 
     .cockpit-tab-btn {
@@ -449,22 +468,83 @@
     }
 
     .cockpit-body {
-      padding: 18px;
+      padding: 16px 18px;
       font-family: var(--mono);
       font-size: 0.8rem;
       line-height: 1.7;
-      min-height: 140px;
-      background: #050811;
+      min-height: 150px;
+      max-height: 280px;
+      overflow-y: auto;
+      background: var(--bg-terminal);
     }
 
-    .cockpit-cmd { color: var(--accent); font-weight: 600; margin-bottom: 6px; }
+    .cockpit-cmd { color: var(--accent); font-weight: 600; margin-bottom: 5px; }
     .cockpit-out { color: #cbd5e1; }
     .cockpit-meta { color: var(--text-faint); margin-top: 4px; }
-    .cockpit-success { color: var(--emerald); font-weight: 600; margin-top: 6px; }
+    .cockpit-success { color: var(--emerald); font-weight: 600; margin-top: 5px; }
+    .cockpit-warn { color: var(--amber); }
+
+    /* Interactive REPL Prompt Bar */
+    .cockpit-repl-bar {
+      display: flex;
+      align-items: center;
+      padding: 8px 16px;
+      background: rgba(12, 18, 36, 0.9);
+      border-top: 1px solid var(--border);
+      gap: 8px;
+    }
+
+    .repl-prompt-symbol {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .repl-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: #fff;
+    }
+
+    .repl-input::placeholder {
+      color: var(--text-faint);
+    }
+
+    .repl-chips {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      flex-shrink: 0;
+    }
+
+    .repl-chip {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      padding: 2px 7px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.1s ease;
+      white-space: nowrap;
+    }
+
+    .repl-chip:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
 
     /* ── SECTIONS (CRITICAL: ZERO HORIZONTAL LINES AFTER NUMBERED HEADINGS) ── */
     .section {
-      padding: 58px 0;
+      padding: 56px 0;
       border-top: 1px solid rgba(255, 255, 255, 0.05);
       scroll-margin-top: 70px;
     }
@@ -491,7 +571,7 @@
     }
 
     .section-sub {
-      font-size: 0.96rem;
+      font-size: 0.95rem;
       color: var(--text-muted);
       margin-top: 4px;
       max-width: 660px;
@@ -510,7 +590,7 @@
       font-size: 0.98rem;
       color: var(--text-muted);
       line-height: 1.8;
-      max-width: 820px;
+      max-width: 840px;
     }
 
     .about-prose p { margin-bottom: 14px; }
@@ -535,7 +615,7 @@
       color: var(--text-muted);
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid var(--border);
-      padding: 4px 12px;
+      padding: 5px 12px;
       border-radius: 6px;
     }
 
@@ -579,7 +659,7 @@
     }
 
     .os-repo-title {
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       font-weight: 700;
       color: #fff;
       display: inline-flex;
@@ -642,24 +722,24 @@
       color: var(--accent);
       background: rgba(56, 189, 248, 0.08);
       border: 1px solid rgba(56, 189, 248, 0.25);
-      padding: 3px 8px;
-      border-radius: 4px;
+      padding: 4px 9px;
+      border-radius: 5px;
       cursor: pointer;
       transition: all 0.15s ease;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
-      margin-left: auto;
+      gap: 5px;
     }
 
     .diff-toggle-btn:hover {
       background: rgba(56, 189, 248, 0.2);
+      border-color: var(--accent);
     }
 
     .diff-box {
       display: none;
       margin-top: 14px;
-      background: #050811;
+      background: var(--bg-terminal);
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 12px 14px;
@@ -669,7 +749,13 @@
       overflow-x: auto;
     }
 
-    .diff-box.open { display: block; }
+    .diff-box.open { display: block; animation: diffSlide 0.2s ease-out; }
+    @keyframes diffSlide {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .diff-hdr { color: #60a5fa; font-weight: 600; margin-bottom: 4px; display: block; }
     .diff-add { color: #34d399; background: rgba(52, 211, 153, 0.08); display: block; }
     .diff-del { color: #f87171; background: rgba(239, 68, 68, 0.08); display: block; }
     .diff-ctx { color: #94a3b8; display: block; }
@@ -760,6 +846,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      flex-wrap: wrap;
     }
 
     .proj-btn {
@@ -772,6 +859,7 @@
       align-items: center;
       gap: 6px;
       transition: all 0.15s ease;
+      text-decoration: none;
     }
 
     .proj-btn-demo {
@@ -793,6 +881,17 @@
     .proj-btn-code:hover {
       color: #fff;
       border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .proj-btn-arch {
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      background: rgba(56, 189, 248, 0.06);
+      cursor: pointer;
+    }
+
+    .proj-btn-arch:hover {
+      background: rgba(56, 189, 248, 0.15);
     }
 
     .project-summary {
@@ -827,6 +926,81 @@
       margin-top: 7px;
       flex-shrink: 0;
       background: var(--accent);
+    }
+
+    /* Interactive Pipeline Graph Inspector */
+    .arch-flow-box {
+      display: none;
+      margin-bottom: 18px;
+      background: var(--bg-terminal);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      overflow-x: auto;
+    }
+
+    .arch-flow-box.open {
+      display: block;
+      animation: diffSlide 0.2s ease-out;
+    }
+
+    .arch-flow-title {
+      font-family: var(--mono);
+      font-size: 0.74rem;
+      color: var(--text-faint);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .pipeline-nodes {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 600px;
+      padding-bottom: 4px;
+    }
+
+    .p-node {
+      font-family: var(--mono);
+      font-size: 0.73rem;
+      padding: 7px 11px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .p-node:hover,
+    .p-node.active {
+      border-color: var(--accent);
+      background: rgba(56, 189, 248, 0.15);
+      color: #fff;
+    }
+
+    .p-node.accent { border-color: rgba(56, 189, 248, 0.4); color: var(--accent); }
+    .p-node.emerald { border-color: rgba(52, 211, 153, 0.4); color: var(--emerald); }
+    .p-node.purple { border-color: rgba(192, 132, 252, 0.4); color: var(--purple); }
+    .p-node.amber { border-color: rgba(251, 191, 36, 0.4); color: var(--amber); }
+
+    .p-arrow {
+      color: var(--text-faint);
+      font-family: var(--mono);
+      font-size: 0.8rem;
+    }
+
+    .p-node-info {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      line-height: 1.5;
     }
 
     .project-tech {
@@ -1002,6 +1176,7 @@
       border-radius: 10px;
       padding: 16px 20px;
       transition: all 0.15s ease;
+      text-decoration: none;
     }
 
     .cert-card:hover {
@@ -1058,6 +1233,7 @@
       padding: 14px 18px;
       transition: all 0.15s ease;
       cursor: pointer;
+      text-decoration: none;
     }
 
     .contact-box:hover {
@@ -1107,7 +1283,7 @@
       z-index: 2500;
       align-items: flex-start;
       justify-content: center;
-      padding-top: 15vh;
+      padding-top: 14vh;
     }
 
     .cmd-overlay.open {
@@ -1116,11 +1292,11 @@
 
     .cmd-dialog {
       width: 90%;
-      max-width: 560px;
+      max-width: 580px;
       background: #0c1224;
       border: 1px solid var(--border-accent);
       border-radius: 12px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85);
       overflow: hidden;
       animation: cmdPop 0.15s ease-out;
     }
@@ -1153,7 +1329,7 @@
     }
 
     .cmd-list {
-      max-height: 320px;
+      max-height: 330px;
       overflow-y: auto;
       padding: 8px;
       list-style: none;
@@ -1163,7 +1339,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 12px;
+      padding: 9px 12px;
       border-radius: 8px;
       cursor: pointer;
       color: var(--text);
@@ -1184,6 +1360,15 @@
       background: rgba(56, 189, 248, 0.08);
       padding: 2px 6px;
       border-radius: 4px;
+    }
+
+    .cmd-empty-msg {
+      padding: 24px;
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--text-faint);
+      display: none;
     }
 
     /* Copy Toast */
@@ -1225,22 +1410,22 @@
 
     footer a { color: var(--accent); }
 
-    /* ── RESPONSIVE ADAPTATIONS ── */
+    /* ── RESPONSIVE ADAPTATIONS (ZERO HORIZONTAL JANK) ── */
     @media (max-width: 860px) {
-      .wrap { padding: 0 20px; }
-      .hero { padding: 90px 0 36px; }
-      .section { padding: 46px 0; }
+      .wrap { padding: 0 18px; }
+      .hero { padding: 88px 0 32px; }
+      .section { padding: 44px 0; }
       .journey-grid, .skills-grid, .contact-cards, .project-highlights, .os-grid {
         grid-template-columns: 1fr;
       }
       .os-card-lead { grid-column: 1; }
       .nav-links { display: none; }
-      .mob-toggle { display: block; }
+      .mob-toggle { display: flex; }
       .nav-links.open {
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 62px;
+        top: 64px;
         left: 0;
         right: 0;
         background: var(--bg-surface);
@@ -1252,30 +1437,36 @@
 
     @media (max-width: 580px) {
       .wrap { padding: 0 16px; }
-      .nav-bar { padding: 0 16px; height: 56px; }
+      .nav-bar { padding: 0 12px; height: 56px; gap: 6px; }
+      .nav-logo { font-size: 0.84rem; }
+      .logo-full { display: none; }
       .nav-links.open { top: 56px; }
-      .hero { padding: 76px 0 26px; }
-      .hero-title { font-size: 2rem; }
+      .nav-actions { gap: 5px; }
+      .btn-cmd { padding: 6px 7px; font-size: 0.72rem; }
+      .btn-cmd span.cmd-text { display: none; }
+      .btn-cmd kbd { display: none; }
+      .btn-resume { padding: 6px 8px; font-size: 0.72rem; }
+      .btn-resume span.resume-full { display: none; }
+      .btn-resume span.resume-short { display: inline; }
+      .mob-toggle { display: flex; padding: 6px; }
+      .hero { padding: 72px 0 24px; }
+      .hero-title { font-size: 1.95rem; }
       .hero-subtitle { font-size: 1.1rem; }
       .hero-desc { font-size: 0.92rem; }
       .hero-actions {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
+        display: flex;
+        flex-direction: column;
         width: 100%;
+        gap: 8px;
       }
-      .hero-actions .btn-primary {
-        grid-column: 1 / -1;
+      .hero-actions .btn {
+        width: 100%;
         justify-content: center;
-      }
-      .hero-actions .btn-secondary {
-        justify-content: center;
-        padding: 8px 10px;
-        font-size: 0.8rem;
       }
       .project-top { flex-direction: column; align-items: flex-start; }
       .contact-cards { grid-template-columns: 1fr; }
       .cmd-overlay { padding-top: 5vh; }
+      .repl-chips { display: none; }
     }
   </style>
 </head>
@@ -1285,8 +1476,8 @@
   <nav>
     <div class="nav-bar">
       <a href="#" class="nav-logo">
-        <span class="tag-bracket">&lt;</span>katta.karthik<span class="tag-bracket">/&gt;</span>
-        <span class="pulse-pip" title="Live System"></span>
+        <span class="tag-bracket">&lt;</span><span class="logo-full">katta.</span>karthik<span class="tag-bracket">/&gt;</span>
+        <span class="pulse-pip" title="Live System Active"></span>
       </a>
 
       <ul class="nav-links" id="navMenu">
@@ -1295,20 +1486,23 @@
         <li><a href="#projects">Systems</a></li>
         <li><a href="#journey">Journey</a></li>
         <li><a href="#skills">Arsenal</a></li>
+        <li><a href="#credentials">Credentials</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
 
       <div class="nav-actions">
         <button class="btn-cmd" onclick="openCommandPalette()" aria-label="Open Command Menu">
-          <span>Search</span>
-          <kbd>⌘K</kbd>
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <span class="cmd-text">Search</span>
+          <kbd id="navKeyKbd">⌘K</kbd>
         </button>
         <a href="Katta_Karthik_Resume.pdf" download class="btn-resume">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/></svg>
-          Resume
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/></svg>
+          <span class="resume-full">Resume</span>
+          <span class="resume-short" style="display:none;">CV</span>
         </a>
         <button class="mob-toggle" onclick="document.getElementById('navMenu').classList.toggle('open')" aria-label="Toggle Navigation">
-          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
     </div>
@@ -1342,7 +1536,7 @@
       </div>
 
       <p class="hero-desc">
-        Integrated M.Tech graduate in Computer Science & Engineering from <strong>Vellore Institute of Technology</strong>. Engineering dependable AI architectures with LangGraph, hybrid retrieval (BM25 + ChromaDB with Reciprocal Rank Fusion), and self-healing execution loops. Active upstream contributor to premier open-source AI agent frameworks.
+        Integrated M.Tech graduate in Computer Science & Engineering from <strong>Vellore Institute of Technology</strong>. Engineering dependable AI architectures with LangGraph, dense + sparse hybrid retrieval (BM25 + ChromaDB with Reciprocal Rank Fusion), and self-healing execution loops. Active upstream contributor to premier open-source AI agent frameworks.
       </p>
 
       <div class="hero-actions">
@@ -1375,7 +1569,7 @@
         </a>
       </div>
 
-      <!-- SIGNATURE TWITTER/X VIBE: INTERACTIVE AGENT COCKPIT -->
+      <!-- SIGNATURE TWITTER/X VIBE: INTERACTIVE AGENT COCKPIT & REPL -->
       <div class="cockpit-container">
         <div class="cockpit-header">
           <div class="cockpit-dots">
@@ -1384,19 +1578,31 @@
             <span class="c-dot c-dot-green"></span>
           </div>
           <div class="cockpit-badge">agent-runtime@katta-karthik:~</div>
-          <div class="cockpit-status">● interactive sandbox</div>
+          <div class="cockpit-status">● interactive session</div>
         </div>
         <div class="cockpit-tabs">
           <button class="cockpit-tab-btn active" onclick="switchCockpit(0)">langchain-gemini-pr</button>
           <button class="cockpit-tab-btn" onclick="switchCockpit(1)">nexus-hybrid-rag</button>
           <button class="cockpit-tab-btn" onclick="switchCockpit(2)">deepscope-agents</button>
           <button class="cockpit-tab-btn" onclick="switchCockpit(3)">self-healing-sql</button>
+          <button class="cockpit-tab-btn" onclick="switchCockpit(4)">actor-persistence</button>
         </div>
         <div class="cockpit-body" id="cockpitOutput">
           <div class="cockpit-cmd">$ gh pr view 50 --repo langchain-ai/design-agent</div>
           <div class="cockpit-out">State: <span class="os-badge-merged" style="display:inline-block; font-size:0.7rem; padding:1px 6px;">MERGED</span> | Author: katta-karthik (+456, -70)</div>
           <div class="cockpit-meta">Routing image generation to Google Gemini image models via generateContent...</div>
           <div class="cockpit-success">✓ 2K resolution & aspect ratio mapping configured. CI 1,341 unit & contract tests passed.</div>
+        </div>
+        <div class="cockpit-repl-bar">
+          <span class="repl-prompt-symbol">katta@agent:~$</span>
+          <input type="text" class="repl-input" id="replInput" placeholder="Type 'help', 'prs', 'rag', 'resume' or click chip..." onkeydown="handleReplKey(event)">
+          <div class="repl-chips">
+            <button class="repl-chip" onclick="runReplCmd('help')">help</button>
+            <button class="repl-chip" onclick="runReplCmd('prs')">prs</button>
+            <button class="repl-chip" onclick="runReplCmd('rag')">rag</button>
+            <button class="repl-chip" onclick="runReplCmd('resume')">resume</button>
+            <button class="repl-chip" onclick="runReplCmd('clear')">clear</button>
+          </div>
         </div>
       </div>
 
@@ -1420,7 +1626,7 @@
             My engineering focuses on solving core failure points in modern GenAI: orchestrating <strong>multi-agent graphs</strong> with LangGraph that divide cognitive loads across specialized roles, implementing <strong>dense + sparse hybrid retrieval</strong> (BM25 + ChromaDB with Reciprocal Rank Fusion) and FlashRank cross-encoder reranking for verifiable citations, and constructing <strong>self-healing execution loops</strong> that recover from runtime errors autonomously.
           </p>
           <p>
-            Beyond architecting standalone platforms, I actively contribute to upstream open-source AI agent ecosystems—shipping merged features and runtime fixes to official repositories under <strong>LangChain</strong>, alongside active contributions to <strong>CopilotKit</strong> and <strong>OpenHands</strong>. I also bring hands-on experience in AI safety and red-teaming through freelance work at <a href="https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing" target="_blank">Soul AI (Project Shield)</a>, and maintain a competitive problem-solving practice on my <a href="https://takeuforward.org/profile/karthik0712" target="_blank">TakeUForward DSA profile</a>.
+            Beyond architecting standalone platforms, I actively contribute to upstream open-source AI agent ecosystems—shipping merged features and runtime fixes to official repositories under <strong>LangChain</strong>, alongside active contributions to <strong>CopilotKit</strong>, <strong>OpenHands</strong>, <strong>TerseAI</strong>, and <strong>Arvo-AI</strong>. I also bring hands-on experience in AI safety and red-teaming through freelance work at <a href="https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing" target="_blank" rel="noopener noreferrer">Soul AI (Project Shield)</a>, and maintain a competitive problem-solving practice on my <a href="https://takeuforward.org/profile/karthik0712" target="_blank" rel="noopener noreferrer">TakeUForward DSA profile</a>.
           </p>
         </div>
 
@@ -1461,15 +1667,17 @@
           <p class="os-desc">
             Contributed to LangChain's official generative design agent repository:
             <br>
-            • <strong><a href="https://github.com/langchain-ai/design-agent/pull/50" target="_blank">PR #50 (Merged)</a></strong>: Added Google Gemini image models as a first-class image generation provider via <code>generateContent</code>, supporting aspect-ratio mapping, 2K resolution, and parallel generation (<strong>+456, -70</strong>).
+            • <strong><a href="https://github.com/langchain-ai/design-agent/pull/50" target="_blank" rel="noopener noreferrer">PR #50 (Merged)</a></strong>: Added Google Gemini image models as a first-class image generation provider via <code>generateContent</code>, supporting aspect-ratio mapping, 2K resolution, and parallel generation (<strong>+456, -70</strong>).
             <br>
-            • <strong><a href="https://github.com/langchain-ai/design-agent/pull/38" target="_blank">PR #38 (Merged)</a></strong>: Windows cross-platform timezone runtime fix (PEP 615 / <code>tzdata</code>) and POSIX stat guard in unit test suite.
+            • <strong><a href="https://github.com/langchain-ai/design-agent/pull/38" target="_blank" rel="noopener noreferrer">PR #38 (Merged)</a></strong>: Windows cross-platform timezone runtime fix (PEP 615 / <code>tzdata</code>) and POSIX stat guard in unit test suite.
             <br>
-            • <strong><a href="https://github.com/langchain-ai/design-agent/pull/53" target="_blank">PR #53 (In Review)</a></strong>: <code>HostMediaErrorBoundary</code> middleware wrapping media and fetch tools to catch API timeouts and return clean error states without crashing agent graphs (<strong>+503, -3</strong>).
+            • <strong><a href="https://github.com/langchain-ai/design-agent/pull/53" target="_blank" rel="noopener noreferrer">PR #53 (In Review)</a></strong>: <code>HostMediaErrorBoundary</code> middleware wrapping media and fetch tools to catch API timeouts and return clean error states without crashing agent graphs (<strong>+503, -3</strong>).
           </p>
 
           <div id="diff-langchain" class="diff-box">
-            <span class="diff-ctx"># langchain-ai/design-agent/pull/50 — Core Provider Patch</span>
+            <span class="diff-hdr">@@ -1,15 +1,22 @@ # langchain-ai/design-agent/pull/50 — Core Provider Patch</span>
+            <span class="diff-ctx"> from typing import Optional, Dict, Any</span>
+            <span class="diff-ctx"> from google import genai</span>
             <span class="diff-add">+ class GeminiImageProvider(BaseImageProvider):</span>
             <span class="diff-add">+     """Native Google Gemini Imagen-3 image generation provider."""</span>
             <span class="diff-add">+     def __init__(self, api_key: str, model: str = "imagen-3.0-generate-002"):</span>
@@ -1481,11 +1689,11 @@
           </div>
 
           <div class="os-link-row" style="margin-top: 12px;">
-            <a href="https://github.com/langchain-ai/design-agent/pull/50" target="_blank">View Gemini PR #50 ↗</a>
+            <a href="https://github.com/langchain-ai/design-agent/pull/50" target="_blank" rel="noopener noreferrer">View Gemini PR #50 ↗</a>
             <span style="color:var(--text-faint);">·</span>
-            <a href="https://github.com/langchain-ai/design-agent/pull/38" target="_blank">View Windows PR #38 ↗</a>
+            <a href="https://github.com/langchain-ai/design-agent/pull/38" target="_blank" rel="noopener noreferrer">View Windows PR #38 ↗</a>
             <span style="color:var(--text-faint);">·</span>
-            <a href="https://github.com/langchain-ai/design-agent/pull/53" target="_blank">View Error Boundary PR #53 ↗</a>
+            <a href="https://github.com/langchain-ai/design-agent/pull/53" target="_blank" rel="noopener noreferrer">View Error Boundary PR #53 ↗</a>
           </div>
         </div>
 
@@ -1501,19 +1709,21 @@
             </div>
           </div>
           <p class="os-desc">
-            <strong><a href="https://github.com/CopilotKit/CopilotKit/pull/8042" target="_blank">PR #8042</a></strong>: Fixed core agent lifecycle bug where aborted runs left unanswered tool calls in agent messages, preventing downstream OpenAI 400 errors. Added synthetic stopped results and cleaned dangling placeholders (<strong>+747, -16</strong>).
+            <strong><a href="https://github.com/CopilotKit/CopilotKit/pull/8042" target="_blank" rel="noopener noreferrer">PR #8042</a></strong>: Fixed core agent lifecycle bug where aborted runs left unanswered tool calls in agent messages, preventing downstream OpenAI 400 errors. Added synthetic stopped results and cleaned dangling placeholders (<strong>+747, -16</strong>).
           </p>
 
           <div id="diff-copilot" class="diff-box">
-            <span class="diff-ctx">// CopilotKit/CopilotKit/pull/8042 — Tool Lifecycle Resolution</span>
-            <span class="diff-add">+ if (runStatus === 'aborted') {</span>
-            <span class="diff-add">+     yield { type: 'tool_call_resolution', status: 'cancelled', synthetic: true };</span>
-            <span class="diff-add">+     return; // Cleanly resolves pending OpenAI tool_calls</span>
-            <span class="diff-add">+ }</span>
+            <span class="diff-hdr">@@ -82,6 +82,12 @@ // CopilotKit/CopilotKit/pull/8042 — Tool Lifecycle Resolution</span>
+            <span class="diff-ctx"> export function* handleAbortedRun(runStatus: string): Generator {</span>
+            <span class="diff-add">+   if (runStatus === 'aborted') {</span>
+            <span class="diff-add">+       yield { type: 'tool_call_resolution', status: 'cancelled', synthetic: true };</span>
+            <span class="diff-add">+       return; // Cleanly resolves pending OpenAI tool_calls</span>
+            <span class="diff-add">+   }</span>
+            <span class="diff-ctx"> }</span>
           </div>
 
           <div class="os-link-row">
-            <a href="https://github.com/CopilotKit/CopilotKit/pull/8042" target="_blank">View Pull Request #8042 ↗</a>
+            <a href="https://github.com/CopilotKit/CopilotKit/pull/8042" target="_blank" rel="noopener noreferrer">View Pull Request #8042 ↗</a>
           </div>
         </div>
 
@@ -1529,17 +1739,19 @@
             </div>
           </div>
           <p class="os-desc">
-            <strong><a href="https://github.com/OpenHands/software-agent-sdk/pull/6292" target="_blank">PR #6292</a></strong>: Fixed unhandled Pydantic <code>extra_forbidden</code> crashes when LLMs emit variant parameter names (e.g. <code>description</code> or <code>instruction</code> instead of <code>summary</code>) with schema boundary filtering (<strong>+504, -14</strong>).
+            <strong><a href="https://github.com/OpenHands/software-agent-sdk/pull/6292" target="_blank" rel="noopener noreferrer">PR #6292</a></strong>: Fixed unhandled Pydantic <code>extra_forbidden</code> crashes when LLMs emit variant parameter names (e.g. <code>description</code> or <code>instruction</code> instead of <code>summary</code>) with schema boundary filtering (<strong>+504, -14</strong>).
           </p>
 
           <div id="diff-openhands" class="diff-box">
-            <span class="diff-ctx"># OpenHands/software-agent-sdk/pull/6292 — Schema Guard</span>
-            <span class="diff-add">+ filtered_kwargs = {k: v for k, v in args.items() if k in allowed_fields}</span>
-            <span class="diff-add">+ return cls.model_validate(filtered_kwargs)</span>
+            <span class="diff-hdr">@@ -140,4 +140,9 @@ # OpenHands/software-agent-sdk/pull/6292 — Schema Guard</span>
+            <span class="diff-ctx"> def validate_tool_payload(cls, args: Dict[str, Any]):</span>
+            <span class="diff-add">+     allowed_fields = set(cls.model_fields.keys())</span>
+            <span class="diff-add">+     filtered_kwargs = {k: v for k, v in args.items() if k in allowed_fields}</span>
+            <span class="diff-add">+     return cls.model_validate(filtered_kwargs)</span>
           </div>
 
           <div class="os-link-row">
-            <a href="https://github.com/OpenHands/software-agent-sdk/pull/6292" target="_blank">View Pull Request #6292 ↗</a>
+            <a href="https://github.com/OpenHands/software-agent-sdk/pull/6292" target="_blank" rel="noopener noreferrer">View Pull Request #6292 ↗</a>
           </div>
         </div>
 
@@ -1549,13 +1761,25 @@
             <span class="os-repo-title">
               ⚡ TerseAI / durable-actors
             </span>
-            <span class="os-badge-review">🟢 In Review</span>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span class="os-badge-review">🟢 In Review</span>
+              <button class="diff-toggle-btn" onclick="toggleDiff('diff-terseai')">Git Diff</button>
+            </div>
           </div>
           <p class="os-desc">
-            <strong><a href="https://github.com/TerseAI/durable-actors/pull/400" target="_blank">PR #400</a></strong>: Architected first-class persistence adapters for LangGraph and LangChain in Python SDK (<code>DurableActorSaver</code> & <code>DurableActorChatMessageHistory</code>) with WebSocket state emission and time-travel tests (<strong>+4,532, -7</strong>).
+            <strong><a href="https://github.com/TerseAI/durable-actors/pull/400" target="_blank" rel="noopener noreferrer">PR #400</a></strong>: Architected first-class persistence adapters for LangGraph and LangChain in Python SDK (<code>DurableActorSaver</code> & <code>DurableActorChatMessageHistory</code>) with WebSocket state emission and time-travel tests (<strong>+4,532, -7</strong>).
           </p>
+
+          <div id="diff-terseai" class="diff-box">
+            <span class="diff-hdr">@@ -1,18 +1,25 @@ # TerseAI/durable-actors/pull/400 — LangGraph Checkpointer</span>
+            <span class="diff-add">+ class DurableActorSaver(BaseCheckpointSaver):</span>
+            <span class="diff-add">+     """Distributed actor persistence adapter with WebSocket event bus."""</span>
+            <span class="diff-add">+     async def aput(self, config: RunnableConfig, checkpoint: Checkpoint, metadata: CheckpointMetadata):</span>
+            <span class="diff-add">+         await self.actor_client.persist_state(config["configurable"]["thread_id"], checkpoint)</span>
+          </div>
+
           <div class="os-link-row">
-            <a href="https://github.com/TerseAI/durable-actors/pull/400" target="_blank">View Pull Request #400 ↗</a>
+            <a href="https://github.com/TerseAI/durable-actors/pull/400" target="_blank" rel="noopener noreferrer">View Pull Request #400 ↗</a>
           </div>
         </div>
 
@@ -1565,20 +1789,31 @@
             <span class="os-repo-title">
               🛡️ Arvo-AI / aurora
             </span>
-            <span class="os-badge-review">🟢 In Review</span>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span class="os-badge-review">🟢 In Review</span>
+              <button class="diff-toggle-btn" onclick="toggleDiff('diff-arvo')">Git Diff</button>
+            </div>
           </div>
           <p class="os-desc">
-            <strong><a href="https://github.com/Arvo-AI/aurora/pull/758" target="_blank">PR #758</a></strong>: Resolved incident remediation suggestion status sync issues by deriving suggestion status directly from command execution results instead of chat session state (#566).
+            <strong><a href="https://github.com/Arvo-AI/aurora/pull/758" target="_blank" rel="noopener noreferrer">PR #758</a></strong>: Resolved incident remediation suggestion status sync issues by deriving suggestion status directly from command execution results instead of chat session state (#566).
           </p>
+
+          <div id="diff-arvo" class="diff-box">
+            <span class="diff-hdr">@@ -45,5 +45,10 @@ # Arvo-AI/aurora/pull/758 — Incident Remediation Sync</span>
+            <span class="diff-ctx"> def resolve_remediation_status(incident_id: str, command_result: CommandResult):</span>
+            <span class="diff-add">+     # Decouple suggestion state from ephemeral chat context</span>
+            <span class="diff-add">+     return Status.APPLIED if command_result.exit_code == 0 else Status.FAILED</span>
+          </div>
+
           <div class="os-link-row">
-            <a href="https://github.com/Arvo-AI/aurora/pull/758" target="_blank">View Pull Request #758 ↗</a>
+            <a href="https://github.com/Arvo-AI/aurora/pull/758" target="_blank" rel="noopener noreferrer">View Pull Request #758 ↗</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 03: Flagship Projects Section (Interactive Filtering) -->
+  <!-- Section 03: Flagship Projects Section (Interactive Filtering & Architecture Flows) -->
   <section class="section" id="projects">
     <div class="wrap">
       <div class="section-head">
@@ -1605,6 +1840,10 @@
               <h3 class="project-title">DeepScope</h3>
             </div>
             <div class="project-links">
+              <button class="proj-btn proj-btn-arch" onclick="toggleArchFlow('arch-deepscope')">
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                Graph Inspector
+              </button>
               <a href="https://github.com/katta-karthik/DeepScope" target="_blank" rel="noopener noreferrer" class="proj-btn proj-btn-code">
                 Source Code
                 <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
@@ -1614,6 +1853,31 @@
           <p class="project-summary">
             Single-pass LLM prompts degrade quickly on comprehensive research tasks due to context dilution and token bloat. <strong>DeepScope</strong> resolves this by decomposing complex inquiries across a team of specialized LangChain Deep Agents orchestrated with <strong>LangGraph</strong>.
           </p>
+
+          <!-- Interactive LangGraph Flow Diagram -->
+          <div id="arch-deepscope" class="arch-flow-box">
+            <div class="arch-flow-title">
+              <span>LANGGRAPH MULTI-AGENT PIPELINE (CLICK NODES TO INSPECT RESPONSIBILITY)</span>
+              <span style="color:var(--accent);">Active Topology</span>
+            </div>
+            <div class="pipeline-nodes">
+              <div class="p-node purple" onclick="inspectNode('deepscope', 'goal')">User Inquiry</div>
+              <span class="p-arrow">──▶</span>
+              <div class="p-node accent" onclick="inspectNode('deepscope', 'planner')">Lead Coordinator</div>
+              <span class="p-arrow">──▶</span>
+              <div class="p-node emerald" onclick="inspectNode('deepscope', 'workers')">Web Worker Agents (×4)</div>
+              <span class="p-arrow">──▶</span>
+              <div class="p-node amber" onclick="inspectNode('deepscope', 'fs')">Filesystem Isolation</div>
+              <span class="p-arrow">──▶</span>
+              <div class="p-node purple" onclick="inspectNode('deepscope', 'verifier')">Fact Verifier Node</div>
+              <span class="p-arrow">──▶</span>
+              <div class="p-node emerald" onclick="inspectNode('deepscope', 'synthesis')">Final Report Synthesis</div>
+            </div>
+            <div id="deepscope-info" class="p-node-info">
+              💡 <strong>Node Profile:</strong> Click any node in the pipeline above to inspect its execution contract, isolation guarantees, and token efficiency.
+            </div>
+          </div>
+
           <div class="project-highlights">
             <div class="highlight-item"><span class="highlight-bullet"></span>Lead agent parses objectives and autonomously constructs structured inquiry plans.</div>
             <div class="highlight-item"><span class="highlight-bullet"></span>Specialized subagents conduct web research and persist raw findings directly to disk.</div>
@@ -1637,6 +1901,10 @@
               <h3 class="project-title">NexusRAG</h3>
             </div>
             <div class="project-links">
+              <button class="proj-btn proj-btn-arch" onclick="toggleArchFlow('arch-nexusrag')">
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                RAG Pipeline
+              </button>
               <a href="https://nexus-doc-rag.streamlit.app/" target="_blank" rel="noopener noreferrer" class="proj-btn proj-btn-demo">
                 Live Demo ↗
               </a>
@@ -1649,6 +1917,33 @@
           <p class="project-summary">
             Standard dense retrieval frequently misses critical precision tokens like IDs, numerical metrics, or specific dates. <strong>NexusRAG</strong> implements a high-performance <strong>dense + sparse hybrid retrieval platform</strong> with a visual 7-stage processing pipeline.
           </p>
+
+          <!-- Interactive RAG Pipeline Inspector -->
+          <div id="arch-nexusrag" class="arch-flow-box">
+            <div class="arch-flow-title">
+              <span>7-STAGE HYBRID RETRIEVAL PIPELINE (CLICK STAGES TO INSPECT LATENCY & FUSION)</span>
+              <span style="color:var(--emerald);">Sub-Second SLA</span>
+            </div>
+            <div class="pipeline-nodes">
+              <div class="p-node emerald" onclick="inspectNode('nexus', 'ingest')">1. Ingest & Chunk</div>
+              <span class="p-arrow">──▶</span>
+              <div class="p-node accent" onclick="inspectNode('nexus', 'chroma')">2. Dense (ChromaDB)</div>
+              <span class="p-arrow">+</span>
+              <div class="p-node amber" onclick="inspectNode('nexus', 'bm25')">3. Sparse (BM25)</div>
+              <span class="p-arrow">──▶</span>
+              <div class="p-node purple" onclick="inspectNode('nexus', 'rrf')">4. RRF Rank Fusion</div>
+              <span class="p-arrow">──▶</span>
+              <div class="p-node accent" onclick="inspectNode('nexus', 'flashrank')">5. FlashRank Reranker</div>
+              <span class="p-arrow">──▶</span>
+              <div class="p-node emerald" onclick="inspectNode('nexus', 'groq')">6. Groq LPU Inference</div>
+              <span class="p-arrow">──▶</span>
+              <div class="p-node" onclick="inspectNode('nexus', 'citations')">7. Page Citations</div>
+            </div>
+            <div id="nexus-info" class="p-node-info">
+              💡 <strong>Pipeline Profile:</strong> Reciprocal Rank Fusion combines ChromaDB semantic vectors and BM25 exact keywords, reranked by FlashRank in under 35ms.
+            </div>
+          </div>
+
           <div class="project-highlights">
             <div class="highlight-item"><span class="highlight-bullet"></span>Visual 7-stage ingestion: document parsing, cleaning, semantic chunking, and AI synthesis.</div>
             <div class="highlight-item"><span class="highlight-bullet"></span>ChromaDB dense vectors + BM25 keyword matching fused via Reciprocal Rank Fusion (RRF).</div>
@@ -1673,6 +1968,10 @@
               <h3 class="project-title">E-commerce AI Analytics</h3>
             </div>
             <div class="project-links">
+              <button class="proj-btn proj-btn-arch" onclick="toggleArchFlow('arch-ecom')">
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                Self-Healing Loop
+              </button>
               <a href="https://ecommerce-data-agent.streamlit.app/" target="_blank" rel="noopener noreferrer" class="proj-btn proj-btn-demo">
                 Live Demo ↗
               </a>
@@ -1685,6 +1984,31 @@
           <p class="project-summary">
             Traditional text-to-SQL workflows fail silently when encountering unexpected database schemas or minor SQL errors. This project introduces a <strong>stateful, self-healing agent</strong> that autonomously detects execution failures and performs real-time SQL correction.
           </p>
+
+          <!-- Interactive Self-Healing Flow -->
+          <div id="arch-ecom" class="arch-flow-box">
+            <div class="arch-flow-title">
+              <span>SELF-HEALING STATEGRAPH ARCHITECTURE</span>
+              <span style="color:var(--amber);">Prompt Guard 86M Guardrail</span>
+            </div>
+            <div class="pipeline-nodes">
+              <div class="p-node amber" onclick="inspectNode('ecom', 'prompt')">Natural Language Query</div>
+              <span class="p-arrow">──▶</span>
+              <div class="p-node purple" onclick="inspectNode('ecom', 'guard')">Prompt Guard 86M</div>
+              <span class="p-arrow">──▶</span>
+              <div class="p-node accent" onclick="inspectNode('ecom', 'sqlgen')">Schema Planner Node</div>
+              <span class="p-arrow">──▶</span>
+              <div class="p-node emerald" onclick="inspectNode('ecom', 'exec')">SQLite Sandbox</div>
+              <span class="p-arrow">──▶</span>
+              <div class="p-node amber" onclick="inspectNode('ecom', 'retry')">Self-Healing Loop (Retry)</div>
+              <span class="p-arrow">──▶</span>
+              <div class="p-node accent" onclick="inspectNode('ecom', 'mcp')">MCP Visualizer</div>
+            </div>
+            <div id="ecom-info" class="p-node-info">
+              💡 <strong>State Loop:</strong> Catches sqlite3.OperationalError exceptions, dynamically inspects table pragmas, repairs broken syntax, and re-executes automatically.
+            </div>
+          </div>
+
           <div class="project-highlights">
             <div class="highlight-item"><span class="highlight-bullet"></span>LangGraph StateGraph managing iterative query planning, execution, and error triage.</div>
             <div class="highlight-item"><span class="highlight-bullet"></span>Self-healing execution loop automatically diagnoses SQLite exceptions and rewrites queries.</div>
@@ -1723,11 +2047,11 @@
             <div class="timeline-role">Open Source Contributor</div>
             <div class="timeline-org">
               <a href="https://github.com/katta-karthik" target="_blank" rel="noopener noreferrer">
-                LangChain · CopilotKit · OpenHands ↗
+                LangChain · CopilotKit · OpenHands · TerseAI · Arvo ↗
               </a>
             </div>
             <p class="timeline-text">
-              Active contributor to upstream AI agent ecosystems. Shipped merged features and core reliability fixes in <strong>langchain-ai/design-agent</strong> (Google Gemini image generation provider & Windows runtime), <strong>CopilotKit</strong> (cancellation lifecycle & tool resolution), and <strong>OpenHands</strong> (tool invocation boundary resilience).
+              Active contributor to upstream AI agent ecosystems. Shipped merged features and core reliability fixes in <strong>langchain-ai/design-agent</strong> (Google Gemini image generation provider & Windows runtime), <strong>CopilotKit</strong> (cancellation lifecycle & tool resolution), <strong>OpenHands</strong> (tool invocation boundary resilience), <strong>TerseAI</strong> (LangGraph state checkpointer), and <strong>Arvo-AI</strong>.
             </p>
           </div>
 
@@ -1849,10 +2173,10 @@
   </section>
 
   <!-- Section 06: Verified Credentials -->
-  <section class="section">
+  <section class="section" id="credentials">
     <div class="wrap">
       <div class="section-head">
-        <div class="section-tag">Credentials</div>
+        <div class="section-tag">06. Credentials</div>
         <h2 class="section-title">Verified Certifications</h2>
       </div>
 
@@ -1904,7 +2228,7 @@
   <section class="section" id="contact">
     <div class="wrap">
       <div class="section-head">
-        <div class="section-tag">06. Connect</div>
+        <div class="section-tag">07. Connect</div>
         <h2 class="section-title">Let's Connect</h2>
       </div>
 
@@ -1965,9 +2289,9 @@
         Engineered by <a href="https://github.com/katta-karthik" target="_blank" rel="noopener noreferrer">Katta Karthik</a> · Vellore Institute of Technology
       </p>
       <div style="display: flex; align-items: center; gap: 14px;">
-        <button onclick="openCommandPalette()" class="btn-cmd" style="font-size: 0.72rem; padding: 3px 8px;">
-          <span>Quick Menu</span>
-          <kbd>⌘K</kbd>
+        <button onclick="openCommandPalette()" class="btn-cmd" style="font-size: 0.72rem; padding: 4px 8px;">
+          <span>Command Menu</span>
+          <kbd class="dynamic-kbd">⌘K</kbd>
         </button>
         <a href="#" style="font-family: var(--mono); font-size: 0.8rem; color: var(--text-faint);">Back to top ↑</a>
       </div>
@@ -1982,6 +2306,9 @@
         <input type="text" id="cmdInput" placeholder="Type a command or jump to..." oninput="filterCmdList()" onkeydown="handleCmdKey(event)">
         <kbd style="font-family: var(--mono); font-size: 0.7rem; color: var(--text-faint);">ESC</kbd>
       </div>
+      <div class="cmd-empty-msg" id="cmdEmptyMsg">
+        No commands found. Try typing "resume", "prs", "rag", or "systems".
+      </div>
       <ul class="cmd-list" id="cmdList">
         <li class="cmd-item" onclick="executeCmd('resume')">
           <span>📥 Download Resume (PDF)</span>
@@ -1995,6 +2322,22 @@
           <span>🦜 View Merged LangChain PR #50</span>
           <span class="cmd-item-shortcut">GitHub</span>
         </li>
+        <li class="cmd-item" onclick="executeCmd('copilot')">
+          <span>🦾 View CopilotKit PR #8042</span>
+          <span class="cmd-item-shortcut">GitHub</span>
+        </li>
+        <li class="cmd-item" onclick="executeCmd('openhands')">
+          <span>🤖 View OpenHands PR #6292</span>
+          <span class="cmd-item-shortcut">GitHub</span>
+        </li>
+        <li class="cmd-item" onclick="executeCmd('terseai')">
+          <span>⚡ View TerseAI PR #400 (+4,532, -7)</span>
+          <span class="cmd-item-shortcut">GitHub</span>
+        </li>
+        <li class="cmd-item" onclick="executeCmd('aurora')">
+          <span>🛡️ View Arvo-AI Aurora PR #758</span>
+          <span class="cmd-item-shortcut">GitHub</span>
+        </li>
         <li class="cmd-item" onclick="executeCmd('nexus')">
           <span>⚡ Launch NexusRAG Live Demo</span>
           <span class="cmd-item-shortcut">Streamlit</span>
@@ -2002,6 +2345,10 @@
         <li class="cmd-item" onclick="executeCmd('ecommerce')">
           <span>🛒 Launch E-commerce Agent Demo</span>
           <span class="cmd-item-shortcut">Streamlit</span>
+        </li>
+        <li class="cmd-item" onclick="executeCmd('sec-about')">
+          <span>👤 Jump to About Philosophy</span>
+          <span class="cmd-item-shortcut">#about</span>
         </li>
         <li class="cmd-item" onclick="executeCmd('sec-opensource')">
           <span>⚡ Jump to Open Source Bento</span>
@@ -2018,6 +2365,14 @@
         <li class="cmd-item" onclick="executeCmd('sec-skills')">
           <span>🛠️ Jump to Arsenal & Skills</span>
           <span class="cmd-item-shortcut">#skills</span>
+        </li>
+        <li class="cmd-item" onclick="executeCmd('sec-credentials')">
+          <span>📜 Jump to Verified Credentials</span>
+          <span class="cmd-item-shortcut">#credentials</span>
+        </li>
+        <li class="cmd-item" onclick="executeCmd('sec-contact')">
+          <span>📬 Jump to Contact</span>
+          <span class="cmd-item-shortcut">#contact</span>
         </li>
         <li class="cmd-item" onclick="executeCmd('dsa')">
           <span>🧠 View TakeUForward DSA Profile</span>
@@ -2040,12 +2395,16 @@
 
   <!-- Zero-Dependency High-Performance JavaScript -->
   <script>
+    // 0. OS Platform Shortcut Detection (Ctrl+K on Windows/Linux, ⌘K on Mac)
+    const isMac = typeof navigator !== 'undefined' && /Mac|iPod|iPhone|iPad/.test(navigator.userAgent || navigator.platform);
+    const shortcutLabel = isMac ? '⌘K' : 'Ctrl+K';
+    document.querySelectorAll('#navKeyKbd, .dynamic-kbd').forEach(el => el.textContent = shortcutLabel);
+
     // 1. Live IST Clock
     function updateClock() {
       const el = document.getElementById('clockVal');
       if (!el) return;
       const now = new Date();
-      // Format to IST
       const options = { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
       el.textContent = now.toLocaleTimeString('en-US', options) + ' IST';
     }
@@ -2060,7 +2419,7 @@
       });
     });
 
-    // 3. Interactive Agent Cockpit Simulator
+    // 3. Interactive Agent Cockpit Simulator & REPL CLI
     const cockpitScenarios = [
       {
         cmd: "$ gh pr view 50 --repo langchain-ai/design-agent",
@@ -2085,6 +2444,12 @@
         out: "Caught SQLite OperationalError: missing column -> Triggering Self-Healing retry loop...",
         meta: "Introspecting database schema pragmas -> Query re-planned, repaired and executed successfully",
         status: "✓ Query self-repaired. Meta Prompt Guard 86M verified 0 prompt injection attempts."
+      },
+      {
+        cmd: "$ gh pr view 400 --repo TerseAI/durable-actors",
+        out: "State: IN REVIEW | Author: katta-karthik (+4,532, -7)",
+        meta: "Architecting DurableActorSaver persistence adapter for LangGraph checkpoint state...",
+        status: "✓ WebSocket state synchronization active. Time-travel checkpoint test suite passed."
       }
     ];
 
@@ -2101,6 +2466,115 @@
       `;
     }
 
+    // Interactive REPL CLI Engine
+    function handleReplKey(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const input = document.getElementById('replInput');
+        const cmd = input.value.trim().toLowerCase();
+        if (cmd) {
+          runReplCmd(cmd);
+          input.value = '';
+        }
+      }
+    }
+
+    function runReplCmd(cmd) {
+      const box = document.getElementById('cockpitOutput');
+      const time = new Date().toLocaleTimeString('en-US', { hour12: false });
+      let outputHtml = '';
+
+      switch(cmd) {
+        case 'help':
+          outputHtml = `
+            <div class="cockpit-cmd">$ help [${time}]</div>
+            <div class="cockpit-out">Available CLI commands:</div>
+            <div class="cockpit-meta">  • prs         - List upstream pull requests & stats</div>
+            <div class="cockpit-meta">  • systems     - Overview of DeepScope, NexusRAG & E-commerce AI</div>
+            <div class="cockpit-meta">  • rag         - Execute simulated 7-stage hybrid RAG pipeline</div>
+            <div class="cockpit-meta">  • skills      - Display categorized AI architecture stack</div>
+            <div class="cockpit-meta">  • resume      - Download Katta_Karthik_Resume.pdf</div>
+            <div class="cockpit-meta">  • contact     - Display contact channels and email</div>
+            <div class="cockpit-meta">  • clear       - Clear terminal output</div>
+          `;
+          break;
+        case 'prs':
+          outputHtml = `
+            <div class="cockpit-cmd">$ gh pr list --author katta-karthik</div>
+            <div class="cockpit-out">1. langchain-ai/design-agent #50    [MERGED]    +456  -70  (Google Gemini Image Provider)</div>
+            <div class="cockpit-out">2. langchain-ai/design-agent #38    [MERGED]    +18   -4   (Windows Runtime Timezone Guard)</div>
+            <div class="cockpit-out">3. CopilotKit/CopilotKit #8042      [IN REVIEW] +747  -16  (Tool Cancellation Lifecycle)</div>
+            <div class="cockpit-out">4. OpenHands/agent-sdk #6292        [IN REVIEW] +504  -14  (Pydantic Schema Boundary Guard)</div>
+            <div class="cockpit-out">5. TerseAI/durable-actors #400      [IN REVIEW] +4532 -7   (LangGraph State Checkpointer)</div>
+            <div class="cockpit-out">6. Arvo-AI/aurora #758              [IN REVIEW] +12   -3   (Incident Remediation Sync)</div>
+            <div class="cockpit-success">✓ 6 verified upstream contributions across premier agent frameworks.</div>
+          `;
+          break;
+        case 'rag':
+          outputHtml = `
+            <div class="cockpit-cmd">$ python -m nexus_rag.query "enterprise RAG latency SLA"</div>
+            <div class="cockpit-out">[Stage 1] Query Expansion & Tokenization complete (3ms)</div>
+            <div class="cockpit-out">[Stage 2] BM25 sparse lexical search: top-20 candidates (12ms)</div>
+            <div class="cockpit-out">[Stage 3] ChromaDB dense vector similarity: top-20 candidates (28ms)</div>
+            <div class="cockpit-out">[Stage 4] Reciprocal Rank Fusion (RRF) fused 40 candidates -> top-10 (4ms)</div>
+            <div class="cockpit-out">[Stage 5] FlashRank cross-encoder reranking filtered top-3 passages (32ms)</div>
+            <div class="cockpit-out">[Stage 6] Groq LPU LLM inference generated response (118ms)</div>
+            <div class="cockpit-success">✓ Total latency: 197ms · Grounded page-level citations returned with 0 hallucination.</div>
+          `;
+          break;
+        case 'systems':
+          outputHtml = `
+            <div class="cockpit-cmd">$ systems --summary</div>
+            <div class="cockpit-out">1. DeepScope: Multi-agent research architecture with LangGraph & filesystem isolation</div>
+            <div class="cockpit-out">2. NexusRAG: Enterprise hybrid RAG (BM25 + ChromaDB + FlashRank + Groq)</div>
+            <div class="cockpit-out">3. E-commerce Agent: Self-healing SQL engine with Prompt Guard 86M guardrails</div>
+            <div class="cockpit-success">✓ Live Streamlit demos available for NexusRAG and E-commerce Agent below.</div>
+          `;
+          break;
+        case 'skills':
+          outputHtml = `
+            <div class="cockpit-cmd">$ cat /etc/arsenal.conf</div>
+            <div class="cockpit-out">• Agentic: LangGraph, LangChain, Multi-Agent Systems, Self-Healing Loops, MCP</div>
+            <div class="cockpit-out">• Retrieval: Hybrid Search (Dense+Sparse), BM25, ChromaDB, RRF, FlashRank</div>
+            <div class="cockpit-out">• Models & Safety: Google Gemini, Meta LLaMA 3.x, Groq LPU, Prompt Guard 86M, HITL</div>
+            <div class="cockpit-out">• Engineering: Python, Java, SQL, FastAPI, Docker, Git, Streamlit</div>
+          `;
+          break;
+        case 'resume':
+          executeCmd('resume');
+          outputHtml = `
+            <div class="cockpit-cmd">$ curl -O Katta_Karthik_Resume.pdf</div>
+            <div class="cockpit-success">✓ Triggered download for Katta_Karthik_Resume.pdf</div>
+          `;
+          break;
+        case 'contact':
+          outputHtml = `
+            <div class="cockpit-cmd">$ whoami --contact</div>
+            <div class="cockpit-out">Name: Katta Karthik</div>
+            <div class="cockpit-out">Email: kattakarthik8008@gmail.com</div>
+            <div class="cockpit-out">Phone: +91 8008456790</div>
+            <div class="cockpit-out">LinkedIn: linkedin.com/in/katta-karthik</div>
+            <div class="cockpit-out">GitHub: github.com/katta-karthik</div>
+          `;
+          break;
+        case 'clear':
+          box.innerHTML = `
+            <div class="cockpit-cmd">$ clear</div>
+            <div class="cockpit-out">Terminal session cleared. Type 'help' to view commands.</div>
+          `;
+          return;
+        default:
+          outputHtml = `
+            <div class="cockpit-cmd">$ ${cmd}</div>
+            <div class="cockpit-warn">Command not recognized: '${cmd}'. Try: 'help', 'prs', 'rag', 'systems', 'resume', 'contact', 'clear'</div>
+          `;
+          break;
+      }
+
+      box.innerHTML = outputHtml;
+      box.scrollTop = box.scrollHeight;
+    }
+
     // 4. Git Diff Toggle
     function toggleDiff(diffId) {
       const diffEl = document.getElementById(diffId);
@@ -2109,7 +2583,50 @@
       }
     }
 
-    // 5. Project Filtering
+    // 5. Interactive Architecture Flows
+    function toggleArchFlow(flowId) {
+      const el = document.getElementById(flowId);
+      if (el) {
+        el.classList.toggle('open');
+      }
+    }
+
+    const nodeDescriptions = {
+      deepscope: {
+        goal: "📌 <strong>User Inquiry Node:</strong> Captures ambiguous, high-level research questions and extracts target entities.",
+        planner: "🧭 <strong>Lead Coordinator:</strong> LangGraph StateGraph supervisor decomposing research inquiries into sequential and parallel DAG tasks.",
+        workers: "🌐 <strong>Web Worker Agents:</strong> Autonomous subagents dispatched concurrently to perform deep searches and web retrieval.",
+        fs: "💾 <strong>Filesystem Context Isolation:</strong> Raw HTML and API payloads are persisted directly to disk files, preventing token bloating and LLM memory leaks.",
+        verifier: "🔍 <strong>Fact Verifier Node:</strong> Performs adversarial cross-checking between subagent findings and raw source files to eliminate hallucinations.",
+        synthesis: "📄 <strong>Structured Synthesis:</strong> Merges verified evidence into a publication-grade research brief with verifiable citations."
+      },
+      nexus: {
+        ingest: "📥 <strong>Stage 1 - Ingestion:</strong> Multi-format parser (PDF, Markdown, HTML) with semantic chunking that preserves structural headers.",
+        chroma: "🧠 <strong>Stage 2 - Dense Vector Search:</strong> Embeddings indexed in ChromaDB for high-recall conceptual retrieval.",
+        bm25: "🔎 <strong>Stage 3 - Sparse Lexical Search:</strong> Exact keyword matching via BM25 to catch precision tokens, IDs, and financial metrics.",
+        rrf: "⚖️ <strong>Stage 4 - Reciprocal Rank Fusion:</strong> Normalizes and merges dense and sparse rankings with formula: RRF_score = 1 / (60 + rank).",
+        flashrank: "⚡ <strong>Stage 5 - FlashRank Reranker:</strong> High-speed cross-encoder reranking that trims top-40 candidates down to top-3 relevant passages in &lt;35ms.",
+        groq: "🚀 <strong>Stage 6 - Groq LPU Inference:</strong> Ultra-fast inference engine running LLaMA 3.x with sub-second generation speeds.",
+        citations: "📑 <strong>Stage 7 - Grounded Citations:</strong> Exact page numbers, paragraph references, and source document links attached to every output statement."
+      },
+      ecom: {
+        prompt: "💬 <strong>Natural Language:</strong> Accepts complex business questions from non-technical stakeholders regarding sales, inventory, and cohorts.",
+        guard: "🛡️ <strong>Meta Prompt Guard 86M:</strong> Real-time adversarial classifier filtering prompt injection, jailbreaks, and unauthorized DB operations.",
+        sqlgen: "⚙️ <strong>Schema Planner Node:</strong> Inspects active SQLite/Postgres catalog pragmas to synthesize syntax-accurate SQL queries.",
+        exec: "📦 <strong>SQLite Sandbox Execution:</strong> Executes read-only queries within an isolated sandbox environment.",
+        retry: "🔄 <strong>Self-Healing Loop:</strong> Catches database exceptions (e.g. unknown column, syntax error), reflects error traceback back to LLM, and repairs query automatically.",
+        mcp: "📊 <strong>MCP Visualizer:</strong> Exposes execution results as interactive charts and tables via Model Context Protocol tools."
+      }
+    };
+
+    function inspectNode(system, nodeKey) {
+      const infoBox = document.getElementById(`${system}-info`);
+      if (infoBox && nodeDescriptions[system] && nodeDescriptions[system][nodeKey]) {
+        infoBox.innerHTML = `💡 ${nodeDescriptions[system][nodeKey]}`;
+      }
+    }
+
+    // 6. Project Filtering
     function filterProjects(cat) {
       const btns = document.querySelectorAll('.filter-btn');
       btns.forEach(b => {
@@ -2130,12 +2647,26 @@
       });
     }
 
-    // 6. One-Click Copy Email
+    // 7. One-Click Copy Email
     function copyEmail() {
       const email = "kattakarthik8008@gmail.com";
-      navigator.clipboard.writeText(email).then(() => {
-        showToast("Copied kattakarthik8008@gmail.com to clipboard! 📋");
-      });
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(() => {
+          showToast("Copied kattakarthik8008@gmail.com to clipboard! 📋");
+        }).catch(() => fallbackCopy(email));
+      } else {
+        fallbackCopy(email);
+      }
+    }
+
+    function fallbackCopy(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      showToast("Copied kattakarthik8008@gmail.com to clipboard! 📋");
     }
 
     function showToast(msg) {
@@ -2145,7 +2676,7 @@
       setTimeout(() => toast.classList.remove('show'), 2400);
     }
 
-    // 7. Command Palette Logic (Cmd+K / Ctrl+K)
+    // 8. Command Palette Logic (Cmd+K / Ctrl+K)
     function openCommandPalette() {
       const overlay = document.getElementById('cmdOverlay');
       overlay.classList.add('open');
@@ -2182,12 +2713,30 @@
     });
 
     function filterCmdList() {
-      const q = document.getElementById('cmdInput').value.toLowerCase();
+      const q = document.getElementById('cmdInput').value.toLowerCase().trim();
       const items = document.querySelectorAll('#cmdList .cmd-item');
+      let visibleCount = 0;
+      let firstVisible = null;
+
       items.forEach(it => {
+        it.classList.remove('selected');
         const text = it.textContent.toLowerCase();
-        it.style.display = text.includes(q) ? 'flex' : 'none';
+        const match = !q || text.includes(q);
+        it.style.display = match ? 'flex' : 'none';
+        if (match) {
+          visibleCount++;
+          if (!firstVisible) firstVisible = it;
+        }
       });
+
+      const emptyMsg = document.getElementById('cmdEmptyMsg');
+      if (emptyMsg) {
+        emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+
+      if (firstVisible) {
+        firstVisible.classList.add('selected');
+      }
     }
 
     function handleCmdKey(e) {
@@ -2231,13 +2780,28 @@
           copyEmail();
           break;
         case 'langchain':
-          window.open('https://github.com/langchain-ai/design-agent/pull/50', '_blank');
+          window.open('https://github.com/langchain-ai/design-agent/pull/50', '_blank', 'noopener,noreferrer');
+          break;
+        case 'copilot':
+          window.open('https://github.com/CopilotKit/CopilotKit/pull/8042', '_blank', 'noopener,noreferrer');
+          break;
+        case 'openhands':
+          window.open('https://github.com/OpenHands/software-agent-sdk/pull/6292', '_blank', 'noopener,noreferrer');
+          break;
+        case 'terseai':
+          window.open('https://github.com/TerseAI/durable-actors/pull/400', '_blank', 'noopener,noreferrer');
+          break;
+        case 'aurora':
+          window.open('https://github.com/Arvo-AI/aurora/pull/758', '_blank', 'noopener,noreferrer');
           break;
         case 'nexus':
-          window.open('https://nexus-doc-rag.streamlit.app/', '_blank');
+          window.open('https://nexus-doc-rag.streamlit.app/', '_blank', 'noopener,noreferrer');
           break;
         case 'ecommerce':
-          window.open('https://ecommerce-data-agent.streamlit.app/', '_blank');
+          window.open('https://ecommerce-data-agent.streamlit.app/', '_blank', 'noopener,noreferrer');
+          break;
+        case 'sec-about':
+          location.hash = '#about';
           break;
         case 'sec-opensource':
           location.hash = '#opensource';
@@ -2251,19 +2815,25 @@
         case 'sec-skills':
           location.hash = '#skills';
           break;
+        case 'sec-credentials':
+          location.hash = '#credentials';
+          break;
+        case 'sec-contact':
+          location.hash = '#contact';
+          break;
         case 'dsa':
-          window.open('https://takeuforward.org/profile/karthik0712', '_blank');
+          window.open('https://takeuforward.org/profile/karthik0712', '_blank', 'noopener,noreferrer');
           break;
         case 'github':
-          window.open('https://github.com/katta-karthik', '_blank');
+          window.open('https://github.com/katta-karthik', '_blank', 'noopener,noreferrer');
           break;
         case 'linkedin':
-          window.open('https://www.linkedin.com/in/katta-karthik/', '_blank');
+          window.open('https://www.linkedin.com/in/katta-karthik/', '_blank', 'noopener,noreferrer');
           break;
       }
     }
 
-    // 8. Scrollspy via IntersectionObserver
+    // 9. Scrollspy via IntersectionObserver
     if ('IntersectionObserver' in window) {
       const sections = document.querySelectorAll('section[id]');
       const navLinks = document.querySelectorAll('.nav-links a');
