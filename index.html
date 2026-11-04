@@ -3,40 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Katta Karthik — AI Engineer</title>
-  <meta name="description" content="Portfolio of Katta Karthik — AI Engineer specializing in Autonomous Multi-Agent Systems, Production RAG, and Agentic Data Analytics. Graduated from Vellore Institute of Technology.">
+  <title>Katta Karthik — AI Engineer & Open Source Contributor</title>
+  <meta name="description" content="Portfolio of Katta Karthik — AI Engineer & Open Source Contributor (LangChain, CopilotKit, OpenHands). Specialized in Autonomous Multi-Agent Systems, Production RAG, and Self-Healing Analytics. Graduated from Vellore Institute of Technology.">
   <meta name="author" content="Katta Karthik">
   <link rel="canonical" href="https://katta-karthik.github.io/">
 
-  <!-- Favicon (Inline SVG for zero network request latency) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230f172a'/><text x='16' y='22' font-family='monospace' font-weight='800' font-size='18' fill='%2338bdf8' text-anchor='middle'>K</text></svg>">
+  <!-- Favicon (Inline SVG: Zero network latency) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230a0f1d'/><text x='16' y='22' font-family='monospace' font-weight='800' font-size='18' fill='%2338bdf8' text-anchor='middle'>K</text></svg>">
 
-  <!-- Open Graph & Social Sharing -->
+  <!-- Open Graph & Social Cards -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://katta-karthik.github.io/">
-  <meta property="og:title" content="Katta Karthik — AI Engineer">
-  <meta property="og:description" content="AI Engineer specializing in Autonomous Multi-Agent Systems, Production RAG Platforms, and Self-Healing Analytics. Integrated M.Tech graduate from Vellore Institute of Technology.">
+  <meta property="og:title" content="Katta Karthik — AI Engineer & Open Source Contributor">
+  <meta property="og:description" content="AI Engineer specializing in Autonomous Multi-Agent Systems, Production RAG, and Upstream Open Source (LangChain, CopilotKit, OpenHands). Integrated M.Tech graduate from Vellore Institute of Technology.">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Katta Karthik — AI Engineer">
-  <meta name="twitter:description" content="AI Engineer specializing in Autonomous Multi-Agent Systems, Production RAG Platforms, and Self-Healing Analytics.">
+  <meta name="twitter:description" content="Building Autonomous Multi-Agent Systems, Production RAG, and upstream contributor to LangChain and OpenHands.">
 
-  <meta name="theme-color" content="#090d16">
+  <meta name="theme-color" content="#0a0f1d">
 
-  <!-- Speed Optimizations: DNS Prefetch & Lean Fonts -->
-  <link rel="dns-prefetch" href="//fonts.googleapis.com">
-  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <!-- Ultra-Fast Typography: System Font Stack with Google Font Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 
   <style>
+    /* ── BASE & DESIGN SYSTEM ── */
     :root {
-      --bg: #090d16;
-      --bg-surface: #0f172a;
-      --bg-card: #131c31;
-      --bg-card-hover: #17223b;
+      --bg: #070a12;
+      --bg-surface: #0c1222;
+      --bg-card: #10192e;
+      --bg-card-hover: #14203a;
       --border: rgba(255, 255, 255, 0.08);
-      --border-focus: rgba(56, 189, 248, 0.4);
+      --border-accent: rgba(56, 189, 248, 0.35);
       --text: #f1f5f9;
       --text-muted: #94a3b8;
       --text-faint: #64748b;
@@ -44,8 +43,8 @@
       --accent-glow: rgba(56, 189, 248, 0.15);
       --emerald: #34d399;
       --emerald-glow: rgba(52, 211, 153, 0.15);
-      --violet: #a78bfa;
-      --violet-glow: rgba(167, 139, 250, 0.15);
+      --purple: #a855f7;
+      --purple-glow: rgba(168, 85, 247, 0.15);
       --amber: #fbbf24;
       --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -58,67 +57,63 @@
       font-family: var(--font);
       background-color: var(--bg);
       color: var(--text);
-      line-height: 1.65;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      position: relative;
+      overflow-x: hidden;
     }
 
-    /* GPU-accelerated fixed ambient layer (zero repaint lag on scroll) */
-    body::before {
-      content: '';
+    /* Lightweight Ambient Gradient (GPU Composited, zero repaint lag) */
+    .ambient-bg {
       position: fixed;
       inset: 0;
-      background-image: 
-        radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.08) 0%, transparent 45%),
-        radial-gradient(circle at 100% 30%, rgba(167, 139, 250, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 0% 70%, rgba(52, 211, 153, 0.04) 0%, transparent 40%);
       pointer-events: none;
       z-index: -1;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.09) 0%, transparent 40%),
+        radial-gradient(circle at 90% 40%, rgba(168, 85, 247, 0.06) 0%, transparent 35%),
+        radial-gradient(circle at 10% 80%, rgba(52, 211, 153, 0.05) 0%, transparent 35%);
       transform: translateZ(0);
     }
 
-    ::selection { background: rgba(56, 189, 248, 0.25); color: #fff; }
-    a { color: var(--accent); text-decoration: none; transition: all 0.2s ease; }
+    ::selection { background: rgba(56, 189, 248, 0.3); color: #fff; }
+    a { color: var(--accent); text-decoration: none; transition: color 0.15s ease; }
     a:hover { color: #bae6fd; }
 
     .wrap {
-      max-width: 1040px;
+      max-width: 1060px;
       margin: 0 auto;
-      padding: 0 28px;
+      padding: 0 24px;
     }
 
-    /* ── NAVIGATION ── */
+    /* ── NAVBAR ── */
     nav {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(9, 13, 22, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      background: rgba(7, 10, 18, 0.9);
       border-bottom: 1px solid var(--border);
     }
 
     .nav-bar {
-      max-width: 1040px;
+      max-width: 1060px;
       margin: 0 auto;
-      padding: 0 28px;
+      padding: 0 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 64px;
+      height: 60px;
     }
 
     .nav-logo {
       font-family: var(--mono);
       font-weight: 700;
-      font-size: 0.95rem;
-      letter-spacing: -0.02em;
+      font-size: 0.92rem;
       color: var(--text);
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
 
     .nav-logo span { color: var(--accent); }
@@ -126,37 +121,30 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 2px;
       list-style: none;
     }
 
     .nav-links a {
       font-family: var(--mono);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 500;
       color: var(--text-muted);
-      padding: 6px 14px;
+      padding: 6px 12px;
       border-radius: 6px;
-      transition: all 0.2s ease;
+      transition: all 0.15s ease;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      color: var(--accent);
-      background: rgba(56, 189, 248, 0.08);
-      border-color: rgba(56, 189, 248, 0.2);
-    }
-
-    .nav-links .num {
-      color: var(--accent);
-      margin-right: 4px;
-      font-size: 0.75rem;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.06);
     }
 
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     .btn-resume {
@@ -169,15 +157,14 @@
       color: var(--accent);
       background: rgba(56, 189, 248, 0.08);
       border: 1px solid rgba(56, 189, 248, 0.3);
-      padding: 6px 14px;
+      padding: 5px 14px;
       border-radius: 6px;
-      transition: all 0.2s ease;
+      transition: all 0.15s ease;
     }
 
     .btn-resume:hover {
-      background: rgba(56, 189, 248, 0.16);
-      border-color: var(--accent);
-      color: #fff;
+      background: var(--accent);
+      color: #070a12;
       transform: translateY(-1px);
     }
 
@@ -192,49 +179,66 @@
 
     /* ── HERO ── */
     .hero {
-      padding: 96px 0 44px;
+      padding: 96px 0 40px;
     }
 
-    .hero-content {
-      max-width: 760px;
+    .hero-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
     }
 
-    .status-badge {
+    .badge-status {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       font-family: var(--mono);
-      font-size: 0.78rem;
-      font-weight: 500;
+      font-size: 0.74rem;
+      font-weight: 600;
       color: var(--emerald);
       background: rgba(52, 211, 153, 0.08);
       border: 1px solid rgba(52, 211, 153, 0.25);
-      padding: 5px 14px;
+      padding: 4px 12px;
       border-radius: 999px;
-      margin-bottom: 16px;
     }
 
-    .pulse-dot {
-      width: 8px;
-      height: 8px;
+    .badge-open-source {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--mono);
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+
+    .dot-pulse {
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       background: var(--emerald);
-      box-shadow: 0 0 10px var(--emerald);
+      box-shadow: 0 0 8px var(--emerald);
       animation: pulse 2s infinite ease-in-out;
     }
 
     @keyframes pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.85); }
+      50% { opacity: 0.4; transform: scale(0.8); }
     }
 
     .hero-title {
-      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-size: clamp(2.3rem, 5.2vw, 3.5rem);
       font-weight: 800;
       letter-spacing: -0.04em;
-      line-height: 1.12;
-      color: #fff;
+      line-height: 1.1;
       margin-bottom: 14px;
+      color: #fff;
     }
 
     .hero-title .name-highlight {
@@ -252,22 +256,17 @@
       margin-bottom: 16px;
     }
 
-    .hero-subtitle span {
-      color: var(--text);
-    }
+    .hero-subtitle span { color: var(--text); }
 
     .hero-desc {
-      font-size: 1.02rem;
+      font-size: 1rem;
       color: var(--text-muted);
       line-height: 1.7;
       margin-bottom: 24px;
       max-width: 660px;
     }
 
-    .hero-desc strong {
-      color: var(--text);
-      font-weight: 600;
-    }
+    .hero-desc strong { color: var(--text); font-weight: 600; }
 
     .hero-actions {
       display: flex;
@@ -280,25 +279,25 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: 0.86rem;
+      font-size: 0.85rem;
       font-weight: 600;
       padding: 9px 18px;
       border-radius: 8px;
-      transition: all 0.2s ease;
+      transition: all 0.15s ease;
       cursor: pointer;
     }
 
     .btn-primary {
       background: var(--accent);
-      color: #090d16;
+      color: #070a12;
       border: 1px solid var(--accent);
-      box-shadow: 0 4px 16px rgba(56, 189, 248, 0.25);
+      box-shadow: 0 2px 14px rgba(56, 189, 248, 0.25);
     }
 
     .btn-primary:hover {
       background: #7dd3fc;
-      color: #090d16;
-      box-shadow: 0 6px 22px rgba(56, 189, 248, 0.35);
+      color: #070a12;
+      box-shadow: 0 4px 20px rgba(56, 189, 248, 0.35);
       transform: translateY(-2px);
     }
 
@@ -315,6 +314,87 @@
       transform: translateY(-2px);
     }
 
+    /* ── CREATIVE INTERACTIVE AGENT TERMINAL (TWITTER/X SIGNATURE) ── */
+    .terminal-section {
+      margin: 32px 0 20px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .terminal-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      background: rgba(255, 255, 255, 0.02);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .terminal-dots {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .t-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .t-dot-red { background: #ef4444; }
+    .t-dot-yellow { background: #f59e0b; }
+    .t-dot-green { background: #10b981; }
+
+    .terminal-title {
+      font-family: var(--mono);
+      font-size: 0.74rem;
+      color: var(--text-faint);
+    }
+
+    .terminal-tabs {
+      display: flex;
+      gap: 6px;
+      padding: 8px 16px;
+      background: rgba(0, 0, 0, 0.2);
+      border-bottom: 1px solid var(--border);
+      overflow-x: auto;
+    }
+
+    .term-btn {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+
+    .term-btn:hover,
+    .term-btn.active {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .terminal-body {
+      padding: 16px;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: #94a3b8;
+      line-height: 1.7;
+      min-height: 125px;
+      background: #060911;
+    }
+
+    .terminal-cmd { color: var(--accent); font-weight: 600; margin-bottom: 6px; }
+    .terminal-out { color: #cbd5e1; }
+    .terminal-success { color: var(--emerald); font-weight: 600; }
+    .terminal-dim { color: var(--text-faint); }
+
     /* ── SECTIONS ── */
     .section {
       padding: 56px 0;
@@ -328,7 +408,7 @@
 
     .section-tag {
       font-family: var(--mono);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 600;
       color: var(--accent);
       display: inline-block;
@@ -336,99 +416,126 @@
     }
 
     .section-title {
-      font-size: 1.85rem;
+      font-size: 1.8rem;
       font-weight: 700;
       letter-spacing: -0.03em;
       color: #fff;
     }
 
     .section-sub {
-      font-size: 0.95rem;
+      font-size: 0.94rem;
       color: var(--text-muted);
-      margin-top: 6px;
-      max-width: 600px;
+      margin-top: 4px;
+      max-width: 620px;
     }
 
-    /* ── ABOUT ── */
-    .about-card {
+    /* ── OPEN SOURCE SECTION (BENTO HIGHLIGHT) ── */
+    .os-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .os-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 28px 30px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      padding: 22px;
+      transition: all 0.2s ease;
+      position: relative;
     }
 
-    .about-prose {
-      font-size: 0.98rem;
-      color: var(--text-muted);
-      line-height: 1.8;
-      max-width: 780px;
+    .os-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
     }
 
-    .about-prose p { margin-bottom: 14px; }
-    .about-prose p:last-child { margin-bottom: 0; }
-    .about-prose strong { color: var(--text); font-weight: 600; }
+    .os-card-lead {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.08) 0%, rgba(56, 189, 248, 0.06) 100%), var(--bg-card);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+    }
 
-    .about-footer-badges {
+    .os-header {
       display: flex;
-      gap: 8px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
       flex-wrap: wrap;
-      margin-top: 20px;
-      padding-top: 18px;
-      border-top: 1px solid var(--border);
     }
 
-    .badge-pill {
+    .os-repo-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-family: var(--mono);
-      font-size: 0.76rem;
-      color: var(--text-muted);
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border);
-      padding: 4px 10px;
-      border-radius: 6px;
     }
 
-    .badge-pill strong { color: var(--text); }
+    .os-badge-merged {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #c084fc;
+      background: rgba(168, 85, 247, 0.15);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
 
-    /* ── PROJECTS ── */
+    .os-badge-review {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--emerald);
+      background: rgba(52, 211, 153, 0.12);
+      border: 1px solid rgba(52, 211, 153, 0.3);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    .os-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .os-desc strong { color: var(--text); }
+
+    .os-link-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--mono);
+      font-size: 0.76rem;
+    }
+
+    /* ── FLAGSHIP PROJECTS ── */
     .project-grid {
       display: flex;
       flex-direction: column;
-      gap: 22px;
+      gap: 20px;
     }
 
     .project-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 26px 28px;
-      transition: all 0.25s ease;
+      border-radius: 12px;
+      padding: 24px 26px;
+      transition: all 0.2s ease;
       position: relative;
-      overflow: hidden;
     }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      opacity: 0.9;
-    }
-
-    .card-violet::before { background: linear-gradient(90deg, var(--violet), transparent 80%); }
-    .card-emerald::before { background: linear-gradient(90deg, var(--emerald), transparent 80%); }
-    .card-amber::before { background: linear-gradient(90deg, var(--amber), transparent 80%); }
 
     .project-card:hover {
       border-color: rgba(255, 255, 255, 0.15);
       background: var(--bg-card-hover);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
       transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
     }
 
     .project-top {
@@ -436,7 +543,7 @@
       justify-content: space-between;
       align-items: flex-start;
       gap: 14px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       flex-wrap: wrap;
     }
 
@@ -446,13 +553,13 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      padding: 3px 8px;
+      padding: 2px 8px;
       border-radius: 4px;
       display: inline-block;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
-    .tag-violet { color: var(--violet); background: var(--violet-glow); }
+    .tag-purple { color: #c084fc; background: var(--purple-glow); }
     .tag-emerald { color: var(--emerald); background: var(--emerald-glow); }
     .tag-amber { color: var(--amber); background: rgba(251, 191, 36, 0.12); }
 
@@ -473,23 +580,22 @@
       font-family: var(--mono);
       font-size: 0.76rem;
       font-weight: 600;
-      padding: 6px 12px;
+      padding: 5px 12px;
       border-radius: 6px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      transition: all 0.2s ease;
+      transition: all 0.15s ease;
     }
 
     .proj-btn-demo {
       background: var(--accent);
-      color: #090d16;
+      color: #070a12;
     }
 
     .proj-btn-demo:hover {
       background: #7dd3fc;
-      color: #090d16;
-      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+      color: #070a12;
     }
 
     .proj-btn-code {
@@ -501,32 +607,29 @@
     .proj-btn-code:hover {
       color: #fff;
       border-color: rgba(255, 255, 255, 0.25);
-      background: rgba(255, 255, 255, 0.06);
     }
 
     .project-summary {
-      font-size: 0.94rem;
+      font-size: 0.92rem;
       color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 16px;
+      line-height: 1.65;
+      margin-bottom: 14px;
     }
 
-    .project-summary strong {
-      color: var(--text);
-    }
+    .project-summary strong { color: var(--text); }
 
     .project-highlights {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 8px 14px;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .highlight-item {
       display: flex;
       align-items: flex-start;
       gap: 8px;
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       color: var(--text-muted);
       line-height: 1.45;
     }
@@ -535,33 +638,73 @@
       width: 5px;
       height: 5px;
       border-radius: 50%;
-      margin-top: 7px;
+      margin-top: 6px;
       flex-shrink: 0;
+      background: var(--accent);
     }
-
-    .bullet-violet { background: var(--violet); }
-    .bullet-emerald { background: var(--emerald); }
-    .bullet-amber { background: var(--amber); }
 
     .project-tech {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      padding-top: 16px;
+      padding-top: 14px;
       border-top: 1px solid var(--border);
     }
 
     .tech-pill {
       font-family: var(--mono);
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       color: var(--text-faint);
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.05);
-      padding: 3px 8px;
+      padding: 2px 8px;
       border-radius: 4px;
     }
 
-    /* ── EXPERIENCE & EDUCATION ── */
+    /* ── ABOUT & BENTO SUMMARY ── */
+    .about-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 26px 28px;
+    }
+
+    .about-prose {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      max-width: 780px;
+    }
+
+    .about-prose p { margin-bottom: 12px; }
+    .about-prose p:last-child { margin-bottom: 0; }
+    .about-prose strong { color: var(--text); font-weight: 600; }
+
+    .about-footer-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--mono);
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+
+    .badge-pill strong { color: var(--text); }
+
+    /* ── JOURNEY (EXPERIENCE & EDUCATION) ── */
     .journey-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -572,7 +715,7 @@
       font-size: 1.05rem;
       font-weight: 700;
       color: #fff;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       padding-bottom: 8px;
       border-bottom: 1px solid var(--border);
       display: flex;
@@ -583,13 +726,11 @@
     .timeline-item {
       position: relative;
       padding-left: 20px;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
       border-left: 2px solid var(--border);
     }
 
-    .timeline-item:last-child {
-      margin-bottom: 0;
-    }
+    .timeline-item:last-child { margin-bottom: 0; }
 
     .timeline-item::before {
       content: '';
@@ -601,37 +742,34 @@
       border-radius: 50%;
       background: var(--accent);
       border: 2px solid var(--bg);
-      box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
     }
 
     .timeline-period {
       font-family: var(--mono);
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       font-weight: 600;
       color: var(--accent);
       margin-bottom: 2px;
     }
 
     .timeline-role {
-      font-size: 0.98rem;
+      font-size: 0.96rem;
       font-weight: 700;
       color: #fff;
     }
 
     .timeline-org {
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       color: var(--text-muted);
       margin-bottom: 6px;
     }
 
-    .timeline-org a {
-      color: var(--accent);
-    }
+    .timeline-org a { color: var(--accent); }
 
     .timeline-text {
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       color: var(--text-muted);
-      line-height: 1.6;
+      line-height: 1.55;
     }
 
     .timeline-badge {
@@ -639,7 +777,7 @@
       align-items: center;
       gap: 4px;
       font-family: var(--mono);
-      font-size: 0.76rem;
+      font-size: 0.74rem;
       font-weight: 600;
       color: var(--emerald);
       background: var(--emerald-glow);
@@ -659,49 +797,42 @@
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 20px 22px;
-      transition: all 0.2s ease;
+      padding: 18px 20px;
+      transition: all 0.15s ease;
     }
 
     .skill-card:hover {
       border-color: rgba(56, 189, 248, 0.3);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     }
 
-    .skill-card-head {
-      display: flex;
-      align-items: center;
-      gap: 8px;
+    .skill-card h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #fff;
       margin-bottom: 4px;
     }
 
-    .skill-card-head h4 {
-      font-size: 0.92rem;
-      font-weight: 700;
-      color: #fff;
-    }
-
     .skill-card-desc {
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       color: var(--text-faint);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .skill-pill-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
+      gap: 5px;
     }
 
     .skill-pill {
       font-family: var(--mono);
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       font-weight: 500;
       color: var(--text-muted);
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid var(--border);
-      padding: 3px 8px;
-      border-radius: 5px;
+      padding: 2px 8px;
+      border-radius: 4px;
       transition: all 0.15s ease;
     }
 
@@ -726,19 +857,16 @@
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 14px 18px;
-      text-decoration: none;
-      color: inherit;
-      transition: all 0.2s ease;
+      transition: all 0.15s ease;
     }
 
     .cert-card:hover {
       border-color: rgba(56, 189, 248, 0.4);
-      background: var(--bg-card-hover);
-      transform: translateX(4px);
+      transform: translateX(3px);
     }
 
     .cert-meta h4 {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 700;
       color: #fff;
       margin-bottom: 2px;
@@ -751,7 +879,7 @@
 
     .cert-link-text {
       font-family: var(--mono);
-      font-size: 0.76rem;
+      font-size: 0.75rem;
       color: var(--accent);
       display: flex;
       align-items: center;
@@ -764,14 +892,10 @@
     }
 
     .contact-lead {
-      font-size: 0.98rem;
+      font-size: 0.96rem;
       color: var(--text-muted);
-      line-height: 1.75;
+      line-height: 1.7;
       margin-bottom: 20px;
-    }
-
-    .contact-lead strong {
-      color: var(--text);
     }
 
     .contact-cards {
@@ -787,21 +911,20 @@
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 14px 16px;
-      text-decoration: none;
-      transition: all 0.2s ease;
+      padding: 12px 16px;
+      transition: all 0.15s ease;
+      cursor: pointer;
     }
 
     .contact-box:hover {
       border-color: var(--accent);
       background: var(--bg-card-hover);
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
     }
 
     .contact-icon {
-      width: 36px;
-      height: 36px;
+      width: 34px;
+      height: 34px;
       border-radius: 8px;
       background: rgba(56, 189, 248, 0.08);
       display: flex;
@@ -809,10 +932,6 @@
       justify-content: center;
       color: var(--accent);
       flex-shrink: 0;
-    }
-
-    .contact-detail {
-      overflow: hidden;
     }
 
     .contact-type {
@@ -823,12 +942,11 @@
       text-transform: uppercase;
       letter-spacing: 0.06em;
       color: var(--text-faint);
-      margin-bottom: 2px;
     }
 
     .contact-val {
       display: block;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       font-weight: 600;
       color: var(--text);
       white-space: nowrap;
@@ -836,11 +954,35 @@
       text-overflow: ellipsis;
     }
 
+    /* Copy Email Toast */
+    #copyToast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #10b981;
+      color: #070a12;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 8px;
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.2s ease;
+      pointer-events: none;
+      z-index: 2000;
+    }
+
+    #copyToast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
       padding: 24px 0;
-      text-align: center;
     }
 
     footer p {
@@ -848,25 +990,24 @@
       color: var(--text-faint);
     }
 
-    footer a {
-      color: var(--accent);
-    }
+    footer a { color: var(--accent); }
 
-    /* ── RESPONSIVE OVERHAUL (ALL DEVICES) ── */
+    /* ── RESPONSIVE ── */
     @media (max-width: 860px) {
       .wrap { padding: 0 20px; }
-      .hero { padding: 84px 0 36px; }
-      .section { padding: 46px 0; }
-      .journey-grid, .skills-grid, .contact-cards, .project-highlights {
+      .hero { padding: 84px 0 32px; }
+      .section { padding: 44px 0; }
+      .journey-grid, .skills-grid, .contact-cards, .project-highlights, .os-grid {
         grid-template-columns: 1fr;
       }
+      .os-card-lead { grid-column: 1; }
       .nav-links { display: none; }
       .mob-toggle { display: block; }
       .nav-links.open {
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 64px;
+        top: 60px;
         left: 0;
         right: 0;
         background: var(--bg-surface);
@@ -874,18 +1015,16 @@
         padding: 16px 20px;
         gap: 6px;
       }
-      .project-card { padding: 20px 22px; }
-      .about-card { padding: 22px 20px; }
     }
 
     @media (max-width: 580px) {
       .wrap { padding: 0 16px; }
-      .nav-bar { padding: 0 16px; height: 56px; }
-      .nav-links.open { top: 56px; }
-      .hero { padding: 74px 0 30px; }
-      .hero-title { font-size: 1.95rem; margin-bottom: 10px; }
-      .hero-subtitle { font-size: 1.1rem; margin-bottom: 14px; }
-      .hero-desc { font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px; }
+      .nav-bar { padding: 0 16px; height: 54px; }
+      .nav-links.open { top: 54px; }
+      .hero { padding: 72px 0 24px; }
+      .hero-title { font-size: 1.9rem; }
+      .hero-subtitle { font-size: 1.05rem; }
+      .hero-desc { font-size: 0.9rem; }
       .hero-actions {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -895,34 +1034,21 @@
       .hero-actions .btn-primary {
         grid-column: 1 / -1;
         justify-content: center;
-        padding: 10px 16px;
       }
       .hero-actions .btn-secondary {
         justify-content: center;
         padding: 8px 10px;
-        font-size: 0.8rem;
+        font-size: 0.78rem;
       }
-      .section { padding: 36px 0; }
-      .section-head { margin-bottom: 18px; }
-      .section-title { font-size: 1.5rem; }
-      .project-top {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-      .project-links {
-        width: 100%;
-        justify-content: flex-start;
-      }
-      .about-card, .project-card { padding: 18px 16px; }
-      .about-footer-badges { gap: 6px; }
-      .badge-pill { font-size: 0.72rem; padding: 3px 8px; }
+      .project-top { flex-direction: column; align-items: flex-start; }
       .contact-cards { grid-template-columns: 1fr; }
-      .contact-box { padding: 12px 14px; }
     }
   </style>
 </head>
 <body>
+
+  <!-- Ambient zero-repaint layer -->
+  <div class="ambient-bg"></div>
 
   <!-- Navigation -->
   <nav>
@@ -932,20 +1058,21 @@
       </a>
 
       <ul class="nav-links" id="navMenu">
-        <li><a href="#about"><span class="num">01.</span>About</a></li>
-        <li><a href="#projects"><span class="num">02.</span>Projects</a></li>
-        <li><a href="#journey"><span class="num">03.</span>Journey</a></li>
-        <li><a href="#skills"><span class="num">04.</span>Skills</a></li>
-        <li><a href="#contact"><span class="num">05.</span>Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#opensource">Open Source</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
 
       <div class="nav-actions">
         <a href="Katta_Karthik_Resume.pdf" download class="btn-resume">
-          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/></svg>
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/></svg>
           Resume
         </a>
         <button class="mob-toggle" onclick="document.getElementById('navMenu').classList.toggle('open')" aria-label="Toggle Navigation">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
     </div>
@@ -954,53 +1081,85 @@
   <!-- Hero Section -->
   <header class="hero">
     <div class="wrap">
-      <div class="hero-content">
-        
-        <div class="status-badge">
-          <span class="pulse-dot"></span>
+      
+      <div class="hero-badge-row">
+        <div class="badge-status">
+          <span class="dot-pulse"></span>
           AI Engineer · Available for Full-Time Roles
         </div>
-
-        <h1 class="hero-title">
-          Hi, I'm <span class="name-highlight">Katta Karthik</span>.
-        </h1>
-
-        <div class="hero-subtitle">
-          I build <span>autonomous AI agents</span> & <span>production RAG systems</span>.
+        <div class="badge-open-source">
+          <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          Upstream Contributor @ LangChain & OpenHands
         </div>
-
-        <p class="hero-desc">
-          AI Engineer and Integrated M.Tech graduate in Computer Science & Engineering from <strong>Vellore Institute of Technology</strong>. I engineer reliable, production-grade intelligence — from multi-agent deep research systems with context isolation to self-correcting text-to-SQL analytics.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">
-            Explore My Work
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
-          </a>
-
-          <a href="Katta_Karthik_Resume.pdf" download class="btn btn-secondary">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/></svg>
-            Download Resume
-          </a>
-
-          <a href="https://github.com/katta-karthik" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="GitHub Profile">
-            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            GitHub
-          </a>
-
-          <a href="https://www.linkedin.com/in/katta-karthik/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="LinkedIn Profile">
-            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            LinkedIn
-          </a>
-
-          <a href="https://takeuforward.org/profile/karthik0712" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="DSA Coding Profile">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6M14 4l-4 16"/></svg>
-            DSA Profile
-          </a>
-        </div>
-
       </div>
+
+      <h1 class="hero-title">
+        Hi, I'm <span class="name-highlight">Katta Karthik</span>.
+      </h1>
+
+      <div class="hero-subtitle">
+        I architect <span>autonomous AI agent workflows</span> & <span>enterprise RAG systems</span>.
+      </div>
+
+      <p class="hero-desc">
+        Integrated M.Tech graduate in Computer Science & Engineering from <strong>Vellore Institute of Technology</strong>. Engineering dependable AI systems with LangGraph orchestration, dense + sparse hybrid retrieval, and self-healing error recovery loops.
+      </p>
+
+      <div class="hero-actions">
+        <a href="Katta_Karthik_Resume.pdf" download class="btn btn-primary">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/></svg>
+          Download Resume
+        </a>
+
+        <a href="#opensource" class="btn btn-secondary">
+          ⚡ Open Source
+        </a>
+
+        <a href="#projects" class="btn btn-secondary">
+          🔬 Flagship Systems
+        </a>
+
+        <a href="https://takeuforward.org/profile/karthik0712" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="DSA Profile">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6M14 4l-4 16"/></svg>
+          DSA Profile
+        </a>
+
+        <a href="https://github.com/katta-karthik" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="GitHub Profile">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+
+        <a href="https://www.linkedin.com/in/katta-karthik/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="LinkedIn Profile">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+
+      <!-- CREATIVE LIVE AGENT REPL / SYSTEM SIMULATOR -->
+      <div class="terminal-section">
+        <div class="terminal-bar">
+          <div class="terminal-dots">
+            <span class="t-dot t-dot-red"></span>
+            <span class="t-dot t-dot-yellow"></span>
+            <span class="t-dot t-dot-green"></span>
+          </div>
+          <div class="terminal-title">agent-runtime@katta-karthik:~</div>
+          <div style="font-family: var(--mono); font-size: 0.7rem; color: var(--emerald);">● live</div>
+        </div>
+        <div class="terminal-tabs">
+          <button class="term-btn active" onclick="switchTerminal(0)">langchain-gemini-pr</button>
+          <button class="term-btn" onclick="switchTerminal(1)">nexus-rag-pipeline</button>
+          <button class="term-btn" onclick="switchTerminal(2)">deepscope-agents</button>
+          <button class="term-btn" onclick="switchTerminal(3)">self-healing-sql</button>
+        </div>
+        <div class="terminal-body" id="termOutput">
+          <div class="terminal-cmd">$ gh pr view 50 --repo langchain-ai/design-agent</div>
+          <div class="terminal-out">State: <span class="os-badge-merged" style="display:inline-block; font-size:0.7rem;">MERGED</span> | Author: katta-karthik (+456, -70)</div>
+          <div>Routing image generation to Google Gemini image models via generateContent...</div>
+          <div class="terminal-success">✓ 2K resolution & aspect ratio mapping configured. CI 1,341 unit & contract tests passed.</div>
+        </div>
+      </div>
+
     </div>
   </header>
 
@@ -1009,54 +1168,157 @@
     <div class="wrap">
       <div class="section-head">
         <div class="section-tag">01. About</div>
-        <h2 class="section-title">Background & Focus</h2>
+        <h2 class="section-title">Background & Architecture Philosophy</h2>
       </div>
 
       <div class="about-card">
         <div class="about-prose">
           <p>
-            I am a graduate with an <strong>Integrated M.Tech in Computer Science & Engineering from Vellore Institute of Technology</strong>. I specialize in architecting autonomous AI agents, enterprise-grade retrieval architectures, and intelligent software systems that solve real-world problems with reliability and precision.
+            I am a graduate with an <strong>Integrated M.Tech in Computer Science & Engineering from Vellore Institute of Technology</strong>. I build production-grade AI systems designed for factual grounding, context isolation, and execution resilience.
           </p>
           <p>
-            My core capabilities center on building end-to-end production AI applications: orchestrating <strong>stateful multi-agent systems</strong> with LangGraph that autonomously decompose and execute complex research workflows, designing <strong>dense-sparse hybrid RAG pipelines</strong> combining ChromaDB, BM25, and FlashRank cross-encoder reranking for zero-hallucination document intelligence, and constructing <strong>self-healing data agents</strong> that automatically diagnose runtime SQL errors and repair queries in real time.
+            My engineering focuses on solving core failure points in modern GenAI: orchestrating <strong>multi-agent graphs</strong> with LangGraph that divide cognitive loads across specialized roles, implementing <strong>dense + sparse hybrid retrieval</strong> (BM25 + ChromaDB with Reciprocal Rank Fusion) and FlashRank cross-encoder reranking for verifiable citations, and constructing <strong>self-healing execution loops</strong> that recover from runtime errors autonomously.
           </p>
           <p>
-            Beyond system architecture, I actively contribute to upstream open-source AI agent ecosystems—authoring merged features and reliability fixes in <strong>LangChain</strong>, <strong>CopilotKit</strong>, and <strong>OpenHands</strong>. I also bring hands-on experience in AI safety and red-teaming through freelance work at <a href="https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing" target="_blank">Soul AI (Project Shield)</a>, testing model boundaries and enforcing strict instruction compliance. In addition, I maintain a rigorous problem-solving practice on my <a href="https://takeuforward.org/profile/karthik0712" target="_blank">DSA coding profile</a>, and enjoy competitive chess when away from the terminal.
+            Beyond architecting standalone platforms, I actively contribute to upstream open-source AI agent ecosystems—shipping merged features and runtime fixes to official repositories under <strong>LangChain</strong>, alongside active contributions to <strong>CopilotKit</strong> and <strong>OpenHands</strong>. I also bring hands-on experience in AI safety and red-teaming through freelance work at <a href="https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing" target="_blank">Soul AI (Project Shield)</a>, and maintain a competitive problem-solving practice on my <a href="https://takeuforward.org/profile/karthik0712" target="_blank">TakeUForward DSA profile</a>.
           </p>
         </div>
 
         <div class="about-footer-badges">
           <div class="badge-pill">🎓 Degree: <strong>Integrated M.Tech CSE</strong></div>
-          <div class="badge-pill">🏛️ Alma Mater: <strong>Vellore Institute of Technology</strong></div>
-          <div class="badge-pill">⚡ Core Stack: <strong>LangGraph, Python & RAG</strong></div>
-          <div class="badge-pill">🎯 Focus: <strong>Agentic Systems & GenAI Engineering</strong></div>
+          <div class="badge-pill">🏛️ College: <strong>Vellore Institute of Technology</strong></div>
+          <div class="badge-pill">⚡ Core: <strong>LangGraph · Hybrid RAG · Multi-Agent</strong></div>
+          <div class="badge-pill">🌐 Upstream: <strong>LangChain · OpenHands · CopilotKit</strong></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- Open Source Contributions Section (Creative Bento) -->
+  <section class="section" id="opensource">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-tag">02. Upstream Open Source</div>
+        <h2 class="section-title">Open Source Contributions</h2>
+        <p class="section-sub">Upstream pull requests and merged architectural enhancements in premier agent ecosystems.</p>
+      </div>
+
+      <div class="os-grid">
+        <!-- LangChain Merged Featured Bento Card -->
+        <div class="os-card os-card-lead">
+          <div class="os-header">
+            <span class="os-repo-title">
+              🦜 langchain-ai / design-agent
+            </span>
+            <span class="os-badge-merged">🟣 Merged Upstream</span>
+          </div>
+          <p class="os-desc">
+            Contributed to LangChain's official generative design agent repository:
+            <br>
+            • <strong><a href="https://github.com/langchain-ai/design-agent/pull/50" target="_blank">PR #50 (Merged)</a></strong>: Added Google Gemini image models as a first-class image generation provider via <code>generateContent</code>, supporting aspect-ratio mapping, 2K resolution, and parallel generation (<strong>+456, -70</strong>).
+            <br>
+            • <strong><a href="https://github.com/langchain-ai/design-agent/pull/38" target="_blank">PR #38 (Merged)</a></strong>: Windows cross-platform timezone runtime fix (PEP 615 / <code>tzdata</code>) and POSIX stat guard in unit test suite.
+            <br>
+            • <strong><a href="https://github.com/langchain-ai/design-agent/pull/53" target="_blank">PR #53 (In Review)</a></strong>: <code>HostMediaErrorBoundary</code> middleware wrapping media and fetch tools to catch API timeouts and return clean error states without crashing agent graphs (<strong>+503, -3</strong>).
+          </p>
+          <div class="os-link-row">
+            <a href="https://github.com/langchain-ai/design-agent/pull/50" target="_blank">View Gemini PR #50 ↗</a>
+            <span style="color:var(--text-faint);">·</span>
+            <a href="https://github.com/langchain-ai/design-agent/pull/38" target="_blank">View Windows PR #38 ↗</a>
+            <span style="color:var(--text-faint);">·</span>
+            <a href="https://github.com/langchain-ai/design-agent/pull/53" target="_blank">View Error Boundary PR #53 ↗</a>
+          </div>
+        </div>
+
+        <!-- CopilotKit Card -->
+        <div class="os-card">
+          <div class="os-header">
+            <span class="os-repo-title">
+              🦾 CopilotKit / CopilotKit
+            </span>
+            <span class="os-badge-review">🟢 In Review · 18k+ ⭐</span>
+          </div>
+          <p class="os-desc">
+            <strong><a href="https://github.com/CopilotKit/CopilotKit/pull/8042" target="_blank">PR #8042</a></strong>: Fixed core agent lifecycle bug where aborted runs left unanswered tool calls in agent messages, preventing downstream OpenAI 400 errors. Added synthetic stopped results and cleaned dangling placeholders (<strong>+747, -16</strong>).
+          </p>
+          <div class="os-link-row">
+            <a href="https://github.com/CopilotKit/CopilotKit/pull/8042" target="_blank">View Pull Request #8042 ↗</a>
+          </div>
+        </div>
+
+        <!-- OpenHands Card -->
+        <div class="os-card">
+          <div class="os-header">
+            <span class="os-repo-title">
+              🤖 OpenHands / software-agent-sdk
+            </span>
+            <span class="os-badge-review">🟢 In Review · 45k+ ⭐</span>
+          </div>
+          <p class="os-desc">
+            <strong><a href="https://github.com/OpenHands/software-agent-sdk/pull/6292" target="_blank">PR #6292</a></strong>: Fixed unhandled Pydantic <code>extra_forbidden</code> crashes when LLMs emit variant parameter names (e.g. <code>description</code> or <code>instruction</code> instead of <code>summary</code>) with schema boundary filtering (<strong>+504, -14</strong>).
+          </p>
+          <div class="os-link-row">
+            <a href="https://github.com/OpenHands/software-agent-sdk/pull/6292" target="_blank">View Pull Request #6292 ↗</a>
+          </div>
+        </div>
+
+        <!-- TerseAI Card -->
+        <div class="os-card">
+          <div class="os-header">
+            <span class="os-repo-title">
+              ⚡ TerseAI / durable-actors
+            </span>
+            <span class="os-badge-review">🟢 In Review</span>
+          </div>
+          <p class="os-desc">
+            <strong><a href="https://github.com/TerseAI/durable-actors/pull/400" target="_blank">PR #400</a></strong>: Architected first-class persistence adapters for LangGraph and LangChain in Python SDK (<code>DurableActorSaver</code> & <code>DurableActorChatMessageHistory</code>) with WebSocket state emission and time-travel tests (<strong>+4,532, -7</strong>).
+          </p>
+          <div class="os-link-row">
+            <a href="https://github.com/TerseAI/durable-actors/pull/400" target="_blank">View Pull Request #400 ↗</a>
+          </div>
+        </div>
+
+        <!-- Arvo-AI Card -->
+        <div class="os-card">
+          <div class="os-header">
+            <span class="os-repo-title">
+              🛡️ Arvo-AI / aurora
+            </span>
+            <span class="os-badge-review">🟢 In Review</span>
+          </div>
+          <p class="os-desc">
+            <strong><a href="https://github.com/Arvo-AI/aurora/pull/758" target="_blank">PR #758</a></strong>: Resolved incident remediation suggestion status sync issues by deriving suggestion status directly from command execution results instead of chat session state (#566).
+          </p>
+          <div class="os-link-row">
+            <a href="https://github.com/Arvo-AI/aurora/pull/758" target="_blank">View Pull Request #758 ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flagship Projects Section -->
   <section class="section" id="projects">
     <div class="wrap">
       <div class="section-head">
-        <div class="section-tag">02. Projects</div>
-        <h2 class="section-title">Flagship Implementations</h2>
+        <div class="section-tag">03. Systems</div>
+        <h2 class="section-title">Flagship AI Architectures</h2>
         <p class="section-sub">Production-oriented AI systems engineered for resilience, factual grounding, and execution reliability.</p>
       </div>
 
       <div class="project-grid">
 
         <!-- DeepScope -->
-        <article class="project-card card-violet">
+        <article class="project-card">
           <div class="project-top">
             <div>
-              <span class="project-tag tag-violet">Multi-Agent Research Architecture</span>
+              <span class="project-tag tag-purple">Multi-Agent Research Architecture</span>
               <h3 class="project-title">DeepScope</h3>
             </div>
             <div class="project-links">
               <a href="https://github.com/katta-karthik/DeepScope" target="_blank" rel="noopener noreferrer" class="proj-btn proj-btn-code">
                 Source Code
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
               </a>
             </div>
           </div>
@@ -1064,10 +1326,10 @@
             Single-pass LLM prompts degrade quickly on comprehensive research tasks due to context dilution and token bloat. <strong>DeepScope</strong> resolves this by decomposing complex inquiries across a team of specialized LangChain Deep Agents orchestrated with <strong>LangGraph</strong>.
           </p>
           <div class="project-highlights">
-            <div class="highlight-item"><span class="highlight-bullet bullet-violet"></span>Lead agent parses objectives and autonomously constructs structured inquiry plans.</div>
-            <div class="highlight-item"><span class="highlight-bullet bullet-violet"></span>Specialized subagents conduct web research and persist raw findings directly to disk.</div>
-            <div class="highlight-item"><span class="highlight-bullet bullet-violet"></span>Filesystem-backed context isolation prevents memory leaks and hallucination.</div>
-            <div class="highlight-item"><span class="highlight-bullet bullet-violet"></span>Dedicated fact-verifier performs gap analysis prior to synthesizing final reports.</div>
+            <div class="highlight-item"><span class="highlight-bullet"></span>Lead agent parses objectives and autonomously constructs structured inquiry plans.</div>
+            <div class="highlight-item"><span class="highlight-bullet"></span>Specialized subagents conduct web research and persist raw findings directly to disk.</div>
+            <div class="highlight-item"><span class="highlight-bullet"></span>Filesystem-backed context isolation prevents memory leaks and hallucination.</div>
+            <div class="highlight-item"><span class="highlight-bullet"></span>Dedicated fact-verifier performs gap analysis prior to synthesizing final reports.</div>
           </div>
           <div class="project-tech">
             <span class="tech-pill">Python</span>
@@ -1079,7 +1341,7 @@
         </article>
 
         <!-- NexusRAG -->
-        <article class="project-card card-emerald">
+        <article class="project-card">
           <div class="project-top">
             <div>
               <span class="project-tag tag-emerald">Enterprise RAG Lifecycle</span>
@@ -1091,7 +1353,7 @@
               </a>
               <a href="https://github.com/katta-karthik/Nexus_RAG" target="_blank" rel="noopener noreferrer" class="proj-btn proj-btn-code">
                 Source Code
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
               </a>
             </div>
           </div>
@@ -1099,10 +1361,10 @@
             Standard dense retrieval frequently misses critical precision tokens like IDs, numerical metrics, or specific dates. <strong>NexusRAG</strong> implements a high-performance <strong>dense + sparse hybrid retrieval platform</strong> with a visual 7-stage processing pipeline.
           </p>
           <div class="project-highlights">
-            <div class="highlight-item"><span class="highlight-bullet bullet-emerald"></span>Visual 7-stage ingestion: document parsing, cleaning, semantic chunking, and AI synthesis.</div>
-            <div class="highlight-item"><span class="highlight-bullet bullet-emerald"></span>ChromaDB dense vectors + BM25 keyword matching fused via Reciprocal Rank Fusion (RRF).</div>
-            <div class="highlight-item"><span class="highlight-bullet bullet-emerald"></span>FlashRank cross-encoder reranking filters false positives before LLM ingestion.</div>
-            <div class="highlight-item"><span class="highlight-bullet bullet-emerald"></span>Sub-second Groq LPU inference delivering page-level citations for every output.</div>
+            <div class="highlight-item"><span class="highlight-bullet"></span>Visual 7-stage ingestion: document parsing, cleaning, semantic chunking, and AI synthesis.</div>
+            <div class="highlight-item"><span class="highlight-bullet"></span>ChromaDB dense vectors + BM25 keyword matching fused via Reciprocal Rank Fusion (RRF).</div>
+            <div class="highlight-item"><span class="highlight-bullet"></span>FlashRank cross-encoder reranking filters false positives before LLM ingestion.</div>
+            <div class="highlight-item"><span class="highlight-bullet"></span>Sub-second Groq LPU inference delivering page-level citations for every output.</div>
           </div>
           <div class="project-tech">
             <span class="tech-pill">Python</span>
@@ -1115,7 +1377,7 @@
         </article>
 
         <!-- E-commerce AI Analytics -->
-        <article class="project-card card-amber">
+        <article class="project-card">
           <div class="project-top">
             <div>
               <span class="project-tag tag-amber">Autonomous Agentic Analytics</span>
@@ -1127,7 +1389,7 @@
               </a>
               <a href="https://github.com/katta-karthik/ai_agent_for_ecommerce-data" target="_blank" rel="noopener noreferrer" class="proj-btn proj-btn-code">
                 Source Code
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
               </a>
             </div>
           </div>
@@ -1135,10 +1397,10 @@
             Traditional text-to-SQL workflows fail silently when encountering unexpected database schemas or minor SQL errors. This project introduces a <strong>stateful, self-healing agent</strong> that autonomously detects execution failures and performs real-time SQL correction.
           </p>
           <div class="project-highlights">
-            <div class="highlight-item"><span class="highlight-bullet bullet-amber"></span>LangGraph StateGraph managing iterative query planning, execution, and error triage.</div>
-            <div class="highlight-item"><span class="highlight-bullet bullet-amber"></span>Self-healing execution loop automatically diagnoses SQLite exceptions and rewrites queries.</div>
-            <div class="highlight-item"><span class="highlight-bullet bullet-amber"></span>Strict read-only sandbox defended against injection using Meta Prompt Guard 86M.</div>
-            <div class="highlight-item"><span class="highlight-bullet bullet-amber"></span>Autonomous chart generation and tool exposure via Model Context Protocol (MCP).</div>
+            <div class="highlight-item"><span class="highlight-bullet"></span>LangGraph StateGraph managing iterative query planning, execution, and error triage.</div>
+            <div class="highlight-item"><span class="highlight-bullet"></span>Self-healing execution loop automatically diagnoses SQLite exceptions and rewrites queries.</div>
+            <div class="highlight-item"><span class="highlight-bullet"></span>Strict read-only sandbox defended against injection using Meta Prompt Guard 86M.</div>
+            <div class="highlight-item"><span class="highlight-bullet"></span>Autonomous chart generation and tool exposure via Model Context Protocol (MCP).</div>
           </div>
           <div class="project-tech">
             <span class="tech-pill">LangGraph</span>
@@ -1158,14 +1420,14 @@
   <section class="section" id="journey">
     <div class="wrap">
       <div class="section-head">
-        <div class="section-tag">03. Journey</div>
+        <div class="section-tag">04. Journey</div>
         <h2 class="section-title">Experience & Education</h2>
       </div>
 
       <div class="journey-grid">
         <!-- Experience -->
         <div class="journey-col">
-          <h3>💼 Work Experience</h3>
+          <h3>💼 Work & Open Source Experience</h3>
 
           <div class="timeline-item">
             <div class="timeline-period">2026 — Present</div>
@@ -1176,7 +1438,7 @@
               </a>
             </div>
             <p class="timeline-text">
-              Active contributor to upstream AI agent ecosystems. Shipped merged features and core reliability fixes in <strong>langchain-ai/design-agent</strong> (Gemini image generation provider & Windows runtime), <strong>CopilotKit</strong> (cancellation lifecycle & tool resolution), and <strong>OpenHands</strong> (tool invocation boundary resilience).
+              Active contributor to upstream AI agent ecosystems. Shipped merged features and core reliability fixes in <strong>langchain-ai/design-agent</strong> (Google Gemini image generation provider & Windows runtime), <strong>CopilotKit</strong> (cancellation lifecycle & tool resolution), and <strong>OpenHands</strong> (tool invocation boundary resilience).
             </p>
           </div>
 
@@ -1229,15 +1491,13 @@
   <section class="section" id="skills">
     <div class="wrap">
       <div class="section-head">
-        <div class="section-tag">04. Skills</div>
+        <div class="section-tag">05. Arsenal</div>
         <h2 class="section-title">Technical Expertise</h2>
       </div>
 
       <div class="skills-grid">
         <div class="skill-card">
-          <div class="skill-card-head">
-            <h4>🤖 Agentic AI & Orchestration</h4>
-          </div>
+          <h4>🤖 Agentic AI & Orchestration</h4>
           <div class="skill-card-desc">Stateful architectures, tool calling, and multi-agent coordination</div>
           <div class="skill-pill-container">
             <span class="skill-pill">LangGraph</span>
@@ -1252,9 +1512,7 @@
         </div>
 
         <div class="skill-card">
-          <div class="skill-card-head">
-            <h4>🔍 Advanced RAG & Retrieval</h4>
-          </div>
+          <h4>🔍 Advanced RAG & Retrieval</h4>
           <div class="skill-card-desc">Dense + sparse hybrid search and grounded document QA</div>
           <div class="skill-pill-container">
             <span class="skill-pill">Hybrid Search</span>
@@ -1268,9 +1526,7 @@
         </div>
 
         <div class="skill-card">
-          <div class="skill-card-head">
-            <h4>🧠 Models, Safety & Evaluation</h4>
-          </div>
+          <h4>🧠 Models, Safety & Evaluation</h4>
           <div class="skill-card-desc">Inference optimization, red-teaming, and guardrails</div>
           <div class="skill-pill-container">
             <span class="skill-pill">Meta LLaMA 3.x</span>
@@ -1285,9 +1541,7 @@
         </div>
 
         <div class="skill-card">
-          <div class="skill-card-head">
-            <h4>⚙️ Software Engineering & Tools</h4>
-          </div>
+          <h4>⚙️ Software Engineering & Tools</h4>
           <div class="skill-card-desc">Backend development, databases, and deployment</div>
           <div class="skill-pill-container">
             <span class="skill-pill">Python</span>
@@ -1351,31 +1605,31 @@
   <section class="section" id="contact">
     <div class="wrap">
       <div class="section-head">
-        <div class="section-tag">05. Contact</div>
+        <div class="section-tag">06. Connect</div>
         <h2 class="section-title">Let's Connect</h2>
       </div>
 
       <div class="contact-container">
         <p class="contact-lead">
-          I am actively evaluating <strong>AI Engineering</strong>, <strong>Agentic AI</strong>, and <strong>Software Engineering</strong> roles. If you are building innovative AI products, have an open opportunity, or would like to discuss my projects — feel free to reach out directly.
+          I am actively evaluating <strong>AI Engineering</strong>, <strong>Agentic AI</strong>, and <strong>Software Engineering</strong> roles. If you are building innovative AI products, have an open opportunity, or would like to discuss my systems — feel free to reach out directly.
         </p>
 
         <div class="contact-cards">
-          <a href="mailto:kattakarthik8008@gmail.com" class="contact-box">
+          <div class="contact-box" onclick="copyEmail()">
             <div class="contact-icon">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </div>
-            <div class="contact-detail">
-              <span class="contact-type">Email</span>
-              <span class="contact-val">kattakarthik8008@gmail.com</span>
+            <div>
+              <span class="contact-type">Email (Click to Copy)</span>
+              <span class="contact-val" id="emailVal">kattakarthik8008@gmail.com</span>
             </div>
-          </a>
+          </div>
 
           <a href="https://www.linkedin.com/in/katta-karthik/" target="_blank" rel="noopener noreferrer" class="contact-box">
             <div class="contact-icon">
-              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
             </div>
-            <div class="contact-detail">
+            <div>
               <span class="contact-type">LinkedIn</span>
               <span class="contact-val">in/katta-karthik</span>
             </div>
@@ -1383,9 +1637,9 @@
 
           <a href="https://github.com/katta-karthik" target="_blank" rel="noopener noreferrer" class="contact-box">
             <div class="contact-icon">
-              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             </div>
-            <div class="contact-detail">
+            <div>
               <span class="contact-type">GitHub</span>
               <span class="contact-val">katta-karthik</span>
             </div>
@@ -1393,9 +1647,9 @@
 
           <a href="tel:+918008456790" class="contact-box">
             <div class="contact-icon">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </div>
-            <div class="contact-detail">
+            <div>
               <span class="contact-type">Phone</span>
               <span class="contact-val">+91 8008456790</span>
             </div>
@@ -1409,14 +1663,18 @@
   <footer>
     <div class="wrap" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
       <p>
-        Crafted by <a href="https://github.com/katta-karthik" target="_blank" rel="noopener noreferrer">Katta Karthik</a> · Vellore Institute of Technology
+        Built by <a href="https://github.com/katta-karthik" target="_blank" rel="noopener noreferrer">Katta Karthik</a> · Vellore Institute of Technology
       </p>
       <a href="#" style="font-family: var(--mono); font-size: 0.8rem; color: var(--text-faint);">Back to top ↑</a>
     </div>
   </footer>
 
+  <!-- Toast for Copy Email -->
+  <div id="copyToast">Copied to clipboard! 📋</div>
+
+  <!-- Lightweight Vanilla JS (Instant execution, Zero Dependencies) -->
   <script>
-    // 1. Mobile Menu: Auto-close on navigation item click
+    // 1. Mobile Menu Auto-Close
     const navMenu = document.getElementById('navMenu');
     document.querySelectorAll('#navMenu a').forEach(item => {
       item.addEventListener('click', () => {
@@ -1424,36 +1682,78 @@
       });
     });
 
-    // 2. Keyboard Accessibility: Close mobile menu on Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && navMenu && navMenu.classList.contains('open')) {
         navMenu.classList.remove('open');
       }
     });
 
-    // 3. Scrollspy: Highlight active navigation link smoothly (Zero CPU overhead via IntersectionObserver)
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    // 2. Interactive Agent REPL Simulator
+    const termLogs = [
+      {
+        cmd: "$ gh pr view 50 --repo langchain-ai/design-agent",
+        out: "State: MERGED | Author: katta-karthik (+456, -70)",
+        detail: "Routing image generation to Google Gemini image models via generateContent...",
+        status: "✓ 2K resolution & aspect ratio mapping configured. CI 1,341 unit & contract tests passed."
+      },
+      {
+        cmd: "$ python -m nexus_rag.pipeline --eval",
+        out: "Ingesting 7-stage document corpus... Generating BM25 sparse + ChromaDB dense vectors",
+        detail: "Applying Reciprocal Rank Fusion (RRF) -> FlashRank cross-encoder reranking top-3 chunks...",
+        status: "✓ Sub-second Groq LPU inference latency: 142ms. Page-level citations verified."
+      },
+      {
+        cmd: "$ python -m deepscope.orchestrator --target 'agentic-ai-2026'",
+        out: "LangGraph StateGraph initialized. Lead Coordinator decomposing research inquiry...",
+        detail: "Subagents dispatched to web worker threads with FilesystemBackend isolation...",
+        status: "✓ Fact-verifier validated citations against raw markdown reports without context bloat."
+      },
+      {
+        cmd: "$ python -m ecommerce_agent.runner --query 'top-selling-category-q3'",
+        out: "Translating prompt to SQL -> Caught SQLite syntax exception: missing column 'order_date'",
+        detail: "Self-healing retry loop triggered: inspecting database schema pragma and repairing query...",
+        status: "✓ Query self-repaired and executed. Prompt Guard 86M verified 0 injection attempts."
+      }
+    ];
 
+    function switchTerminal(idx) {
+      const btns = document.querySelectorAll('.term-btn');
+      btns.forEach((b, i) => b.classList.toggle('active', i === idx));
+      const log = termLogs[idx];
+      const out = document.getElementById('termOutput');
+      out.innerHTML = `
+        <div class="terminal-cmd">${log.cmd}</div>
+        <div class="terminal-out">${log.out}</div>
+        <div class="terminal-dim">${log.detail}</div>
+        <div class="terminal-success">${log.status}</div>
+      `;
+    }
+
+    // 3. One-Click Copy Email with Toast
+    function copyEmail() {
+      const email = "kattakarthik8008@gmail.com";
+      navigator.clipboard.writeText(email).then(() => {
+        const toast = document.getElementById('copyToast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2200);
+      });
+    }
+
+    // 4. Lightweight Scrollspy
     if ('IntersectionObserver' in window) {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-links a');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             const id = entry.target.getAttribute('id');
             navLinks.forEach(link => {
-              if (link.getAttribute('href') === `#${id}`) {
-                link.classList.add('active');
-              } else {
-                link.classList.remove('active');
-              }
+              link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
             });
           }
         });
-      }, {
-        rootMargin: '-20% 0px -70% 0px'
-      });
-
-      sections.forEach(section => observer.observe(section));
+      }, { rootMargin: '-20% 0px -70% 0px' });
+      sections.forEach(s => observer.observe(s));
     }
   </script>
 
