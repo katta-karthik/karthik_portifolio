@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Katta Karthik — AI Engineer</title>
-  <meta name="description" content="Portfolio of Katta Karthik — AI Engineer specializing in Autonomous Multi-Agent Systems, Production RAG, and Agentic Data Analytics. Graduated from Vellore Institute of Technology.">
+  <title>Katta Karthik — AI Engineer & Open Source Contributor</title>
+  <meta name="description" content="Portfolio of Katta Karthik — AI Engineer & Upstream Open Source Contributor (LangChain, CopilotKit, OpenHands). Specialized in Autonomous Multi-Agent Systems, Production RAG, and Self-Healing Analytics.">
   <meta name="author" content="Katta Karthik">
   <link rel="canonical" href="https://katta-karthik.github.io/">
 
@@ -391,7 +391,110 @@
       border-radius: 6px;
     }
 
-    .badge-pill strong { color: var(--text); }
+        .badge-pill strong { color: var(--text); }
+
+    /* ── OPEN SOURCE ── */
+    .os-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .os-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 26px;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .os-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      opacity: 0.9;
+    }
+
+    .os-lead {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, rgba(167, 139, 250, 0.06) 0%, rgba(56, 189, 248, 0.04) 100%), var(--bg-card);
+      border-color: rgba(167, 139, 250, 0.3);
+    }
+
+    .os-lead::before { background: linear-gradient(90deg, var(--violet), var(--accent)); }
+    .os-emerald::before { background: linear-gradient(90deg, var(--emerald), transparent 80%); }
+    .os-accent::before { background: linear-gradient(90deg, var(--accent), transparent 80%); }
+    .os-violet::before { background: linear-gradient(90deg, var(--violet), transparent 80%); }
+
+    .os-card:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      background: var(--bg-card-hover);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .os-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .os-repo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .os-badge-merged {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--violet);
+      background: var(--violet-glow);
+      border: 1px solid rgba(167, 139, 250, 0.3);
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+
+    .os-badge-review {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--emerald);
+      background: var(--emerald-glow);
+      border: 1px solid rgba(52, 211, 153, 0.3);
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+
+    .os-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    .os-desc strong { color: var(--text); font-weight: 600; }
+
+    .os-link-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      flex-wrap: wrap;
+    }
 
     /* ── PROJECTS ── */
     .project-grid {
@@ -857,9 +960,10 @@
       .wrap { padding: 0 20px; }
       .hero { padding: 84px 0 36px; }
       .section { padding: 46px 0; }
-      .journey-grid, .skills-grid, .contact-cards, .project-highlights {
+      .journey-grid, .skills-grid, .contact-cards, .project-highlights, .os-grid {
         grid-template-columns: 1fr;
       }
+      .os-lead { grid-column: 1; }
       .nav-links { display: none; }
       .mob-toggle { display: block; }
       .nav-links.open {
@@ -914,7 +1018,7 @@
         width: 100%;
         justify-content: flex-start;
       }
-      .about-card, .project-card { padding: 18px 16px; }
+      .about-card, .project-card, .os-card { padding: 18px 16px; }
       .about-footer-badges { gap: 6px; }
       .badge-pill { font-size: 0.72rem; padding: 3px 8px; }
       .contact-cards { grid-template-columns: 1fr; }
@@ -933,10 +1037,11 @@
 
       <ul class="nav-links" id="navMenu">
         <li><a href="#about"><span class="num">01.</span>About</a></li>
-        <li><a href="#projects"><span class="num">02.</span>Projects</a></li>
-        <li><a href="#journey"><span class="num">03.</span>Journey</a></li>
-        <li><a href="#skills"><span class="num">04.</span>Skills</a></li>
-        <li><a href="#contact"><span class="num">05.</span>Contact</a></li>
+        <li><a href="#opensource"><span class="num">02.</span>Open Source</a></li>
+        <li><a href="#projects"><span class="num">03.</span>Projects</a></li>
+        <li><a href="#journey"><span class="num">04.</span>Journey</a></li>
+        <li><a href="#skills"><span class="num">05.</span>Skills</a></li>
+        <li><a href="#contact"><span class="num">06.</span>Contact</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -956,9 +1061,14 @@
     <div class="wrap">
       <div class="hero-content">
         
-        <div class="status-badge">
-          <span class="pulse-dot"></span>
-          AI Engineer · Available for Full-Time Roles
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px;">
+          <div class="status-badge" style="margin-bottom: 0;">
+            <span class="pulse-dot"></span>
+            AI Engineer · Available for Full-Time Roles
+          </div>
+          <div class="status-badge" style="margin-bottom: 0; color: var(--accent); background: rgba(56, 189, 248, 0.08); border-color: rgba(56, 189, 248, 0.25);">
+            ⚡ Upstream Contributor @ LangChain & OpenHands
+          </div>
         </div>
 
         <h1 class="hero-title">
@@ -966,17 +1076,21 @@
         </h1>
 
         <div class="hero-subtitle">
-          I build <span>autonomous AI agents</span> & <span>production RAG systems</span>.
+          I build <span>autonomous AI agents</span> & contribute to <span>upstream open source</span>.
         </div>
 
         <p class="hero-desc">
-          AI Engineer and Integrated M.Tech graduate in Computer Science & Engineering from <strong>Vellore Institute of Technology</strong>. I engineer reliable, production-grade intelligence — from multi-agent deep research systems with context isolation to self-correcting text-to-SQL analytics.
+          AI Engineer and Integrated M.Tech graduate in Computer Science & Engineering from <strong>Vellore Institute of Technology</strong>. Active upstream contributor to <strong>LangChain</strong>, <strong>CopilotKit</strong>, and <strong>OpenHands</strong>. I engineer reliable, production-grade intelligence — from multi-agent deep research systems with context isolation to self-correcting text-to-SQL analytics.
         </p>
 
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">
             Explore My Work
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+          </a>
+
+          <a href="#opensource" class="btn btn-secondary">
+            ⚡ Open Source
           </a>
 
           <a href="Katta_Karthik_Resume.pdf" download class="btn btn-secondary">
@@ -1021,7 +1135,7 @@
             My core capabilities center on building end-to-end production AI applications: orchestrating <strong>stateful multi-agent systems</strong> with LangGraph that autonomously decompose and execute complex research workflows, designing <strong>dense-sparse hybrid RAG pipelines</strong> combining ChromaDB, BM25, and FlashRank cross-encoder reranking for zero-hallucination document intelligence, and constructing <strong>self-healing data agents</strong> that automatically diagnose runtime SQL errors and repair queries in real time.
           </p>
           <p>
-            Beyond system architecture, I bring hands-on experience in AI safety and red-teaming through freelance work at <a href="https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing" target="_blank">Soul AI (Project Shield)</a>, testing model boundaries and enforcing strict instruction compliance. I also maintain a rigorous problem-solving practice on my <a href="https://takeuforward.org/profile/karthik0712" target="_blank">DSA coding profile</a>, and enjoy competitive chess when away from the terminal.
+            Beyond system architecture, I actively contribute to upstream open-source AI agent ecosystems—shipping merged features and runtime fixes to official repositories under <strong>LangChain</strong>, alongside active contributions to <strong>CopilotKit</strong> and <strong>OpenHands</strong>. I also bring hands-on experience in AI safety and red-teaming through freelance work at <a href="https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing" target="_blank">Soul AI (Project Shield)</a>, testing model boundaries and enforcing strict instruction compliance. I also maintain a rigorous problem-solving practice on my <a href="https://takeuforward.org/profile/karthik0712" target="_blank">DSA coding profile</a>, and enjoy competitive chess when away from the terminal.
           </p>
         </div>
 
@@ -1029,8 +1143,111 @@
           <div class="badge-pill">🎓 Degree: <strong>Integrated M.Tech CSE</strong></div>
           <div class="badge-pill">🏛️ Alma Mater: <strong>Vellore Institute of Technology</strong></div>
           <div class="badge-pill">⚡ Core Stack: <strong>LangGraph, Python & RAG</strong></div>
-          <div class="badge-pill">🎯 Focus: <strong>Agentic Systems & GenAI Engineering</strong></div>
+          <div class="badge-pill">🌐 Upstream: <strong>LangChain · OpenHands · CopilotKit</strong></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Open Source Contributions Section -->
+  <section class="section" id="opensource">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-tag">02. Open Source</div>
+        <h2 class="section-title">Open Source Contributions</h2>
+        <p class="section-sub">Upstream pull requests and merged architectural enhancements in premier AI agent ecosystems.</p>
+      </div>
+
+      <div class="os-grid">
+        <!-- Lead LangChain Card -->
+        <article class="os-card os-lead">
+          <div class="os-header">
+            <span class="os-repo">
+              🦜 langchain-ai / design-agent
+            </span>
+            <span class="os-badge-merged">🟣 Merged Upstream</span>
+          </div>
+          <p class="os-desc">
+            Contributed to LangChain's official generative design agent repository:
+            <br>
+            • <strong><a href="https://github.com/langchain-ai/design-agent/pull/50" target="_blank">PR #50 (Merged)</a></strong>: Added Google Gemini image models as a first-class image generation provider via <code>generateContent</code>, supporting aspect-ratio mapping, 2K resolution, and parallel generation (<strong>+456, -70</strong>).
+            <br>
+            • <strong><a href="https://github.com/langchain-ai/design-agent/pull/38" target="_blank">PR #38 (Merged)</a></strong>: Windows cross-platform timezone runtime fix (PEP 615 / <code>tzdata</code>) and POSIX stat guard in unit test suite.
+            <br>
+            • <strong><a href="https://github.com/langchain-ai/design-agent/pull/53" target="_blank">PR #53 (In Review)</a></strong>: <code>HostMediaErrorBoundary</code> middleware wrapping media and fetch tools to catch API timeouts and return clean error states without crashing agent graphs (<strong>+503, -3</strong>).
+          </p>
+          <div class="os-link-row">
+            <a href="https://github.com/langchain-ai/design-agent/pull/50" target="_blank">View Gemini PR #50 ↗</a>
+            <span style="color:var(--text-faint);">·</span>
+            <a href="https://github.com/langchain-ai/design-agent/pull/38" target="_blank">View Windows PR #38 ↗</a>
+            <span style="color:var(--text-faint);">·</span>
+            <a href="https://github.com/langchain-ai/design-agent/pull/53" target="_blank">View Error Boundary PR #53 ↗</a>
+          </div>
+        </article>
+
+        <!-- CopilotKit Card -->
+        <article class="os-card os-emerald">
+          <div class="os-header">
+            <span class="os-repo">
+              🦾 CopilotKit / CopilotKit
+            </span>
+            <span class="os-badge-review">🟢 In Review · 18k+ ⭐</span>
+          </div>
+          <p class="os-desc">
+            <strong><a href="https://github.com/CopilotKit/CopilotKit/pull/8042" target="_blank">PR #8042</a></strong>: Fixed core agent lifecycle bug where aborted runs left unanswered tool calls in agent messages, preventing downstream OpenAI 400 errors. Added synthetic stopped results and cleaned dangling placeholders (<strong>+747, -16</strong>).
+          </p>
+          <div class="os-link-row">
+            <a href="https://github.com/CopilotKit/CopilotKit/pull/8042" target="_blank">View Pull Request #8042 ↗</a>
+          </div>
+        </article>
+
+        <!-- OpenHands Card -->
+        <article class="os-card os-accent">
+          <div class="os-header">
+            <span class="os-repo">
+              🤖 OpenHands / software-agent-sdk
+            </span>
+            <span class="os-badge-review">🟢 In Review · 45k+ ⭐</span>
+          </div>
+          <p class="os-desc">
+            <strong><a href="https://github.com/OpenHands/software-agent-sdk/pull/6292" target="_blank">PR #6292</a></strong>: Fixed unhandled Pydantic <code>extra_forbidden</code> crashes when LLMs emit variant parameter names (e.g. <code>description</code> or <code>instruction</code> instead of <code>summary</code>) with schema boundary filtering (<strong>+504, -14</strong>).
+          </p>
+          <div class="os-link-row">
+            <a href="https://github.com/OpenHands/software-agent-sdk/pull/6292" target="_blank">View Pull Request #6292 ↗</a>
+          </div>
+        </article>
+
+        <!-- TerseAI Card -->
+        <article class="os-card os-violet">
+          <div class="os-header">
+            <span class="os-repo">
+              ⚡ TerseAI / durable-actors
+            </span>
+            <span class="os-badge-review">🟢 In Review</span>
+          </div>
+          <p class="os-desc">
+            <strong><a href="https://github.com/TerseAI/durable-actors/pull/400" target="_blank">PR #400</a></strong>: Architected first-class persistence adapters for LangGraph and LangChain in Python SDK (<code>DurableActorSaver</code> & <code>DurableActorChatMessageHistory</code>) with WebSocket state emission and time-travel tests (<strong>+4,532, -7</strong>).
+          </p>
+          <div class="os-link-row">
+            <a href="https://github.com/TerseAI/durable-actors/pull/400" target="_blank">View Pull Request #400 ↗</a>
+          </div>
+        </article>
+
+        <!-- Arvo-AI Card -->
+        <article class="os-card os-emerald">
+          <div class="os-header">
+            <span class="os-repo">
+              🛡️ Arvo-AI / aurora
+            </span>
+            <span class="os-badge-review">🟢 In Review</span>
+          </div>
+          <p class="os-desc">
+            <strong><a href="https://github.com/Arvo-AI/aurora/pull/758" target="_blank">PR #758</a></strong>: Resolved incident remediation suggestion status sync issues by deriving suggestion status directly from command execution results instead of chat session state (#566).
+          </p>
+          <div class="os-link-row">
+            <a href="https://github.com/Arvo-AI/aurora/pull/758" target="_blank">View Pull Request #758 ↗</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -1039,7 +1256,7 @@
   <section class="section" id="projects">
     <div class="wrap">
       <div class="section-head">
-        <div class="section-tag">02. Projects</div>
+        <div class="section-tag">03. Projects</div>
         <h2 class="section-title">Flagship Implementations</h2>
         <p class="section-sub">Production-oriented AI systems engineered for resilience, factual grounding, and execution reliability.</p>
       </div>
@@ -1158,14 +1375,27 @@
   <section class="section" id="journey">
     <div class="wrap">
       <div class="section-head">
-        <div class="section-tag">03. Journey</div>
+        <div class="section-tag">04. Journey</div>
         <h2 class="section-title">Experience & Education</h2>
       </div>
 
       <div class="journey-grid">
         <!-- Experience -->
         <div class="journey-col">
-          <h3>💼 Work Experience</h3>
+          <h3>💼 Work & Open Source Experience</h3>
+
+          <div class="timeline-item">
+            <div class="timeline-period">2026 — Present</div>
+            <div class="timeline-role">Open Source Contributor</div>
+            <div class="timeline-org">
+              <a href="https://github.com/katta-karthik" target="_blank" rel="noopener noreferrer">
+                LangChain · CopilotKit · OpenHands ↗
+              </a>
+            </div>
+            <p class="timeline-text">
+              Active contributor to upstream AI agent ecosystems. Shipped merged features and core reliability fixes in <strong>langchain-ai/design-agent</strong> (Google Gemini image generation provider & Windows runtime), <strong>CopilotKit</strong> (cancellation lifecycle & tool resolution), and <strong>OpenHands</strong> (tool invocation boundary resilience).
+            </p>
+          </div>
 
           <div class="timeline-item">
             <div class="timeline-period">April 2025</div>
@@ -1216,7 +1446,7 @@
   <section class="section" id="skills">
     <div class="wrap">
       <div class="section-head">
-        <div class="section-tag">04. Skills</div>
+        <div class="section-tag">05. Skills</div>
         <h2 class="section-title">Technical Expertise</h2>
       </div>
 
@@ -1338,7 +1568,7 @@
   <section class="section" id="contact">
     <div class="wrap">
       <div class="section-head">
-        <div class="section-tag">05. Contact</div>
+        <div class="section-tag">06. Contact</div>
         <h2 class="section-title">Let's Connect</h2>
       </div>
 
