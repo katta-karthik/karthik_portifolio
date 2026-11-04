@@ -192,7 +192,7 @@
 
     /* ── HERO ── */
     .hero {
-      padding: 96px 0 44px;
+      padding: 72px 0 20px;
     }
 
     .hero-content {
@@ -317,13 +317,13 @@
 
     /* ── SECTIONS ── */
     .section {
-      padding: 56px 0;
+      padding: 36px 0;
       border-top: 1px solid rgba(255, 255, 255, 0.05);
-      scroll-margin-top: 68px;
+      scroll-margin-top: 70px;
     }
 
     .section-head {
-      margin-bottom: 24px;
+      margin-bottom: 18px;
     }
 
     .section-tag {
@@ -349,23 +349,32 @@
       max-width: 600px;
     }
 
-    /* ── ABOUT ── */
+    /* ── ABOUT (2-COLUMN SPACE OPTIMIZED) ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
     .about-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 28px 30px;
+      padding: 24px 26px;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .about-prose {
-      font-size: 0.98rem;
+      font-size: 0.94rem;
       color: var(--text-muted);
-      line-height: 1.8;
-      max-width: 780px;
+      line-height: 1.72;
     }
 
-    .about-prose p { margin-bottom: 14px; }
+    .about-prose p { margin-bottom: 12px; }
     .about-prose p:last-child { margin-bottom: 0; }
     .about-prose strong { color: var(--text); font-weight: 600; }
 
@@ -373,9 +382,56 @@
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
-      margin-top: 20px;
-      padding-top: 18px;
+      margin-top: 16px;
+      padding-top: 14px;
       border-top: 1px solid var(--border);
+    }
+
+    .about-pillars {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .pillar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      transition: all 0.2s ease;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .pillar-card:hover {
+      border-color: rgba(56, 189, 248, 0.35);
+      background: var(--bg-card-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .pillar-icon {
+      font-size: 1.25rem;
+      line-height: 1;
+      padding: 6px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      flex-shrink: 0;
+    }
+
+    .pillar-body h4 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    .pillar-body p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin: 0;
     }
 
     .badge-pill {
@@ -958,9 +1014,10 @@
     /* ── RESPONSIVE OVERHAUL (ALL DEVICES) ── */
     @media (max-width: 860px) {
       .wrap { padding: 0 20px; }
-      .hero { padding: 84px 0 36px; }
-      .section { padding: 46px 0; }
-      .journey-grid, .skills-grid, .contact-cards, .project-highlights, .os-grid {
+      .hero { padding: 64px 0 20px; }
+      .section { padding: 28px 0; }
+      .about-pillars { grid-template-columns: 1fr 1fr; }
+      .journey-grid, .skills-grid, .contact-cards, .project-highlights, .os-grid, .about-grid {
         grid-template-columns: 1fr;
       }
       .os-lead { grid-column: 1; }
@@ -986,7 +1043,7 @@
       .wrap { padding: 0 16px; }
       .nav-bar { padding: 0 16px; height: 56px; }
       .nav-links.open { top: 56px; }
-      .hero { padding: 74px 0 30px; }
+      .hero { padding: 56px 0 16px; }
       .hero-title { font-size: 1.95rem; margin-bottom: 10px; }
       .hero-subtitle { font-size: 1.1rem; margin-bottom: 14px; }
       .hero-desc { font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px; }
@@ -1006,7 +1063,8 @@
         padding: 8px 10px;
         font-size: 0.8rem;
       }
-      .section { padding: 36px 0; }
+      .section { padding: 24px 0; }
+      .about-pillars { grid-template-columns: 1fr; }
       .section-head { margin-bottom: 18px; }
       .section-title { font-size: 1.5rem; }
       .project-top {
@@ -1018,7 +1076,7 @@
         width: 100%;
         justify-content: flex-start;
       }
-      .about-card, .project-card, .os-card { padding: 18px 16px; }
+      .about-card, .project-card, .os-card, .pillar-card { padding: 16px 14px; }
       .about-footer-badges { gap: 6px; }
       .badge-pill { font-size: 0.72rem; padding: 3px 8px; }
       .contact-cards { grid-template-columns: 1fr; }
@@ -1126,24 +1184,62 @@
         <h2 class="section-title">Background & Focus</h2>
       </div>
 
-      <div class="about-card">
-        <div class="about-prose">
-          <p>
-            I am a graduate with an <strong>Integrated M.Tech in Computer Science & Engineering from Vellore Institute of Technology</strong>. I specialize in architecting autonomous AI agents, enterprise-grade retrieval architectures, and intelligent software systems that solve real-world problems with reliability and precision.
-          </p>
-          <p>
-            My core capabilities center on building end-to-end production AI applications: orchestrating <strong>stateful multi-agent systems</strong> with LangGraph that autonomously decompose and execute complex research workflows, designing <strong>dense-sparse hybrid RAG pipelines</strong> combining ChromaDB, BM25, and FlashRank cross-encoder reranking for zero-hallucination document intelligence, and constructing <strong>self-healing data agents</strong> that automatically diagnose runtime SQL errors and repair queries in real time.
-          </p>
-          <p>
-            Beyond system architecture, I actively contribute to upstream open-source AI agent ecosystems—shipping merged features and runtime fixes to official repositories under <strong>LangChain</strong>, alongside active contributions to <strong>CopilotKit</strong> and <strong>OpenHands</strong>. I also bring hands-on experience in AI safety and red-teaming through freelance work at <a href="https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing" target="_blank">Soul AI (Project Shield)</a>, testing model boundaries and enforcing strict instruction compliance. I also maintain a rigorous problem-solving practice on my <a href="https://takeuforward.org/profile/karthik0712" target="_blank">DSA coding profile</a>, and enjoy competitive chess when away from the terminal.
-          </p>
+      <div class="about-grid">
+        <!-- Narrative Card -->
+        <div class="about-card">
+          <div class="about-prose">
+            <p>
+              I am a graduate with an <strong>Integrated M.Tech in Computer Science & Engineering from Vellore Institute of Technology</strong>. I specialize in architecting autonomous AI agents, enterprise-grade retrieval architectures, and intelligent software systems that solve real-world problems with reliability and precision.
+            </p>
+            <p>
+              My engineering focuses on solving core failure points in modern GenAI: orchestrating <strong>stateful multi-agent systems</strong> with LangGraph that autonomously decompose complex workflows, designing <strong>dense-sparse hybrid RAG pipelines</strong> (ChromaDB + BM25 + FlashRank cross-encoder) for zero-hallucination document intelligence, and constructing <strong>self-healing data agents</strong> that autonomously diagnose and recover from runtime SQL errors.
+            </p>
+            <p>
+              Beyond system architecture, I actively contribute to upstream open-source AI agent ecosystems—shipping merged features and runtime fixes to official repositories under <strong>LangChain</strong>, alongside active contributions to <strong>CopilotKit</strong> and <strong>OpenHands</strong>. I also bring hands-on experience in AI safety and red-teaming through freelance work at <a href="https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing" target="_blank">Soul AI (Project Shield)</a>, testing model boundaries and enforcing strict instruction compliance.
+            </p>
+          </div>
+
+          <div class="about-footer-badges">
+            <div class="badge-pill">🎓 Degree: <strong>Integrated M.Tech CSE</strong></div>
+            <div class="badge-pill">🏛️ Alma Mater: <strong>Vellore Institute of Technology</strong></div>
+            <div class="badge-pill">⚡ Core Stack: <strong>LangGraph, Python & RAG</strong></div>
+            <div class="badge-pill">🌐 Upstream: <strong>LangChain · OpenHands · CopilotKit</strong></div>
+          </div>
         </div>
 
-        <div class="about-footer-badges">
-          <div class="badge-pill">🎓 Degree: <strong>Integrated M.Tech CSE</strong></div>
-          <div class="badge-pill">🏛️ Alma Mater: <strong>Vellore Institute of Technology</strong></div>
-          <div class="badge-pill">⚡ Core Stack: <strong>LangGraph, Python & RAG</strong></div>
-          <div class="badge-pill">🌐 Upstream: <strong>LangChain · OpenHands · CopilotKit</strong></div>
+        <!-- Pillars Snapshot Grid (Eliminates awkward empty whitespace on Desktop & Mac) -->
+        <div class="about-pillars">
+          <div class="pillar-card">
+            <div class="pillar-icon">🎓</div>
+            <div class="pillar-body">
+              <h4>Integrated M.Tech Graduate</h4>
+              <p>Five-year integrated master's in Computer Science & Engineering from Vellore Institute of Technology (VIT Amaravati).</p>
+            </div>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">🌐</div>
+            <div class="pillar-body">
+              <h4>Upstream Contributor</h4>
+              <p>Merged features in LangChain (Gemini 2K image generation), plus active PRs in CopilotKit and OpenHands.</p>
+            </div>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">⚡</div>
+            <div class="pillar-body">
+              <h4>Agentic & RAG Engineering</h4>
+              <p>LangGraph stateful orchestration, dense + sparse hybrid search, FlashRank reranking, and self-healing SQL.</p>
+            </div>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">🛡️</div>
+            <div class="pillar-body">
+              <h4>AI Safety & Red-Teaming</h4>
+              <p>Adversarial prompt evaluation and boundary testing at Soul AI (Project Shield) for strict instruction compliance.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
