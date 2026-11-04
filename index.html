@@ -4,30 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Katta Karthik — AI Engineer & Upstream Open Source Contributor</title>
-  <meta name="description" content="Portfolio of Katta Karthik — AI Engineer & Upstream Open Source Contributor (LangChain, CopilotKit, OpenHands). Engineering autonomous multi-agent teams, zero-hallucination hybrid RAG, and self-healing LLM systems. Integrated M.Tech from Vellore Institute of Technology.">
+  <meta name="description" content="Portfolio of Katta Karthik — AI Systems Engineer & Upstream Contributor to LangChain, CopilotKit, and OpenHands. Building multi-agent systems, hybrid search RAG, and self-repairing autonomous workflows. Integrated M.Tech from Vellore Institute of Technology (VIT Amaravati).">
   <meta name="author" content="Katta Karthik">
   <link rel="canonical" href="https://katta-karthik.github.io/">
 
-  <!-- Favicon (Inline SVG: 0ms latency) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23090d16'/><path d='M9 8v16M9 16l7-8M9 16l7 8M19 8h4M19 24h4' stroke='%2338bdf8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+  <!-- Inline Vector Favicon (0ms latency, razor sharp) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23090d16'/%3E%3Cpath d='M9 8v16M9 16l7-8M9 16l7 8M19 8h4M19 24h4' stroke='%2338bdf8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 
-  <!-- Open Graph / Social Meta -->
+  <!-- Open Graph & Social Cards -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://katta-karthik.github.io/">
-  <meta property="og:title" content="Katta Karthik — AI Engineer & Open Source Contributor">
-  <meta property="og:description" content="Engineering autonomous multi-agent systems, hybrid search RAG, and self-healing LLM workflows. Upstream contributor to LangChain, CopilotKit, and OpenHands.">
+  <meta property="og:title" content="Katta Karthik — AI Engineer & Upstream Open Source Contributor">
+  <meta property="og:description" content="Engineering dependable multi-agent systems, dense+sparse hybrid RAG, and self-healing LLM pipelines. Upstream contributor to LangChain, CopilotKit, and OpenHands.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Katta Karthik — AI Engineer">
-  <meta name="twitter:description" content="Engineering autonomous multi-agent teams, production hybrid RAG, and upstream contributor to LangChain & OpenHands.">
+  <meta name="twitter:description" content="Engineering dependable multi-agent systems, dense+sparse hybrid search, and upstream contributor to LangChain and OpenHands.">
   <meta name="theme-color" content="#090d16">
 
-  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <!-- Fonts: Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* ── DESIGN SYSTEM & COLOR PALETTE ── */
+    /* ── DESIGN SYSTEM & COLOR TOKENS ── */
     :root {
       --bg: #090d16;
       --bg-surface: #0e1526;
@@ -46,22 +46,24 @@
       --text-faint: #64748b;
 
       --cyan: #38bdf8;
-      --cyan-glow: rgba(56, 189, 248, 0.15);
+      --cyan-glow: rgba(56, 189, 248, 0.2);
       --emerald: #34d399;
-      --emerald-glow: rgba(52, 211, 153, 0.15);
+      --emerald-glow: rgba(52, 211, 153, 0.2);
       --purple: #a78bfa;
-      --purple-glow: rgba(167, 139, 250, 0.15);
+      --purple-glow: rgba(167, 139, 250, 0.2);
       --amber: #fbbf24;
-      --amber-glow: rgba(251, 191, 36, 0.15);
+      --amber-glow: rgba(251, 191, 36, 0.2);
       --rose: #fb7185;
 
       --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.35);
-      --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.45);
-      --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.6);
-      --radius: 16px;
-      --radius-sm: 10px;
+
+      --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.35);
+      --shadow-md: 0 10px 32px rgba(0, 0, 0, 0.5);
+      --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.65);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --radius-xs: 8px;
     }
 
     *, *::before, *::after {
@@ -72,6 +74,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 84px; /* Fix for fixed navbar offset */
     }
 
     body {
@@ -79,8 +82,9 @@
       background-color: var(--bg);
       background-image: 
         radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.08) 0%, transparent 60%),
-        radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-      background-size: 100% 100%, 28px 28px;
+        radial-gradient(circle at 85% 30%, rgba(167, 139, 250, 0.05) 0%, transparent 50%),
+        radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 28px 28px;
       color: var(--text);
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
@@ -103,18 +107,21 @@
     }
 
     .wrap {
-      max-width: 1120px;
+      max-width: 1140px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
     /* ── STRICT HEADING RULE: NO TRAILING HORIZONTAL LINES ── */
     h1, h2, h3, h4, h5, h6,
-    .section-title, .section-head, .hero-title {
+    .section-title, .section-head, .hero-title, .contact-title {
+      border: none !important;
       border-bottom: none !important;
     }
     h1::after, h2::after, h3::after, h4::after,
-    .section-title::after, .section-head::after, .hero-title::after {
+    .section-title::after, .section-head::after, .hero-title::after, .contact-title::after,
+    h1::before, h2::before, h3::before, h4::before,
+    .section-title::before, .section-head::before, .hero-title::before, .contact-title::before {
       content: none !important;
       display: none !important;
       border: none !important;
@@ -168,15 +175,16 @@
       background: linear-gradient(135deg, #10b981 0%, #059669 100%);
       color: #ffffff;
       font-size: 0.85rem;
-      padding: 8px 16px;
-      border-radius: 9px;
-      box-shadow: 0 3px 12px rgba(16, 185, 129, 0.3);
+      padding: 9px 18px;
+      border-radius: 10px;
+      font-weight: 600;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
     }
 
     .btn-demo:hover {
       color: #ffffff;
       transform: translateY(-1px);
-      box-shadow: 0 6px 18px rgba(16, 185, 129, 0.45);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
     }
 
     .btn-outline-sm {
@@ -184,15 +192,17 @@
       border: 1px solid var(--border);
       color: var(--text-muted);
       font-size: 0.82rem;
-      font-weight: 500;
-      padding: 7px 14px;
+      font-weight: 600;
+      padding: 8px 14px;
       border-radius: 8px;
+      transition: all 0.15s ease;
     }
 
     .btn-outline-sm:hover {
       background: rgba(255, 255, 255, 0.08);
       color: #fff;
       border-color: var(--border-light);
+      transform: translateY(-1px);
     }
 
     /* ── NAVBAR ── */
@@ -202,33 +212,46 @@
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(9, 13, 22, 0.85);
+      background: rgba(9, 13, 22, 0.88);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
-      transition: background 0.2s ease;
+      transition: all 0.2s ease;
     }
 
     .nav-bar {
-      max-width: 1120px;
+      max-width: 1140px;
       margin: 0 auto;
       padding: 0 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 68px;
+      height: 70px;
       gap: 16px;
     }
 
     .nav-logo {
       font-family: var(--font);
       font-weight: 800;
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       color: var(--text);
       display: inline-flex;
       align-items: center;
-      gap: 9px;
+      gap: 10px;
       letter-spacing: -0.02em;
+    }
+
+    .nav-logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.2) 0%, rgba(37, 99, 235, 0.3) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cyan);
+      box-shadow: 0 0 12px var(--cyan-glow);
     }
 
     .nav-logo-badge {
@@ -244,7 +267,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 2px;
       list-style: none;
     }
 
@@ -252,7 +275,7 @@
       font-size: 0.88rem;
       font-weight: 500;
       color: var(--text-muted);
-      padding: 8px 12px;
+      padding: 8px 11px;
       border-radius: 8px;
       transition: all 0.15s ease;
     }
@@ -260,7 +283,7 @@
     .nav-links a:hover,
     .nav-links a.active {
       color: #ffffff;
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.07);
     }
 
     .nav-actions {
@@ -312,18 +335,31 @@
       justify-content: center;
     }
 
-    /* ── HERO SECTION ── */
+    /* ── HERO SECTION (SPLIT CREATIVE LAYOUT) ── */
     .hero {
-      padding: 124px 0 60px;
+      padding: 124px 0 64px;
       position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 52px;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
     }
 
     .hero-hud {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     .hud-pill {
@@ -366,29 +402,28 @@
     }
 
     .hero-title {
-      font-size: clamp(2.5rem, 5.8vw, 4.2rem);
+      font-size: clamp(2.4rem, 4.8vw, 3.8rem);
       font-weight: 800;
       letter-spacing: -0.04em;
-      line-height: 1.08;
-      margin-bottom: 20px;
+      line-height: 1.1;
+      margin-bottom: 18px;
       color: #ffffff;
     }
 
     .hero-title .gradient-text {
-      background: linear-gradient(135deg, #ffffff 30%, #38bdf8 100%);
+      background: linear-gradient(135deg, #ffffff 20%, #38bdf8 70%, #818cf8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       display: inline-block;
     }
 
     .hero-subtitle {
-      font-size: clamp(1.2rem, 2.6vw, 1.65rem);
+      font-size: clamp(1.15rem, 2.2vw, 1.45rem);
       font-weight: 600;
       color: #cbd5e1;
       letter-spacing: -0.02em;
-      line-height: 1.35;
-      margin-bottom: 20px;
-      max-width: 860px;
+      line-height: 1.4;
+      margin-bottom: 18px;
     }
 
     .hero-subtitle span.highlight {
@@ -397,11 +432,10 @@
     }
 
     .hero-desc {
-      font-size: 1.05rem;
+      font-size: 1.02rem;
       color: var(--text-muted);
-      line-height: 1.75;
-      margin-bottom: 32px;
-      max-width: 760px;
+      line-height: 1.7;
+      margin-bottom: 28px;
     }
 
     .hero-desc strong {
@@ -414,20 +448,161 @@
       align-items: center;
       gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 48px;
     }
 
-    /* ── HERO IMPACT STATS STRIP ── */
+    /* ── HERO INTERACTIVE VISUALIZER CARD (RIGHT COLUMN) ── */
+    .hero-visualizer-card {
+      background: linear-gradient(180deg, var(--bg-surface) 0%, rgba(14, 21, 38, 0.8) 100%);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .hero-visualizer-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    }
+
+    .visualizer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .visualizer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--cyan);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+    }
+
+    .visualizer-stage-text {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--emerald);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* Animated SVG Container */
+    .visualizer-svg-wrap {
+      width: 100%;
+      height: 240px;
+      background: rgba(7, 10, 18, 0.9);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .visualizer-svg-wrap svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* SVG Keyframes & Wires */
+    .wire-dash {
+      stroke-dasharray: 6 6;
+      animation: dashAnim 1.6s linear infinite;
+    }
+
+    @keyframes dashAnim {
+      to { stroke-dashoffset: -24; }
+    }
+
+    .pulse-core {
+      animation: coreGlow 3s ease-in-out infinite;
+      transform-origin: 200px 120px;
+    }
+
+    @keyframes coreGlow {
+      0%, 100% { filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.4)); }
+      50% { filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.8)); }
+    }
+
+    .visualizer-console {
+      background: rgba(5, 8, 14, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius-xs);
+      padding: 10px 12px;
+      font-family: var(--mono);
+      font-size: 0.74rem;
+      color: #94a3b8;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-height: 60px;
+    }
+
+    .console-line {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .console-prompt {
+      color: var(--cyan);
+      font-weight: 700;
+    }
+
+    .visualizer-btn {
+      width: 100%;
+      padding: 10px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      border-radius: 10px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: var(--cyan);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .visualizer-btn:hover {
+      background: var(--cyan);
+      color: #090d16;
+      box-shadow: 0 0 16px var(--cyan-glow);
+    }
+
+    /* ── HERO STATS STRIP ── */
     .hero-stats-strip {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
-      padding: 24px;
+      padding: 24px 28px;
       border-radius: var(--radius);
       background: var(--bg-surface);
       border: 1px solid var(--border);
       box-shadow: var(--shadow-sm);
-      margin-bottom: 48px;
     }
 
     .stat-item {
@@ -444,7 +619,7 @@
     }
 
     .stat-number {
-      font-size: 1.9rem;
+      font-size: 2rem;
       font-weight: 800;
       letter-spacing: -0.03em;
       color: #ffffff;
@@ -462,16 +637,54 @@
       font-size: 0.82rem;
       color: var(--text-muted);
       font-weight: 500;
-      line-height: 1.3;
+      line-height: 1.35;
     }
 
-    /* ── INTERACTIVE "HOW IT WORKS" VISUAL FLOW SHOWCASE ── */
-    /* Replaces intimidating nerdy terminals with a visual, delightful flow anyone understands */
+    /* ── SECTIONS SHARED ── */
+    .section {
+      padding: 80px 0;
+      position: relative;
+    }
+
+    .section-head {
+      margin-bottom: 44px;
+    }
+
+    .section-tag {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title {
+      font-size: clamp(1.9rem, 3.8vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #ffffff;
+      line-height: 1.15;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+      max-width: 720px;
+      line-height: 1.6;
+    }
+
+    /* ── SECTION 01: VISUAL FLOW SHOWCASE ── */
     .flow-showcase {
       border-radius: var(--radius);
-      background: linear-gradient(180deg, var(--bg-surface) 0%, rgba(14, 21, 38, 0.7) 100%);
+      background: linear-gradient(180deg, var(--bg-surface) 0%, rgba(14, 21, 38, 0.75) 100%);
       border: 1px solid var(--border-light);
-      padding: 32px;
+      padding: 36px;
       box-shadow: var(--shadow-md);
       position: relative;
       overflow: hidden;
@@ -493,21 +706,21 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 16px;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
     .flow-title-group h3 {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-weight: 700;
       color: #ffffff;
       margin-bottom: 4px;
       display: flex;
       align-items: center;
-      gap: 9px;
+      gap: 10px;
     }
 
     .flow-title-group p {
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
     }
 
@@ -525,8 +738,8 @@
       border: 1px solid rgba(56, 189, 248, 0.35);
       color: var(--cyan);
       font-weight: 600;
-      font-size: 0.82rem;
-      padding: 7px 15px;
+      font-size: 0.84rem;
+      padding: 8px 16px;
       border-radius: 999px;
       cursor: pointer;
       transition: all 0.2s ease;
@@ -541,8 +754,7 @@
     .flow-steps-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      position: relative;
+      gap: 14px;
       margin-bottom: 24px;
     }
 
@@ -550,7 +762,7 @@
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 18px 14px;
+      padding: 20px 16px;
       cursor: pointer;
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
@@ -564,14 +776,14 @@
     .flow-step-card.active {
       border-color: var(--cyan);
       background: var(--bg-card-hover);
-      box-shadow: 0 0 20px rgba(56, 189, 248, 0.18);
+      box-shadow: 0 0 24px rgba(56, 189, 248, 0.18);
     }
 
     .flow-step-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .step-number-badge {
@@ -590,48 +802,47 @@
     }
 
     .step-icon-wrap {
-      width: 34px;
-      height: 34px;
-      border-radius: 8px;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
       background: rgba(255, 255, 255, 0.05);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--text-muted);
-      font-size: 1.1rem;
       transition: all 0.2s ease;
     }
 
     .flow-step-card.active .step-icon-wrap {
       background: var(--cyan);
       color: #090d16;
-      box-shadow: 0 0 12px var(--cyan-glow);
+      box-shadow: 0 0 14px var(--cyan-glow);
     }
 
     .step-title {
-      font-size: 0.94rem;
+      font-size: 0.96rem;
       font-weight: 700;
       color: #ffffff;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
       line-height: 1.25;
     }
 
     .step-summary {
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
-      line-height: 1.4;
+      line-height: 1.45;
     }
 
-    /* Interactive Output Canvas */
+    /* Flow Output Canvas */
     .flow-display-canvas {
-      background: rgba(7, 10, 18, 0.85);
+      background: rgba(6, 9, 16, 0.9);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 20px 24px;
+      padding: 24px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      min-height: 140px;
+      gap: 14px;
+      min-height: 150px;
       justify-content: center;
     }
 
@@ -642,12 +853,12 @@
       flex-wrap: wrap;
       gap: 8px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      padding-bottom: 8px;
+      padding-bottom: 10px;
     }
 
     .canvas-status-tag {
       font-family: var(--mono);
-      font-size: 0.75rem;
+      font-size: 0.76rem;
       font-weight: 600;
       color: var(--cyan);
       display: flex;
@@ -657,13 +868,13 @@
 
     .canvas-latency-tag {
       font-family: var(--mono);
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       color: var(--text-faint);
     }
 
     .canvas-content-box {
-      font-size: 0.94rem;
-      line-height: 1.6;
+      font-size: 0.96rem;
+      line-height: 1.65;
       color: #e2e8f0;
     }
 
@@ -682,126 +893,69 @@
     .canvas-pill {
       font-family: var(--mono);
       font-size: 0.72rem;
-      padding: 3px 8px;
+      padding: 3px 9px;
       border-radius: 6px;
       background: rgba(255, 255, 255, 0.05);
       color: var(--text-muted);
       border: 1px solid var(--border);
     }
 
-    /* ── SECTIONS SHARED ── */
-    .section {
-      padding: 72px 0;
-      position: relative;
+    /* Comparison Box (Understandable by Normal People) */
+    .flow-comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
     }
 
-    .section-head {
-      margin-bottom: 40px;
+    .compare-card {
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
 
-    .section-tag {
-      font-family: var(--mono);
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--cyan);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 8px;
-      display: inline-flex;
+    .compare-bad {
+      background: rgba(244, 63, 94, 0.05);
+      border-color: rgba(244, 63, 94, 0.2);
+    }
+
+    .compare-good {
+      background: rgba(16, 185, 129, 0.05);
+      border-color: rgba(16, 185, 129, 0.2);
+    }
+
+    .compare-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .section-title {
-      font-size: clamp(1.8rem, 3.6vw, 2.5rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      color: #ffffff;
-      line-height: 1.15;
-    }
+    .compare-bad .compare-title { color: #fb7185; }
+    .compare-good .compare-title { color: #34d399; }
 
-    .section-sub {
-      font-size: 1.02rem;
-      color: var(--text-muted);
-      margin-top: 8px;
-      max-width: 680px;
-    }
-
-    /* ── ABOUT SECTION ── */
-    .about-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 36px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .about-prose {
-      font-size: 1.05rem;
-      color: #cbd5e1;
-      line-height: 1.8;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .about-prose strong {
-      color: #ffffff;
-      font-weight: 600;
-    }
-
-    .about-pillars {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 32px;
-      padding-top: 28px;
-      border-top: 1px solid var(--border);
-    }
-
-    .pillar-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 20px;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-
-    .pillar-card:hover {
-      border-color: rgba(255, 255, 255, 0.18);
-      transform: translateY(-2px);
-    }
-
-    .pillar-icon {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-    }
-
-    .pillar-card h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 6px;
-    }
-
-    .pillar-card p {
-      font-size: 0.85rem;
+    .compare-text {
+      font-size: 0.84rem;
       color: var(--text-muted);
       line-height: 1.5;
     }
 
-    /* ── OPEN SOURCE BENTO ── */
+    /* ── SECTION 02: OPEN SOURCE BENTO GRID ── */
     .os-grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
-      gap: 18px;
+      gap: 20px;
     }
 
     .os-card {
       background: var(--bg-surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 28px;
+      padding: 30px;
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       display: flex;
       flex-direction: column;
@@ -811,7 +965,7 @@
     }
 
     .os-card:hover {
-      border-color: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.22);
       transform: translateY(-3px);
       box-shadow: var(--shadow-md);
     }
@@ -836,33 +990,51 @@
       grid-column: span 6;
     }
 
-    .os-card-third {
-      grid-column: span 4;
-    }
-
     .os-card-head {
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 14px;
+      gap: 12px;
+      margin-bottom: 16px;
     }
 
-    .os-repo-tag {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #ffffff;
+    .os-brand {
       display: flex;
       align-items: center;
-      gap: 9px;
+      gap: 12px;
+    }
+
+    .os-brand-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cyan);
+    }
+
+    .os-repo-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+    }
+
+    .os-badges-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .os-badge {
       font-family: var(--mono);
       font-size: 0.72rem;
       font-weight: 700;
-      padding: 3px 9px;
+      padding: 3px 10px;
       border-radius: 999px;
       display: inline-flex;
       align-items: center;
@@ -888,7 +1060,7 @@
     }
 
     .os-summary {
-      font-size: 0.94rem;
+      font-size: 0.96rem;
       color: #cbd5e1;
       line-height: 1.65;
       margin-bottom: 16px;
@@ -897,12 +1069,12 @@
     .os-why-callout {
       background: rgba(56, 189, 248, 0.06);
       border-left: 3px solid var(--cyan);
-      border-radius: 0 8px 8px 0;
-      padding: 10px 14px;
-      font-size: 0.86rem;
+      border-radius: 0 10px 10px 0;
+      padding: 12px 16px;
+      font-size: 0.88rem;
       color: #e2e8f0;
       margin-bottom: 18px;
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     .os-why-callout strong {
@@ -912,15 +1084,15 @@
     .os-sub-prs {
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      margin-bottom: 16px;
+      gap: 10px;
+      margin-bottom: 18px;
     }
 
     .os-pr-item {
       display: flex;
       align-items: flex-start;
-      gap: 8px;
-      font-size: 0.85rem;
+      gap: 9px;
+      font-size: 0.86rem;
       color: var(--text-muted);
       line-height: 1.45;
     }
@@ -936,7 +1108,7 @@
       align-items: center;
       gap: 12px;
       flex-wrap: wrap;
-      padding-top: 12px;
+      padding-top: 14px;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
     }
 
@@ -948,7 +1120,7 @@
       display: inline-flex;
       align-items: center;
       gap: 5px;
-      padding: 4px 8px;
+      padding: 5px 10px;
       border-radius: 6px;
       background: rgba(56, 189, 248, 0.08);
       border: 1px solid rgba(56, 189, 248, 0.2);
@@ -960,23 +1132,23 @@
       color: #090d16;
     }
 
-    /* ── FLAGSHIP SYSTEMS SECTION ── */
+    /* ── SECTION 03: FLAGSHIP SYSTEMS ── */
     .filter-tabs {
       display: flex;
       align-items: center;
       gap: 8px;
       flex-wrap: wrap;
-      margin-bottom: 28px;
+      margin-bottom: 32px;
     }
 
     .filter-pill {
       font-family: var(--font);
-      font-size: 0.84rem;
+      font-size: 0.86rem;
       font-weight: 600;
       color: var(--text-muted);
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--border);
-      padding: 7px 16px;
+      padding: 8px 18px;
       border-radius: 999px;
       cursor: pointer;
       transition: all 0.15s ease;
@@ -999,21 +1171,21 @@
     .systems-list {
       display: flex;
       flex-direction: column;
-      gap: 28px;
+      gap: 32px;
     }
 
     .system-card {
       background: var(--bg-surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 36px;
+      padding: 38px;
       box-shadow: var(--shadow-sm);
       transition: all 0.25s ease;
       position: relative;
     }
 
     .system-card:hover {
-      border-color: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.2);
       box-shadow: var(--shadow-md);
     }
 
@@ -1023,21 +1195,21 @@
       align-items: flex-start;
       flex-wrap: wrap;
       gap: 16px;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     .system-badge-row {
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .system-tag {
       font-family: var(--mono);
       font-size: 0.74rem;
       font-weight: 700;
-      padding: 3px 9px;
+      padding: 3px 10px;
       border-radius: 6px;
       text-transform: uppercase;
       letter-spacing: 0.04em;
@@ -1062,7 +1234,7 @@
     }
 
     .system-title {
-      font-size: 1.6rem;
+      font-size: 1.75rem;
       font-weight: 800;
       color: #ffffff;
       letter-spacing: -0.02em;
@@ -1076,10 +1248,10 @@
     }
 
     .system-pitch {
-      font-size: 1.02rem;
+      font-size: 1.04rem;
       color: #cbd5e1;
       line-height: 1.7;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
 
     .system-pitch strong {
@@ -1091,8 +1263,8 @@
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 20px;
-      margin-bottom: 22px;
+      padding: 22px;
+      margin-bottom: 24px;
     }
 
     .topology-header {
@@ -1102,7 +1274,7 @@
       font-size: 0.8rem;
       font-weight: 600;
       color: var(--text-muted);
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .topology-nodes {
@@ -1127,10 +1299,11 @@
       transition: all 0.2s ease;
     }
 
-    .topo-node:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.3);
-      transform: translateY(-1px);
+    .topo-node:hover,
+    .topo-node.active {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.4);
+      transform: translateY(-2px);
     }
 
     .topo-node.accent {
@@ -1138,11 +1311,19 @@
       border-color: rgba(56, 189, 248, 0.35);
       color: var(--cyan);
     }
+    .topo-node.accent.active {
+      background: rgba(56, 189, 248, 0.25);
+      box-shadow: 0 0 14px var(--cyan-glow);
+    }
 
     .topo-node.emerald {
       background: rgba(52, 211, 153, 0.12);
       border-color: rgba(52, 211, 153, 0.35);
       color: var(--emerald);
+    }
+    .topo-node.emerald.active {
+      background: rgba(52, 211, 153, 0.25);
+      box-shadow: 0 0 14px var(--emerald-glow);
     }
 
     .topo-node.purple {
@@ -1150,11 +1331,19 @@
       border-color: rgba(167, 139, 250, 0.35);
       color: var(--purple);
     }
+    .topo-node.purple.active {
+      background: rgba(167, 139, 250, 0.25);
+      box-shadow: 0 0 14px var(--purple-glow);
+    }
 
     .topo-node.amber {
       background: rgba(251, 191, 36, 0.12);
       border-color: rgba(251, 191, 36, 0.35);
       color: var(--amber);
+    }
+    .topo-node.amber.active {
+      background: rgba(251, 191, 36, 0.25);
+      box-shadow: 0 0 14px var(--amber-glow);
     }
 
     .topo-arrow {
@@ -1164,13 +1353,14 @@
 
     .topo-info-box {
       margin-top: 14px;
-      padding: 12px 14px;
+      padding: 14px 16px;
       border-radius: 8px;
-      background: rgba(0, 0, 0, 0.25);
-      border: 1px dashed rgba(255, 255, 255, 0.1);
-      font-size: 0.85rem;
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px dashed rgba(255, 255, 255, 0.12);
+      font-size: 0.88rem;
       color: #cbd5e1;
-      line-height: 1.5;
+      line-height: 1.55;
+      transition: all 0.2s ease;
     }
 
     .topo-info-box strong {
@@ -1181,21 +1371,21 @@
     .system-highlights {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-bottom: 22px;
+      gap: 14px;
+      margin-bottom: 24px;
     }
 
     .highlight-card {
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: 8px;
-      padding: 12px 14px;
+      border-radius: var(--radius-xs);
+      padding: 14px 16px;
       font-size: 0.88rem;
       color: #cbd5e1;
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      line-height: 1.45;
+      line-height: 1.5;
     }
 
     .highlight-icon {
@@ -1222,18 +1412,89 @@
       color: var(--text-muted);
     }
 
-    /* ── JOURNEY (EXPERIENCE & EDUCATION) ── */
+    /* ── SECTION 04: ABOUT & PHILOSOPHY ── */
+    .about-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .about-prose {
+      font-size: 1.05rem;
+      color: #cbd5e1;
+      line-height: 1.85;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .about-prose strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .about-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 36px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .pillar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .pillar-card:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .pillar-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cyan);
+      margin-bottom: 14px;
+    }
+
+    .pillar-card h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .pillar-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* ── SECTION 05: JOURNEY (EXPERIENCE & EDUCATION) ── */
     .journey-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 28px;
+      gap: 32px;
     }
 
     .journey-col h3 {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-weight: 700;
       color: #ffffff;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -1243,8 +1504,8 @@
       background: var(--bg-surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 24px;
-      margin-bottom: 18px;
+      padding: 26px;
+      margin-bottom: 20px;
       position: relative;
       transition: border-color 0.2s ease;
     }
@@ -1262,14 +1523,14 @@
     }
 
     .timeline-role {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-weight: 700;
       color: #ffffff;
       margin-bottom: 4px;
     }
 
     .timeline-org {
-      font-size: 0.92rem;
+      font-size: 0.94rem;
       color: var(--text-muted);
       margin-bottom: 12px;
     }
@@ -1310,23 +1571,23 @@
       border: 1px solid rgba(56, 189, 248, 0.3);
     }
 
-    /* ── SKILLS & ARSENAL ── */
+    /* ── SECTION 06: SKILLS ARSENAL ── */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      gap: 22px;
     }
 
     .skill-card {
       background: var(--bg-surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 28px;
+      padding: 30px;
       transition: all 0.2s ease;
     }
 
     .skill-card:hover {
-      border-color: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.2);
       transform: translateY(-2px);
     }
 
@@ -1338,7 +1599,15 @@
     }
 
     .skill-card-icon {
-      font-size: 1.4rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cyan);
     }
 
     .skill-card-title {
@@ -1348,9 +1617,9 @@
     }
 
     .skill-card-desc {
-      font-size: 0.85rem;
+      font-size: 0.86rem;
       color: var(--text-muted);
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     .skill-tags {
@@ -1363,7 +1632,7 @@
       font-family: var(--font);
       font-size: 0.82rem;
       font-weight: 600;
-      padding: 6px 12px;
+      padding: 6px 13px;
       border-radius: 8px;
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -1375,20 +1644,21 @@
       border-color: var(--cyan);
       color: #ffffff;
       background: rgba(56, 189, 248, 0.08);
+      transform: translateY(-1px);
     }
 
-    /* ── VERIFIED CREDENTIALS ── */
+    /* ── SECTION 07: VERIFIED CREDENTIALS ── */
     .certs-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+      gap: 18px;
     }
 
     .cert-card {
       background: var(--bg-surface);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 22px;
+      padding: 24px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -1397,22 +1667,30 @@
     }
 
     .cert-card:hover {
-      border-color: rgba(56, 189, 248, 0.4);
+      border-color: rgba(56, 189, 248, 0.45);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
     }
 
     .cert-top {
       margin-bottom: 16px;
     }
 
-    .cert-icon {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
+    .cert-icon-wrap {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cyan);
+      margin-bottom: 14px;
     }
 
     .cert-card h4 {
-      font-size: 0.98rem;
+      font-size: 1rem;
       font-weight: 700;
       color: #ffffff;
       line-height: 1.35;
@@ -1426,7 +1704,7 @@
 
     .cert-verify-link {
       font-family: var(--mono);
-      font-size: 0.74rem;
+      font-size: 0.76rem;
       font-weight: 600;
       color: var(--cyan);
       display: inline-flex;
@@ -1434,45 +1712,45 @@
       gap: 5px;
     }
 
-    /* ── CONTACT & FOOTER ── */
+    /* ── SECTION 08: CONTACT & FOOTER ── */
     .contact-container {
-      background: linear-gradient(180deg, var(--bg-surface) 0%, rgba(14, 21, 38, 0.8) 100%);
+      background: linear-gradient(180deg, var(--bg-surface) 0%, rgba(14, 21, 38, 0.85) 100%);
       border: 1px solid var(--border-light);
       border-radius: var(--radius);
-      padding: 44px;
+      padding: 48px;
       box-shadow: var(--shadow-md);
       text-align: center;
-      max-width: 880px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
     .contact-title {
-      font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+      font-size: clamp(1.9rem, 3.4vw, 2.5rem);
       font-weight: 800;
       color: #ffffff;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .contact-lead {
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       color: #cbd5e1;
-      max-width: 640px;
-      margin: 0 auto 36px;
-      line-height: 1.7;
+      max-width: 660px;
+      margin: 0 auto 38px;
+      line-height: 1.75;
     }
 
     .contact-cards {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-bottom: 36px;
+      gap: 16px;
+      margin-bottom: 38px;
     }
 
     .contact-box {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 18px 14px;
+      padding: 20px 14px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1490,19 +1768,26 @@
     }
 
     .contact-box-icon {
-      font-size: 1.3rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(56, 189, 248, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: var(--cyan);
     }
 
     .contact-type {
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       color: var(--text-faint);
       text-transform: uppercase;
       font-family: var(--mono);
+      font-weight: 600;
     }
 
     .contact-val {
-      font-size: 0.86rem;
+      font-size: 0.88rem;
       font-weight: 600;
       color: #ffffff;
       word-break: break-all;
@@ -1510,7 +1795,7 @@
 
     footer {
       border-top: 1px solid var(--border);
-      padding: 32px 0;
+      padding: 34px 0;
       font-size: 0.88rem;
       color: var(--text-muted);
     }
@@ -1530,14 +1815,14 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(0, 0, 0, 0.75);
+      background: rgba(0, 0, 0, 0.78);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       z-index: 2000;
       display: none;
       align-items: flex-start;
       justify-content: center;
-      padding-top: 15vh;
+      padding-top: 14vh;
     }
 
     .cmd-overlay.open {
@@ -1546,11 +1831,11 @@
 
     .cmd-dialog {
       width: 90%;
-      max-width: 600px;
+      max-width: 620px;
       background: #0e1526;
       border: 1px solid var(--border-light);
       border-radius: var(--radius);
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
       overflow: hidden;
       animation: cmdSlideDown 0.15s ease-out;
     }
@@ -1583,7 +1868,7 @@
     }
 
     .cmd-list {
-      max-height: 340px;
+      max-height: 350px;
       overflow-y: auto;
       list-style: none;
       padding: 8px;
@@ -1593,10 +1878,10 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 14px;
+      padding: 11px 14px;
       border-radius: 8px;
       cursor: pointer;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       color: #cbd5e1;
       transition: background 0.1s ease;
     }
@@ -1611,7 +1896,7 @@
       font-family: var(--mono);
       font-size: 0.72rem;
       color: var(--text-faint);
-      padding: 2px 6px;
+      padding: 2px 7px;
       border-radius: 4px;
       background: rgba(0, 0, 0, 0.3);
     }
@@ -1653,6 +1938,10 @@
 
     /* ── RESPONSIVE MEDIA QUERIES ── */
     @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
       .hero-stats-strip {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -1662,7 +1951,10 @@
       .flow-steps-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-      .os-card-half, .os-card-third {
+      .flow-comparison {
+        grid-template-columns: 1fr;
+      }
+      .os-card-half {
         grid-column: span 12;
       }
       .certs-grid {
@@ -1680,13 +1972,13 @@
       .nav-links {
         display: none;
         position: absolute;
-        top: 68px;
+        top: 70px;
         left: 0;
         width: 100%;
         background: #090d16;
         border-bottom: 1px solid var(--border);
         flex-direction: column;
-        padding: 16px 24px;
+        padding: 18px 24px;
         gap: 8px;
       }
       .nav-links.open {
@@ -1735,7 +2027,7 @@
         grid-template-columns: 1fr;
       }
       .contact-container {
-        padding: 24px;
+        padding: 26px 18px;
       }
     }
   </style>
@@ -1746,15 +2038,18 @@
   <nav>
     <div class="nav-bar">
       <a href="#" class="nav-logo">
+        <div class="nav-logo-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
         <span>Katta Karthik</span>
         <span class="nav-logo-badge">AI Systems</span>
       </a>
 
       <ul class="nav-links" id="navMenu">
-        <li><a href="#about">About</a></li>
         <li><a href="#flow">How It Works</a></li>
         <li><a href="#opensource">Open Source</a></li>
         <li><a href="#projects">Systems</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#journey">Journey</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#credentials">Credentials</a></li>
@@ -1762,7 +2057,7 @@
       </ul>
 
       <div class="nav-actions">
-        <button class="btn-search" onclick="openCommandPalette()" aria-label="Open Search Palette">
+        <button class="btn-search" onclick="openCommandPalette()" aria-label="Open Command Search">
           <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           <span class="search-text">Search</span>
           <kbd id="navKeyKbd">⌘K</kbd>
@@ -1773,7 +2068,7 @@
           Resume
         </a>
 
-        <button class="mob-toggle" onclick="document.getElementById('navMenu').classList.toggle('open')" aria-label="Toggle Menu">
+        <button class="mob-toggle" onclick="toggleMobileNav()" aria-label="Toggle Mobile Menu">
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
@@ -1784,67 +2079,172 @@
   <header class="hero">
     <div class="wrap">
 
-      <!-- Status HUD Pills -->
-      <div class="hero-hud">
-        <div class="hud-pill status-available">
-          <span class="dot-live"></span>
-          Available for Full-Time AI & Software Engineering Roles
+      <div class="hero-grid">
+
+        <!-- Left Column: Human Story & Value Proposition -->
+        <div class="hero-content">
+
+          <div class="hero-hud">
+            <div class="hud-pill status-available">
+              <span class="dot-live"></span>
+              Available for Full-Time AI & Software Engineering Roles
+            </div>
+            <div class="hud-pill status-os">
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              Upstream Contributor @ LangChain, CopilotKit & OpenHands
+            </div>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Katta Karthik</span>.
+          </h1>
+
+          <div class="hero-subtitle">
+            I build AI systems that <span class="highlight">don't hallucinate</span>, crash, or fail silently in production.
+          </div>
+
+          <p class="hero-desc">
+            Integrated M.Tech in Computer Science & Engineering from <strong>Vellore Institute of Technology (VIT Amaravati)</strong>. Most AI demos look flashy in 30-second videos, but break down when real humans ask complex questions or an API hiccups. I engineer dependable <strong>multi-agent teams</strong>, <strong>hybrid search engines</strong>, and <strong>self-repairing workflows</strong> that cross-check every fact before answering.
+          </p>
+
+          <div class="hero-actions">
+            <a href="Katta_Karthik_Resume.pdf" download class="btn btn-primary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/></svg>
+              Download Resume (PDF)
+            </a>
+
+            <a href="#flow" class="btn btn-secondary">
+              ✨ See How It Works
+            </a>
+
+            <a href="https://takeuforward.org/profile/karthik0712" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="TakeUForward Profile">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6M14 4l-4 16"/></svg>
+              DSA Profile
+            </a>
+
+            <a href="https://github.com/katta-karthik" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="GitHub Profile">
+              <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/in/katta-karthik/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="LinkedIn Profile">
+              <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+
         </div>
-        <div class="hud-pill status-os">
-          <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          Upstream Contributor @ LangChain, CopilotKit & OpenHands
+
+        <!-- Right Column: Interactive Animated Visualizer (Expressing ideas in animation & graphics!) -->
+        <div class="hero-visualizer-card">
+          <div class="visualizer-top">
+            <span class="visualizer-badge">
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              AUTONOMOUS AGENT ORCHESTRATION
+            </span>
+            <span class="visualizer-stage-text" id="liveSwarmStatus">
+              <span class="dot-live" style="width:6px; height:6px;"></span>
+              Swarm Ready
+            </span>
+          </div>
+
+          <!-- Animated SVG Topology Diagram -->
+          <div class="visualizer-svg-wrap">
+            <svg viewBox="0 0 420 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="cyanGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#38bdf8"/>
+                  <stop offset="100%" stop-color="#2563eb"/>
+                </linearGradient>
+                <linearGradient id="emeraldGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#34d399"/>
+                  <stop offset="100%" stop-color="#059669"/>
+                </linearGradient>
+                <linearGradient id="purpleGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#a78bfa"/>
+                  <stop offset="100%" stop-color="#7c3aed"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Connection Wires with Animated Dashes -->
+              <!-- Wire 1: Query -> Coordinator -->
+              <path class="wire-dash" d="M70 115 H 170" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+              <!-- Wire 2: Coordinator -> Web Worker -->
+              <path class="wire-dash" d="M210 95 L 280 50" stroke="#a78bfa" stroke-width="1.8" stroke-linecap="round"/>
+              <!-- Wire 3: Coordinator -> Tool Sandbox -->
+              <path class="wire-dash" d="M225 115 H 280" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round"/>
+              <!-- Wire 4: Coordinator -> Fact Auditor -->
+              <path class="wire-dash" d="M210 135 L 280 180" stroke="#34d399" stroke-width="1.8" stroke-linecap="round"/>
+              <!-- Wire 5: Workers -> Verified Output -->
+              <path class="wire-dash" d="M330 50 L 370 100" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round"/>
+              <path class="wire-dash" d="M330 115 H 370" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+              <path class="wire-dash" d="M330 180 L 370 130" stroke="#34d399" stroke-width="1.5" stroke-linecap="round"/>
+
+              <!-- Node 1: User Query -->
+              <g transform="translate(25, 95)">
+                <rect width="45" height="40" rx="8" fill="#131c31" stroke="#38bdf8" stroke-width="1.5"/>
+                <text x="22" y="25" fill="#38bdf8" font-size="16" text-anchor="middle">💬</text>
+                <text x="22" y="48" fill="#94a3b8" font-size="8" font-family="'JetBrains Mono', monospace" text-anchor="middle">Inquiry</text>
+              </g>
+
+              <!-- Center Node: LangGraph Orchestrator (Glowing Core) -->
+              <g transform="translate(170, 90)" class="pulse-core">
+                <circle cx="25" cy="25" r="28" fill="rgba(56, 189, 248, 0.12)" stroke="#38bdf8" stroke-width="1" stroke-dasharray="3 3"/>
+                <circle cx="25" cy="25" r="22" fill="#131c31" stroke="url(#cyanGrad)" stroke-width="2"/>
+                <text x="25" y="29" fill="#ffffff" font-size="15" text-anchor="middle">🧠</text>
+                <text x="25" y="58" fill="#38bdf8" font-size="8" font-weight="bold" font-family="'JetBrains Mono', monospace" text-anchor="middle">Coordinator</text>
+              </g>
+
+              <!-- Subagent Top: Researcher -->
+              <g transform="translate(280, 30)">
+                <rect width="50" height="38" rx="8" fill="#131c31" stroke="url(#purpleGrad)" stroke-width="1.5"/>
+                <text x="25" y="23" fill="#a78bfa" font-size="14" text-anchor="middle">🔍</text>
+                <text x="25" y="47" fill="#cbd5e1" font-size="7.5" font-family="'JetBrains Mono', monospace" text-anchor="middle">Researcher</text>
+              </g>
+
+              <!-- Subagent Mid: Tool Sandbox -->
+              <g transform="translate(280, 96)">
+                <rect width="50" height="38" rx="8" fill="#131c31" stroke="url(#cyanGrad)" stroke-width="1.5"/>
+                <text x="25" y="23" fill="#38bdf8" font-size="14" text-anchor="middle">⚡</text>
+                <text x="25" y="47" fill="#cbd5e1" font-size="7.5" font-family="'JetBrains Mono', monospace" text-anchor="middle">Sandbox</text>
+              </g>
+
+              <!-- Subagent Bot: Fact Auditor -->
+              <g transform="translate(280, 160)">
+                <rect width="50" height="38" rx="8" fill="#131c31" stroke="url(#emeraldGrad)" stroke-width="1.5"/>
+                <text x="25" y="23" fill="#34d399" font-size="14" text-anchor="middle">🛡️</text>
+                <text x="25" y="47" fill="#cbd5e1" font-size="7.5" font-family="'JetBrains Mono', monospace" text-anchor="middle">Verifier</text>
+              </g>
+
+              <!-- Final Output: Verified Truth -->
+              <g transform="translate(370, 95)">
+                <rect width="42" height="40" rx="8" fill="#131c31" stroke="#34d399" stroke-width="1.5"/>
+                <text x="21" y="25" fill="#34d399" font-size="15" text-anchor="middle">✨</text>
+                <text x="21" y="48" fill="#34d399" font-size="7.5" font-family="'JetBrains Mono', monospace" text-anchor="middle">100% Cited</text>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Real-Time Activity Log -->
+          <div class="visualizer-console" id="visualizerConsole">
+            <div class="console-line">
+              <span class="console-prompt">system &gt;</span>
+              <span id="consoleMsg">Swarm standing by. Click button below to run live verification simulation.</span>
+            </div>
+          </div>
+
+          <button class="visualizer-btn" onclick="runLiveSwarmSim()">
+            <span>⚡ Run Query Simulation</span>
+          </button>
         </div>
+
       </div>
 
-      <!-- Human Hero Copy -->
-      <h1 class="hero-title">
-        Hi, I'm <span class="gradient-text">Katta Karthik</span>.
-      </h1>
-
-      <div class="hero-subtitle">
-        I build AI systems that <span class="highlight">don't hallucinate</span>, crash, or fail silently in production.
-      </div>
-
-      <p class="hero-desc">
-        Integrated M.Tech in Computer Science & Engineering from <strong>Vellore Institute of Technology</strong>. Most AI prototypes look great in short demos but shatter when real users ask complex questions or APIs timeout. I engineer dependable <strong>multi-agent teams</strong>, <strong>dense + sparse hybrid search engines</strong>, and <strong>autonomous self-healing loops</strong> that cross-verify facts and fix their own errors.
-      </p>
-
-      <!-- Primary Action CTAs -->
-      <div class="hero-actions">
-        <a href="Katta_Karthik_Resume.pdf" download class="btn btn-primary">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/></svg>
-          Download Resume (PDF)
-        </a>
-
-        <a href="#flow" class="btn btn-secondary">
-          ✨ See How It Works
-        </a>
-
-        <a href="#opensource" class="btn btn-secondary">
-          ⚡ Open Source Bento
-        </a>
-
-        <a href="https://takeuforward.org/profile/karthik0712" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="TakeUForward Profile">
-          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6M14 4l-4 16"/></svg>
-          DSA Profile
-        </a>
-
-        <a href="https://github.com/katta-karthik" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="GitHub Profile">
-          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          GitHub
-        </a>
-
-        <a href="https://www.linkedin.com/in/katta-karthik/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="LinkedIn Profile">
-          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          LinkedIn
-        </a>
-      </div>
-
-      <!-- Human Impact Stats Strip (NO CGPA HERE — ONLY IN EDUCATION CARD) -->
+      <!-- Human Impact Stats Strip (NO CGPA HERE — ONLY IN EDUCATION CARD!) -->
       <div class="hero-stats-strip">
         <div class="stat-item">
           <div class="stat-number">6<span class="stat-accent">+</span></div>
-          <div class="stat-label">Upstream PRs Shipped in LangChain & OpenHands</div>
+          <div class="stat-label">Upstream PRs Shipped in LangChain, CopilotKit & OpenHands</div>
         </div>
         <div class="stat-item">
           <div class="stat-number">63,000<span class="stat-accent">+</span></div>
@@ -1852,7 +2252,7 @@
         </div>
         <div class="stat-item">
           <div class="stat-number">&lt;200<span class="stat-accent">ms</span></div>
-          <div class="stat-label">Sub-Second Hybrid Search & Inference SLA</div>
+          <div class="stat-label">Sub-Second Hybrid Search & Retrieval Latency SLA</div>
         </div>
         <div class="stat-item">
           <div class="stat-number">100<span class="stat-accent">%</span></div>
@@ -1860,14 +2260,25 @@
         </div>
       </div>
 
-      <!-- Interactive "How My Systems Work" Visual Flow Showcase -->
-      <div class="flow-showcase" id="flow">
+    </div>
+  </header>
+
+  <!-- Section 01: Visual Flow Showcase (How Dependable AI Works) -->
+  <section class="section" id="flow">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-tag">01. Visual Flow</div>
+        <h2 class="section-title">How Dependable AI Actually Works</h2>
+        <p class="section-sub">Instead of asking a single prompt to do everything and hoping it doesn't make things up, here is how production AI verifies facts and protects users.</p>
+      </div>
+
+      <div class="flow-showcase">
         <div class="flow-head">
           <div class="flow-title-group">
             <h3>
-              <span>⚡ Interactive Visual Flow: How Dependable AI Works</span>
+              <span>⚡ Interactive Visual Flow: From Question to Verified Truth</span>
             </h3>
-            <p>Click any stage or play the live simulation to see how complex questions turn into verified truth.</p>
+            <p>Click any stage or hit Play Live Simulation to watch the step-by-step verification pipeline.</p>
           </div>
           <div class="flow-controls">
             <button class="btn-play-sim" id="playSimBtn" onclick="toggleSimulation()">
@@ -1882,40 +2293,48 @@
           <div class="flow-step-card active" onclick="selectFlowStep(0)" id="flowStep0">
             <div class="flow-step-top">
               <span class="step-number-badge">STAGE 01</span>
-              <div class="step-icon-wrap">💬</div>
+              <div class="step-icon-wrap">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
             </div>
             <div class="step-title">The Real-World Question</div>
-            <div class="step-summary">A user asks a tricky, multi-layered question that causes basic chatbots to guess.</div>
+            <div class="step-summary">A user asks a tricky question requiring both live database numbers and PDF contract clauses.</div>
           </div>
 
           <!-- Step 2 -->
           <div class="flow-step-card" onclick="selectFlowStep(1)" id="flowStep1">
             <div class="flow-step-top">
               <span class="step-number-badge">STAGE 02</span>
-              <div class="step-icon-wrap">🧭</div>
+              <div class="step-icon-wrap">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
             </div>
-            <div class="step-title">Multi-Agent Teamwork</div>
-            <div class="step-summary">A lead coordinator splits the inquiry among specialized researcher agents.</div>
+            <div class="step-title">Teamwork & Delegation</div>
+            <div class="step-summary">A lead coordinator splits the inquiry into 3 focused tasks so no single model gets overwhelmed.</div>
           </div>
 
           <!-- Step 3 -->
           <div class="flow-step-card" onclick="selectFlowStep(2)" id="flowStep2">
             <div class="flow-step-top">
               <span class="step-number-badge">STAGE 03</span>
-              <div class="step-icon-wrap">🔄</div>
+              <div class="step-icon-wrap">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+              </div>
             </div>
             <div class="step-title">Search & Self-Healing</div>
-            <div class="step-summary">Dense vectors + exact keywords grab facts. Errors trigger instant self-repair.</div>
+            <div class="step-summary">Vectors find concepts, keywords catch exact serial numbers. Unexpected DB errors self-repair instantly.</div>
           </div>
 
           <!-- Step 4 -->
           <div class="flow-step-card" onclick="selectFlowStep(3)" id="flowStep3">
             <div class="flow-step-top">
               <span class="step-number-badge">STAGE 04</span>
-              <div class="step-icon-wrap">🎯</div>
+              <div class="step-icon-wrap">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+              </div>
             </div>
             <div class="step-title">Verified Truth & Citations</div>
-            <div class="step-summary">A dedicated auditor verifies facts before delivering the final cited answer.</div>
+            <div class="step-summary">An independent auditor checks claims against original text before delivering the answer with page citations.</div>
           </div>
         </div>
 
@@ -1933,7 +2352,7 @@
             <strong>User Inquiry:</strong> "Compare our Q3 enterprise churn with our renewal targets, and tell me why accounts over $50k churned in August."
             <br>
             <span style="color:var(--text-muted); font-size: 0.88rem;">
-              👉 <em>Why this trips normal AI:</em> It requires querying structured databases, analyzing unstructured PDFs, and computing accurate percentages. A generic model would hallucinate the numbers.
+              👉 <em>Why this trips normal AI:</em> It requires querying structured databases, analyzing unstructured PDFs, and computing accurate percentages. A generic chatbot would hallucinate the numbers.
             </span>
           </div>
 
@@ -1944,53 +2363,31 @@
           </div>
         </div>
 
-      </div>
-
-    </div>
-  </header>
-
-  <!-- Section 01: About Me & Philosophy -->
-  <section class="section" id="about">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="section-tag">01. About</div>
-        <h2 class="section-title">Background & Architecture Philosophy</h2>
-        <p class="section-sub">Why I build AI the way I do: making autonomous systems predictable, verifiable, and resilient.</p>
-      </div>
-
-      <div class="about-card">
-        <div class="about-prose">
-          <p>
-            I am an engineer with an <strong>Integrated M.Tech in Computer Science & Engineering from Vellore Institute of Technology (Amaravati)</strong>. Over the last five years of building distributed software and AI architectures, I noticed a fundamental gap: <em>most modern GenAI breaks down the second it meets messy real-world data</em>.
-          </p>
-          <p>
-            Calling an LLM API takes 5 lines of code. But building an enterprise system that operates 24/7 requires solving real engineering problems: preventing token memory leaks, eliminating hallucinations on numerical data, and surviving database schema changes without crashing.
-          </p>
-          <p>
-            My engineering centers on <strong>multi-agent architectures using LangGraph</strong>, <strong>dense + sparse hybrid retrieval (ChromaDB + BM25 with Reciprocal Rank Fusion)</strong>, and <strong>upstream open-source contributions</strong> to industry-standard frameworks like LangChain, CopilotKit, and OpenHands.
-          </p>
-        </div>
-
-        <div class="about-pillars">
-          <div class="pillar-card">
-            <div class="pillar-icon">🤝</div>
-            <h4>Multi-Agent Coordination</h4>
-            <p>Instead of overloading one massive prompt, I coordinate teams of focused subagents with isolated scratchpads and clear supervisor contracts.</p>
+        <!-- Plain-English Before & After Comparison -->
+        <div class="flow-comparison">
+          <div class="compare-card compare-bad">
+            <div class="compare-title">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              Standard AI Chatbots (The Old Way)
+            </div>
+            <div class="compare-text">
+              Rams all documents into one giant prompt. When it doesn't find an exact match, it makes up convincing-sounding statistics. If a database query fails, it crashes with an ugly error code.
+            </div>
           </div>
 
-          <div class="pillar-card">
-            <div class="pillar-icon">🔎</div>
-            <h4>Zero Guesswork Retrieval</h4>
-            <p>I combine semantic vector search with exact keyword matching so precise serial numbers, dates, and metrics are never lost in the noise.</p>
-          </div>
-
-          <div class="pillar-card">
-            <div class="pillar-icon">🛡️</div>
-            <h4>Autonomous Self-Healing</h4>
-            <p>When an agent hits a database error or unexpected payload, it diagnoses the traceback, corrects its own query, and resumes without failing silently.</p>
+          <div class="compare-card compare-good">
+            <div class="compare-title">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Karthik's Dependable Architecture
+            </div>
+            <div class="compare-text">
+              Divides work across focused subagents, blends vector search with exact keyword matching, catches and corrects SQL errors automatically, and cross-checks claims against source documents.
+            </div>
           </div>
         </div>
+
       </div>
+
     </div>
   </section>
 
@@ -2005,25 +2402,28 @@
 
       <div class="os-grid">
 
-        <!-- LangChain Bento Lead Card -->
+        <!-- LangChain Lead Bento Card -->
         <div class="os-card os-card-lead">
           <div>
             <div class="os-card-head">
-              <span class="os-repo-tag">
-                🦜 langchain-ai / design-agent
-              </span>
-              <div style="display:flex; align-items:center; gap:8px;">
+              <div class="os-brand">
+                <div class="os-brand-icon">
+                  <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a9 9 0 0 0-9 9c0 4.17 2.84 7.67 6.69 8.69L9 22l3.31-2.31A9 9 0 0 0 21 11a9 9 0 0 0-9-9z"/><circle cx="12" cy="11" r="3"/></svg>
+                </div>
+                <span class="os-repo-name">langchain-ai / design-agent</span>
+              </div>
+              <div class="os-badges-row">
                 <span class="os-badge merged">🟣 Merged Upstream</span>
                 <span class="os-badge stars">⭐ Official LangChain</span>
               </div>
             </div>
 
             <p class="os-summary">
-              Shipped core multi-modal providers and cross-platform runtime stability patches to LangChain's flagship generative design agent framework.
+              Shipped core multimodal image generation providers and cross-platform runtime stability patches to LangChain's flagship generative design agent framework.
             </p>
 
             <div class="os-why-callout">
-              <strong>💡 Why this matters to the community:</strong> Added Google Gemini's flagship image models via <code>generateContent</code> directly into LangChain's design agent, empowering developers worldwide to generate 2K high-resolution visual assets. Also resolved critical cross-platform timezone bugs so agent tests pass identically on Windows and Linux.
+              <strong>💡 Why this matters to normal people:</strong> Added Google Gemini's image generation directly into LangChain's design agent, empowering creators to generate crisp 2K visuals with simple prompts. Also fixed cross-platform timezone bugs so agent tests pass reliably on both Windows and Linux.
             </div>
 
             <div class="os-sub-prs">
@@ -2033,11 +2433,11 @@
               </div>
               <div class="os-pr-item">
                 <span class="os-pr-bullet">•</span>
-                <span><strong>PR #38 (Merged, +18, -4):</strong> Windows cross-platform timezone fix (PEP 615 / <code>tzdata</code>) and POSIX stat guard in unit tests.</span>
+                <span><strong>PR #38 (Merged, +18, -4):</strong> Windows cross-platform timezone fix (PEP 615 / tzdata) and file stat guard in unit tests.</span>
               </div>
               <div class="os-pr-item">
                 <span class="os-pr-bullet">•</span>
-                <span><strong>PR #53 (In Review, +503, -3):</strong> <code>HostMediaErrorBoundary</code> middleware catching external tool timeouts without crashing graphs.</span>
+                <span><strong>PR #53 (In Review, +503, -3):</strong> Media error boundary middleware catching external tool timeouts without crashing graphs.</span>
               </div>
             </div>
           </div>
@@ -2059,10 +2459,13 @@
         <div class="os-card os-card-half">
           <div>
             <div class="os-card-head">
-              <span class="os-repo-tag">
-                🦾 CopilotKit / CopilotKit
-              </span>
-              <div style="display:flex; align-items:center; gap:8px;">
+              <div class="os-brand">
+                <div class="os-brand-icon">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                </div>
+                <span class="os-repo-name">CopilotKit / CopilotKit</span>
+              </div>
+              <div class="os-badges-row">
                 <span class="os-badge review">🟢 In Review</span>
                 <span class="os-badge stars">⭐ 18,000+</span>
               </div>
@@ -2073,7 +2476,7 @@
             </p>
 
             <div class="os-why-callout">
-              <strong>💡 Why this matters:</strong> When a user hits "Cancel" during an agent execution, unfinished tool calls previously lingered in the message history, causing subsequent OpenAI calls to fail with <code>HTTP 400</code>. This fix resolves interrupted calls with synthetic cancelled results.
+              <strong>💡 Why this matters:</strong> When a user hits "Cancel" while an AI assistant is running, unfinished tool calls previously lingered in memory, causing subsequent OpenAI calls to fail with HTTP 400 errors. This patch resolves interrupted calls cleanly.
             </div>
           </div>
 
@@ -2088,21 +2491,24 @@
         <div class="os-card os-card-half">
           <div>
             <div class="os-card-head">
-              <span class="os-repo-tag">
-                🤖 OpenHands / software-agent-sdk
-              </span>
-              <div style="display:flex; align-items:center; gap:8px;">
+              <div class="os-brand">
+                <div class="os-brand-icon">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <span class="os-repo-name">OpenHands / software-agent-sdk</span>
+              </div>
+              <div class="os-badges-row">
                 <span class="os-badge review">🟢 In Review</span>
                 <span class="os-badge stars">⭐ 45,000+</span>
               </div>
             </div>
 
             <p class="os-summary">
-              <strong>Pull Request #6292 (+504, -14):</strong> Schema boundary filtering preventing Pydantic <code>extra_forbidden</code> aborts.
+              <strong>Pull Request #6292 (+504, -14):</strong> Dynamic schema boundary filtering preventing strict validation aborts.
             </p>
 
             <div class="os-why-callout">
-              <strong>💡 Why this matters:</strong> When LLMs call tools, they occasionally output slight argument variations (like <code>description</code> instead of <code>summary</code>). Instead of crashing the entire software agent with strict Pydantic errors, this filter dynamically reconciles schema boundaries.
+              <strong>💡 Why this matters:</strong> Autonomous coding agents often introduce minor argument variations (like "description" instead of "summary"). Instead of crashing the entire software agent with validation errors, this filter dynamically reconciles schema boundaries.
             </div>
           </div>
 
@@ -2117,18 +2523,21 @@
         <div class="os-card os-card-half">
           <div>
             <div class="os-card-head">
-              <span class="os-repo-tag">
-                ⚡ TerseAI / durable-actors
-              </span>
+              <div class="os-brand">
+                <div class="os-brand-icon">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                </div>
+                <span class="os-repo-name">TerseAI / durable-actors</span>
+              </div>
               <span class="os-badge review">🟢 In Review</span>
             </div>
 
             <p class="os-summary">
-              <strong>Pull Request #400 (+4,532, -7):</strong> Distributed LangGraph persistence adapter (<code>DurableActorSaver</code>) with WebSocket state emission.
+              <strong>Pull Request #400 (+4,532, -7):</strong> Distributed LangGraph state persistence adapter with WebSocket live streaming.
             </p>
 
             <div class="os-why-callout">
-              <strong>💡 Why this matters:</strong> Gives LangGraph agents durable, crash-proof memory so long-running tasks can survive server restarts and sync real-time progress to frontend UIs.
+              <strong>💡 Why this matters:</strong> Gives autonomous agents durable memory so long-running workflows can survive server restarts and stream live updates to web dashboards without dropped state.
             </div>
           </div>
 
@@ -2143,18 +2552,21 @@
         <div class="os-card os-card-half">
           <div>
             <div class="os-card-head">
-              <span class="os-repo-tag">
-                🛡️ Arvo-AI / aurora
-              </span>
+              <div class="os-brand">
+                <div class="os-brand-icon">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <span class="os-repo-name">Arvo-AI / aurora</span>
+              </div>
               <span class="os-badge review">🟢 In Review</span>
             </div>
 
             <p class="os-summary">
-              <strong>Pull Request #758 (+12, -3):</strong> Autonomous DevOps incident remediation suggestion status synchronization.
+              <strong>Pull Request #758 (+12, -3):</strong> Cloud infrastructure incident remediation status synchronization.
             </p>
 
             <div class="os-why-callout">
-              <strong>💡 Why this matters:</strong> Ensures automated cloud infrastructure fixes report their true operational health based on actual command exit codes rather than ephemeral chat session state.
+              <strong>💡 Why this matters:</strong> Ensures automated cloud infrastructure fixes report their true operational health based on actual command execution results rather than temporary chat session state.
             </div>
           </div>
 
@@ -2193,7 +2605,7 @@
           <div class="system-top">
             <div>
               <div class="system-badge-row">
-                <span class="system-tag purple">Multi-Agent Research Architecture</span>
+                <span class="system-tag purple">Multi-Agent Research Swarm</span>
               </div>
               <h3 class="system-title">DeepScope</h3>
             </div>
@@ -2206,35 +2618,35 @@
           </div>
 
           <p class="system-pitch">
-            Single-prompt AI fails on complex research because context windows fill up with messy raw search results. <strong>DeepScope</strong> solves this by deploying a digital research team: a <strong>Lead Coordinator</strong> decomposes the question, <strong>4 Parallel Web Agents</strong> scour the internet and save data to isolated disk files (preventing memory leaks), and an independent <strong>Fact Verifier</strong> cross-checks claims before generating publication-grade markdown reports.
+            Single-prompt AI fails on complex research because context memory gets flooded with messy raw search data. <strong>DeepScope</strong> solves this by deploying a digital research team: a <strong>Lead Coordinator</strong> decomposes the question, <strong>4 Parallel Web Agents</strong> scour the internet and save data to isolated disk cache (preventing memory leaks), and an independent <strong>Fact Verifier</strong> cross-checks claims before generating publication-grade markdown reports.
           </p>
 
-          <!-- Visual Interactive Node Topology -->
+          <!-- Interactive Node Topology -->
           <div class="visual-topology">
             <div class="topology-header">
               <span>LANGGRAPH MULTI-AGENT PIPELINE (CLICK NODES TO INSPECT RESPONSIBILITIES)</span>
               <span style="color:var(--cyan);">StateGraph Active</span>
             </div>
             <div class="topology-nodes">
-              <div class="topo-node purple" onclick="showNodeDetails('deepscope', 'coordinator')">👑 Lead Coordinator</div>
+              <div class="topo-node purple active" onclick="showNodeDetails('deepscope', 'coordinator', this)">👑 Lead Coordinator</div>
               <span class="topo-arrow">──▶</span>
-              <div class="topo-node accent" onclick="showNodeDetails('deepscope', 'workers')">🌐 Web Workers (×4)</div>
+              <div class="topo-node accent" onclick="showNodeDetails('deepscope', 'workers', this)">🌐 Web Workers (×4)</div>
               <span class="topo-arrow">──▶</span>
-              <div class="topo-node amber" onclick="showNodeDetails('deepscope', 'fs')">💾 Disk-Backed Cache</div>
+              <div class="topo-node amber" onclick="showNodeDetails('deepscope', 'fs', this)">💾 Disk-Backed Cache</div>
               <span class="topo-arrow">──▶</span>
-              <div class="topo-node emerald" onclick="showNodeDetails('deepscope', 'verifier')">🔍 Fact-Checking Auditor</div>
+              <div class="topo-node emerald" onclick="showNodeDetails('deepscope', 'verifier', this)">🔍 Fact-Checking Auditor</div>
               <span class="topo-arrow">──▶</span>
-              <div class="topo-node" onclick="showNodeDetails('deepscope', 'writer')">📄 Verified Report</div>
+              <div class="topo-node" onclick="showNodeDetails('deepscope', 'writer', this)">📄 Verified Report</div>
             </div>
             <div class="topo-info-box" id="deepscopeInfo">
-              💡 <strong>Click any node above</strong> to see how each agent role prevents hallucination and keeps token costs low.
+              💡 <strong>Lead Coordinator:</strong> LangGraph supervisor that parses high-level ambiguous goals, creates a task graph of research subtasks, and dynamically assigns them to worker agents.
             </div>
           </div>
 
           <div class="system-highlights">
             <div class="highlight-card">
               <span class="highlight-icon">✓</span>
-              <span><strong>Context Isolation:</strong> Raw HTML and search pages are persisted directly to disk files, so LLM context memory never bloats.</span>
+              <span><strong>Context Protection:</strong> Raw web pages are cached on disk so model memory never bloats or gets confused.</span>
             </div>
             <div class="highlight-card">
               <span class="highlight-icon">✓</span>
@@ -2254,8 +2666,8 @@
             <span class="tech-pill">Python</span>
             <span class="tech-pill">LangGraph</span>
             <span class="tech-pill">LangChain Deep Agents</span>
-            <span class="tech-pill">FilesystemBackend</span>
-            <span class="tech-pill">TodoListMiddleware</span>
+            <span class="tech-pill">Disk Cache Architecture</span>
+            <span class="tech-pill">Task Queue Coordination</span>
           </div>
         </article>
 
@@ -2283,27 +2695,27 @@
             Standard AI search engines rely only on semantic vector matching, which notoriously overlooks critical exact keywords like account numbers, dates, or financial totals. <strong>NexusRAG</strong> implements a production-grade <strong>dense + sparse hybrid retrieval pipeline</strong> fusing <strong>ChromaDB</strong> semantic vectors and <strong>BM25</strong> exact keywords via Reciprocal Rank Fusion, reranked by <strong>FlashRank</strong> in under 35ms.
           </p>
 
-          <!-- Visual Interactive Node Topology -->
+          <!-- Interactive Node Topology -->
           <div class="visual-topology">
             <div class="topology-header">
-              <span>7-STAGE HYBRID RETRIEVAL PIPELINE (CLICK STAGES TO INSPECT LATENCY & ACCURACY)</span>
+              <span>HYBRID RETRIEVAL PIPELINE (CLICK STAGES TO INSPECT LATENCY & ACCURACY)</span>
               <span style="color:var(--emerald);">&lt;200ms Latency SLA</span>
             </div>
             <div class="topology-nodes">
-              <div class="topo-node emerald" onclick="showNodeDetails('nexus', 'ingest')">1. Smart Chunking</div>
+              <div class="topo-node emerald active" onclick="showNodeDetails('nexus', 'ingest', this)">1. Smart Chunking</div>
               <span class="topo-arrow">──▶</span>
-              <div class="topo-node accent" onclick="showNodeDetails('nexus', 'dense')">2. ChromaDB (Vectors)</div>
+              <div class="topo-node accent" onclick="showNodeDetails('nexus', 'dense', this)">2. ChromaDB (Vectors)</div>
               <span class="topo-arrow">+</span>
-              <div class="topo-node amber" onclick="showNodeDetails('nexus', 'sparse')">3. BM25 (Keywords)</div>
+              <div class="topo-node amber" onclick="showNodeDetails('nexus', 'sparse', this)">3. BM25 (Keywords)</div>
               <span class="topo-arrow">──▶</span>
-              <div class="topo-node purple" onclick="showNodeDetails('nexus', 'fusion')">4. RRF Rank Fusion</div>
+              <div class="topo-node purple" onclick="showNodeDetails('nexus', 'fusion', this)">4. RRF Rank Fusion</div>
               <span class="topo-arrow">──▶</span>
-              <div class="topo-node accent" onclick="showNodeDetails('nexus', 'rerank')">5. FlashRank Reranker</div>
+              <div class="topo-node accent" onclick="showNodeDetails('nexus', 'rerank', this)">5. FlashRank Reranker</div>
               <span class="topo-arrow">──▶</span>
-              <div class="topo-node emerald" onclick="showNodeDetails('nexus', 'groq')">6. Groq LPU + Citations</div>
+              <div class="topo-node emerald" onclick="showNodeDetails('nexus', 'groq', this)">6. Groq LPU + Citations</div>
             </div>
             <div class="topo-info-box" id="nexusInfo">
-              💡 <strong>Click any pipeline stage above</strong> to see how hybrid search eliminates hallucination and guarantees sub-second responses.
+              💡 <strong>Smart Chunking:</strong> Parses PDFs and Markdown files while preserving structural table headings and context hierarchy.
             </div>
           </div>
 
@@ -2330,7 +2742,7 @@
             <span class="tech-pill">Python</span>
             <span class="tech-pill">ChromaDB</span>
             <span class="tech-pill">BM25</span>
-            <span class="tech-pill">Reciprocal Rank Fusion (RRF)</span>
+            <span class="tech-pill">Reciprocal Rank Fusion</span>
             <span class="tech-pill">FlashRank</span>
             <span class="tech-pill">Groq LPU</span>
             <span class="tech-pill">Streamlit</span>
@@ -2361,27 +2773,27 @@
             Traditional text-to-SQL agents break the moment they encounter unusual schemas or typos, showing users frustrating red error banners. This system introduces an <strong>autonomous self-healing StateGraph</strong>: when a query fails, the agent intercepts the SQLite traceback, queries database table pragmas, repairs the SQL query in real time, and executes cleanly—all protected by <strong>Meta Prompt Guard 86M</strong> against SQL injection.
           </p>
 
-          <!-- Visual Interactive Node Topology -->
+          <!-- Interactive Node Topology -->
           <div class="visual-topology">
             <div class="topology-header">
               <span>SELF-HEALING RETRY ARCHITECTURE (CLICK TO INSPECT ERROR RECOVERY)</span>
               <span style="color:var(--amber);">Prompt Guard 86M Active</span>
             </div>
             <div class="topology-nodes">
-              <div class="topo-node amber" onclick="showNodeDetails('ecom', 'prompt')">💬 Natural Language</div>
+              <div class="topo-node amber active" onclick="showNodeDetails('ecom', 'prompt', this)">💬 Natural Language</div>
               <span class="topo-arrow">──▶</span>
-              <div class="topo-node purple" onclick="showNodeDetails('ecom', 'guard')">🛡️ Meta Prompt Guard</div>
+              <div class="topo-node purple" onclick="showNodeDetails('ecom', 'guard', this)">🛡️ Meta Prompt Guard</div>
               <span class="topo-arrow">──▶</span>
-              <div class="topo-node accent" onclick="showNodeDetails('ecom', 'sql')">⚙️ Schema Planner</div>
+              <div class="topo-node accent" onclick="showNodeDetails('ecom', 'sql', this)">⚙️ Schema Planner</div>
               <span class="topo-arrow">──▶</span>
-              <div class="topo-node emerald" onclick="showNodeDetails('ecom', 'sandbox')">📦 Sandbox Execution</div>
+              <div class="topo-node emerald" onclick="showNodeDetails('ecom', 'sandbox', this)">📦 Sandbox Execution</div>
               <span class="topo-arrow">──▶</span>
-              <div class="topo-node amber" onclick="showNodeDetails('ecom', 'heal')">🔄 Self-Healing Loop</div>
+              <div class="topo-node amber" onclick="showNodeDetails('ecom', 'heal', this)">🔄 Self-Healing Loop</div>
               <span class="topo-arrow">──▶</span>
-              <div class="topo-node" onclick="showNodeDetails('ecom', 'chart')">📊 Chart Visualizer</div>
+              <div class="topo-node" onclick="showNodeDetails('ecom', 'chart', this)">📊 Chart Visualizer</div>
             </div>
             <div class="topo-info-box" id="ecomInfo">
-              💡 <strong>Click any stage above</strong> to see how the agent intercepts database exceptions and fixes queries automatically.
+              💡 <strong>Natural Language Query:</strong> Accepts conversational questions from stakeholders regarding sales trends, top margins, and customer retention.
             </div>
           </div>
 
@@ -2409,7 +2821,7 @@
             <span class="tech-pill">Google Gemini</span>
             <span class="tech-pill">Groq LPU</span>
             <span class="tech-pill">Meta Prompt Guard 86M</span>
-            <span class="tech-pill">Model Context Protocol (MCP)</span>
+            <span class="tech-pill">Model Context Protocol</span>
             <span class="tech-pill">Streamlit</span>
           </div>
         </article>
@@ -2418,11 +2830,62 @@
     </div>
   </section>
 
-  <!-- Section 04: Journey (Experience & Education) -->
+  <!-- Section 04: About & Philosophy -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-tag">04. About</div>
+        <h2 class="section-title">Background & Architecture Philosophy</h2>
+        <p class="section-sub">Why I build AI the way I do: making autonomous systems predictable, verifiable, and resilient.</p>
+      </div>
+
+      <div class="about-card">
+        <div class="about-prose">
+          <p>
+            I am an engineer with an <strong>Integrated M.Tech in Computer Science & Engineering from Vellore Institute of Technology (Amaravati)</strong>. Over the last five years of building distributed software and AI architectures, I noticed a fundamental gap: <em>most modern GenAI breaks down the second it meets messy real-world data</em>.
+          </p>
+          <p>
+            Calling an LLM API takes 5 lines of code. But building an enterprise system that operates 24/7 requires solving real engineering problems: preventing token memory leaks, eliminating hallucinations on numerical data, and surviving database schema changes without crashing.
+          </p>
+          <p>
+            My engineering centers on <strong>multi-agent architectures using LangGraph</strong>, <strong>dense + sparse hybrid retrieval (ChromaDB + BM25 with Reciprocal Rank Fusion)</strong>, and <strong>upstream open-source contributions</strong> to industry-standard frameworks like LangChain, CopilotKit, and OpenHands.
+          </p>
+        </div>
+
+        <div class="about-pillars">
+          <div class="pillar-card">
+            <div class="pillar-icon-wrap">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h4>Multi-Agent Coordination</h4>
+            <p>Instead of overloading one massive prompt, I coordinate teams of focused subagents with isolated scratchpads and clear supervisor contracts.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon-wrap">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <h4>Zero Guesswork Retrieval</h4>
+            <p>I combine semantic vector search with exact keyword matching so precise serial numbers, dates, and metrics are never lost in the noise.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon-wrap">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h4>Autonomous Self-Healing</h4>
+            <p>When an agent hits a database error or unexpected payload, it diagnoses the traceback, corrects its own query, and resumes without failing silently.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 05: Journey (Experience & Education) -->
   <section class="section" id="journey">
     <div class="wrap">
       <div class="section-head">
-        <div class="section-tag">04. Journey</div>
+        <div class="section-tag">05. Journey</div>
         <h2 class="section-title">Experience & Education</h2>
         <p class="section-sub">My career path, open-source engineering, and academic foundation.</p>
       </div>
@@ -2431,7 +2894,10 @@
 
         <!-- Work Experience Column -->
         <div class="journey-col">
-          <h3>💼 Engineering & Open Source</h3>
+          <h3>
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            Engineering & Open Source
+          </h3>
 
           <div class="timeline-item">
             <div class="timeline-date">2026 — Present</div>
@@ -2442,7 +2908,7 @@
               </a>
             </div>
             <p class="timeline-text">
-              Active contributor to premier open-source AI agent frameworks. Shipped merged features and core reliability fixes in <strong>langchain-ai/design-agent</strong> (Google Gemini image generation provider & Windows runtime), <strong>CopilotKit</strong> (tool cancellation lifecycle & clean stopping), <strong>OpenHands</strong> (Pydantic tool boundary filtering), <strong>TerseAI</strong> (LangGraph state checkpointer), and <strong>Arvo-AI</strong> (incident remediation sync).
+              Active contributor to premier open-source AI agent frameworks. Shipped merged features and core reliability fixes in <strong>langchain-ai/design-agent</strong> (Google Gemini image generation provider & Windows runtime), <strong>CopilotKit</strong> (tool cancellation lifecycle & clean stopping), <strong>OpenHands</strong> (dynamic tool boundary filtering), <strong>TerseAI</strong> (LangGraph state checkpointer), and <strong>Arvo-AI</strong> (incident remediation sync).
             </p>
           </div>
 
@@ -2462,7 +2928,10 @@
 
         <!-- Education Column (STRICT RULE: CGPA 8.3 APPEARS ONLY HERE!) -->
         <div class="journey-col">
-          <h3>🎓 Education</h3>
+          <h3>
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            Education
+          </h3>
 
           <div class="timeline-item">
             <div class="timeline-date">Graduated · 2021 — 2026</div>
@@ -2495,11 +2964,11 @@
     </div>
   </section>
 
-  <!-- Section 05: Skills & Arsenal -->
+  <!-- Section 06: Skills & Arsenal -->
   <section class="section" id="skills">
     <div class="wrap">
       <div class="section-head">
-        <div class="section-tag">05. Skills</div>
+        <div class="section-tag">06. Skills</div>
         <h2 class="section-title">Technical Expertise</h2>
         <p class="section-sub">Core technologies, frameworks, and engineering tools I use to build dependable AI systems.</p>
       </div>
@@ -2508,10 +2977,12 @@
 
         <div class="skill-card">
           <div class="skill-card-head">
-            <span class="skill-card-icon">🤖</span>
+            <div class="skill-card-icon">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
             <h4 class="skill-card-title">Agentic AI & Orchestration</h4>
           </div>
-          <div class="skill-card-desc">Stateful architectures, subagent delegation, and error recovery</div>
+          <div class="skill-card-desc">Stateful architectures, subagent delegation, and autonomous error recovery</div>
           <div class="skill-tags">
             <span class="skill-badge">LangGraph</span>
             <span class="skill-badge">LangChain</span>
@@ -2519,14 +2990,16 @@
             <span class="skill-badge">Deep Agents</span>
             <span class="skill-badge">Tool Calling</span>
             <span class="skill-badge">Self-Healing Loops</span>
-            <span class="skill-badge">Model Context Protocol (MCP)</span>
+            <span class="skill-badge">Model Context Protocol</span>
             <span class="skill-badge">Pydantic</span>
           </div>
         </div>
 
         <div class="skill-card">
           <div class="skill-card-head">
-            <span class="skill-card-icon">🔍</span>
+            <div class="skill-card-icon">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
             <h4 class="skill-card-title">Advanced RAG & Retrieval</h4>
           </div>
           <div class="skill-card-desc">Dense + sparse hybrid search and grounded document QA</div>
@@ -2543,7 +3016,9 @@
 
         <div class="skill-card">
           <div class="skill-card-head">
-            <span class="skill-card-icon">🧠</span>
+            <div class="skill-card-icon">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a9 9 0 0 0-9 9c0 4.17 2.84 7.67 6.69 8.69L9 22l3.31-2.31A9 9 0 0 0 21 11a9 9 0 0 0-9-9z"/></svg>
+            </div>
             <h4 class="skill-card-title">Models, Safety & Evaluation</h4>
           </div>
           <div class="skill-card-desc">Inference acceleration, red-teaming, and safety guardrails</div>
@@ -2561,7 +3036,9 @@
 
         <div class="skill-card">
           <div class="skill-card-head">
-            <span class="skill-card-icon">⚙️</span>
+            <div class="skill-card-icon">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </div>
             <h4 class="skill-card-title">Software Engineering & Tools</h4>
           </div>
           <div class="skill-card-desc">Backend development, databases, and deployment</div>
@@ -2582,11 +3059,11 @@
     </div>
   </section>
 
-  <!-- Section 06: Verified Credentials -->
+  <!-- Section 07: Verified Credentials -->
   <section class="section" id="credentials">
     <div class="wrap">
       <div class="section-head">
-        <div class="section-tag">06. Credentials</div>
+        <div class="section-tag">07. Credentials</div>
         <h2 class="section-title">Verified Certifications</h2>
         <p class="section-sub">Validated credentials in algorithmic problem solving, machine learning, and AI engineering.</p>
       </div>
@@ -2595,7 +3072,9 @@
 
         <a href="https://static.takeuforward.org/certificate-dSicL1.pdf" target="_blank" rel="noopener noreferrer" class="cert-card">
           <div class="cert-top">
-            <div class="cert-icon">🧠</div>
+            <div class="cert-icon-wrap">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
             <h4>Data Structures and Algorithms</h4>
             <div class="cert-issuer">Take U Forward (Striver)</div>
           </div>
@@ -2606,7 +3085,9 @@
 
         <a href="https://www.udemy.com/certificate/UC-2e9f2e98-ea1d-4491-973a-c0f1f902d246/" target="_blank" rel="noopener noreferrer" class="cert-card">
           <div class="cert-top">
-            <div class="cert-icon">📈</div>
+            <div class="cert-icon-wrap">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
             <h4>Data Science, ML & Deep Learning</h4>
             <div class="cert-issuer">KrishAI Technologies</div>
           </div>
@@ -2617,7 +3098,9 @@
 
         <a href="https://www.udemy.com/certificate/UC-e668f427-ff2c-4ad2-bae1-731067820410/" target="_blank" rel="noopener noreferrer" class="cert-card">
           <div class="cert-top">
-            <div class="cert-icon">🤖</div>
+            <div class="cert-icon-wrap">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </div>
             <h4>Generative AI Engineering</h4>
             <div class="cert-issuer">KrishAI Technologies</div>
           </div>
@@ -2628,7 +3111,9 @@
 
         <a href="https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="cert-card">
           <div class="cert-top">
-            <div class="cert-icon">🛡️</div>
+            <div class="cert-icon-wrap">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
             <h4>AI Task Contributor & Red-Teaming</h4>
             <div class="cert-issuer">Soul AI (Project Shield)</div>
           </div>
@@ -2641,19 +3126,19 @@
     </div>
   </section>
 
-  <!-- Section 07: Contact & Call to Action -->
+  <!-- Section 08: Contact & Call to Action -->
   <section class="section" id="contact">
     <div class="wrap">
       <div class="contact-container">
         <h2 class="contact-title">Let's Build Something Dependable</h2>
         <p class="contact-lead">
-          I am actively exploring <strong>AI Engineering</strong>, <strong>Agentic AI</strong>, and <strong>Software Engineering</strong> roles. If you're building systems that require rock-solid reliability and no hallucinations, let's talk.
+          I am actively exploring <strong>AI Engineering</strong>, <strong>Agentic Systems</strong>, and <strong>Software Engineering</strong> roles. If you're building systems that require rock-solid reliability and zero hallucinations, let's talk.
         </p>
 
         <div class="contact-cards">
           <div class="contact-box" onclick="copyEmail()">
             <div class="contact-box-icon">
-              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </div>
             <span class="contact-type">Email (Click to Copy)</span>
             <span class="contact-val">kattakarthik8008@gmail.com</span>
@@ -2661,7 +3146,7 @@
 
           <a href="https://www.linkedin.com/in/katta-karthik/" target="_blank" rel="noopener noreferrer" class="contact-box">
             <div class="contact-box-icon">
-              <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
             </div>
             <span class="contact-type">LinkedIn</span>
             <span class="contact-val">in/katta-karthik</span>
@@ -2669,7 +3154,7 @@
 
           <a href="https://github.com/katta-karthik" target="_blank" rel="noopener noreferrer" class="contact-box">
             <div class="contact-box-icon">
-              <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             </div>
             <span class="contact-type">GitHub</span>
             <span class="contact-val">katta-karthik</span>
@@ -2677,7 +3162,7 @@
 
           <a href="tel:+918008456790" class="contact-box">
             <div class="contact-box-icon">
-              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </div>
             <span class="contact-type">Direct Phone</span>
             <span class="contact-val">+91 8008456790</span>
@@ -2685,9 +3170,9 @@
         </div>
 
         <div>
-          <a href="Katta_Karthik_Resume.pdf" download class="btn btn-primary" style="padding: 12px 28px;">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/></svg>
-            Download Katta Karthik Resume
+          <a href="Katta_Karthik_Resume.pdf" download class="btn btn-primary" style="padding: 13px 30px; font-size: 0.96rem;">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/></svg>
+            Download Katta Karthik Resume (PDF)
           </a>
         </div>
       </div>
@@ -2755,7 +3240,7 @@
           <span class="cmd-item-shortcut">GitHub</span>
         </li>
         <li class="cmd-item" onclick="executeCmd('sec-flow')">
-          <span>✨ Jump to Interactive Flow</span>
+          <span>✨ Jump to How It Works</span>
           <span class="cmd-item-shortcut">#flow</span>
         </li>
         <li class="cmd-item" onclick="executeCmd('sec-opensource')">
@@ -2765,6 +3250,10 @@
         <li class="cmd-item" onclick="executeCmd('sec-projects')">
           <span>🔬 Jump to Flagship Systems</span>
           <span class="cmd-item-shortcut">#projects</span>
+        </li>
+        <li class="cmd-item" onclick="executeCmd('sec-about')">
+          <span>📖 Jump to About</span>
+          <span class="cmd-item-shortcut">#about</span>
         </li>
         <li class="cmd-item" onclick="executeCmd('sec-journey')">
           <span>🎓 Jump to Experience & Education</span>
@@ -2808,15 +3297,48 @@
     const shortcutLabel = isMac ? '⌘K' : 'Ctrl+K';
     document.querySelectorAll('#navKeyKbd, .dynamic-kbd').forEach(el => el.textContent = shortcutLabel);
 
-    // 1. Mobile Menu Link Navigation
+    // 1. Mobile Menu Toggle
     const navMenu = document.getElementById('navMenu');
+    function toggleMobileNav() {
+      if (navMenu) navMenu.classList.toggle('open');
+    }
     document.querySelectorAll('#navMenu a').forEach(link => {
       link.addEventListener('click', () => {
         if (navMenu) navMenu.classList.remove('open');
       });
     });
 
-    // 2. Interactive "How It Works" Flow Stages
+    // 2. Hero Interactive Swarm Simulation
+    const swarmLogMessages = [
+      "Inquiry parsed: User question decomposed into 3 parallel research goals.",
+      "Web Worker #1 fetched financial filing tables in 120ms.",
+      "Tool Sandbox executed schema inspection cleanly in isolated memory.",
+      "Fact Auditor verified 100% of claims against source PDFs. 0% hallucination."
+    ];
+    let simRunning = false;
+
+    function runLiveSwarmSim() {
+      if (simRunning) return;
+      simRunning = true;
+      const status = document.getElementById('liveSwarmStatus');
+      const consoleMsg = document.getElementById('consoleMsg');
+      
+      status.innerHTML = '<span class="dot-live" style="background:#38bdf8; box-shadow:0 0 10px #38bdf8;"></span> Swarm Working...';
+      
+      let step = 0;
+      const interval = setInterval(() => {
+        if (step < swarmLogMessages.length) {
+          consoleMsg.textContent = swarmLogMessages[step];
+          step++;
+        } else {
+          clearInterval(interval);
+          status.innerHTML = '<span class="dot-live"></span> Swarm Verified · Ready';
+          simRunning = false;
+        }
+      }, 700);
+    }
+
+    // 3. Interactive "How It Works" Flow Stages
     const flowStages = [
       {
         status: "STAGE 01 ACTIVE: CAPTURING INQUIRY",
@@ -2825,10 +3347,10 @@
         tags: ["LangGraph Entry Node", "Intent Classifier", "Meta Prompt Guard 86M"]
       },
       {
-        status: "STAGE 02 ACTIVE: MULTI-AGENT TASK DECOMPOSITION",
+        status: "STAGE 02 ACTIVE: TASK DECOMPOSITION",
         latency: "Latency: 35ms · 3 Subagents Dispatched",
-        content: `<strong>LangGraph Supervisor:</strong> Dispatched 3 specialized digital workers in parallel:<br>• <em>Subagent 1:</em> Query SQLite CRM database for accounts &gt; $50k.<br>• <em>Subagent 2:</em> Search Q3 quarterly financial review PDF for renewal targets.<br>• <em>Subagent 3:</em> Read customer exit interview transcripts stored on disk.`,
-        tags: ["Supervisor StateGraph", "Cognitive Role Division", "Zero Context Leaks"]
+        content: `<strong>LangGraph Supervisor:</strong> Dispatched 3 specialized digital workers in parallel:<br>• <em>Subagent 1:</em> Query SQLite CRM database for accounts &gt; $50k.<br>• <em>Subagent 2:</em> Search Q3 quarterly financial review PDF for renewal targets.<br>• <em>Subagent 3:</em> Read customer exit interview transcripts stored in cache.`,
+        tags: ["Supervisor StateGraph", "Parallel Agent Delegation", "Clean Context Boundaries"]
       },
       {
         status: "STAGE 03 ACTIVE: HYBRID RETRIEVAL & SELF-HEALING",
@@ -2866,7 +3388,6 @@
     }
 
     function toggleSimulation() {
-      const btn = document.getElementById('playSimBtn');
       const icon = document.getElementById('simIcon');
       const label = document.getElementById('simLabel');
 
@@ -2885,11 +3406,11 @@
       }
     }
 
-    // 3. Interactive Topology Details for Flagship Systems
+    // 4. Interactive Topology Details for Flagship Systems
     const topologyDetails = {
       deepscope: {
-        coordinator: "<strong>Lead Coordinator:</strong> LangGraph supervisor that parses high-level ambiguous goals, creates a DAG of research subtasks, and dynamically assigns them to worker agents.",
-        workers: "<strong>Web Workers (×4):</strong> Concurrent worker agents that execute parallel Google and web searches, scraping articles and persisting findings directly to disk files.",
+        coordinator: "<strong>Lead Coordinator:</strong> LangGraph supervisor that parses high-level ambiguous goals, creates a task graph of research subtasks, and dynamically assigns them to worker agents.",
+        workers: "<strong>Web Workers (×4):</strong> Concurrent worker agents that execute parallel Google and web searches, scraping articles and persisting findings directly to disk cache.",
         fs: "<strong>Disk-Backed Cache:</strong> Keeps raw HTML and large text payloads out of the LLM's active token context, preventing memory bloat and model confusion.",
         verifier: "<strong>Fact-Checking Auditor:</strong> An adversarial subagent that inspects worker notes against raw source documents to catch hallucinations before the final report is compiled.",
         writer: "<strong>Verified Report Node:</strong> Synthesizes cross-verified evidence into a clean, comprehensive markdown briefing with clickable source citations."
@@ -2908,18 +3429,22 @@
         sql: "<strong>Schema Planner:</strong> Introspects table structures to author clean, optimized, read-only SQL queries.",
         sandbox: "<strong>Sandbox Execution:</strong> Runs generated queries inside an isolated, strictly read-only SQLite database environment.",
         heal: "<strong>Self-Healing Loop:</strong> When an execution exception occurs (e.g. unknown column), the agent reflects on the traceback, inspects table pragmas, fixes the SQL, and re-executes automatically.",
-        chart: "<strong>Chart Visualizer:</strong> Renders interactive Plotly visual graphics and exposes tools via Model Context Protocol (MCP)."
+        chart: "<strong>Chart Visualizer:</strong> Renders interactive Plotly visual graphics and exposes tools via Model Context Protocol."
       }
     };
 
-    function showNodeDetails(system, nodeKey) {
+    function showNodeDetails(system, nodeKey, el) {
       const box = document.getElementById(`${system}Info`);
       if (box && topologyDetails[system] && topologyDetails[system][nodeKey]) {
         box.innerHTML = `💡 ${topologyDetails[system][nodeKey]}`;
       }
+      if (el && el.parentElement) {
+        el.parentElement.querySelectorAll('.topo-node').forEach(n => n.classList.remove('active'));
+        el.classList.add('active');
+      }
     }
 
-    // 4. Filter Flagship Systems
+    // 5. Filter Flagship Systems
     function filterSystems(cat) {
       document.querySelectorAll('.filter-pill').forEach(pill => {
         const matches = (cat === 'all' && pill.textContent.includes('All')) ||
@@ -2938,7 +3463,7 @@
       });
     }
 
-    // 5. One-Click Copy Email With Toast
+    // 6. One-Click Copy Email With Animated Toast
     function copyEmail() {
       const email = "kattakarthik8008@gmail.com";
       if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -2967,7 +3492,7 @@
       setTimeout(() => toast.classList.remove('show'), 2500);
     }
 
-    // 6. Command Palette (Cmd+K / Ctrl+K)
+    // 7. Command Palette (Cmd+K / Ctrl+K)
     function openCommandPalette() {
       const overlay = document.getElementById('cmdOverlay');
       overlay.classList.add('open');
@@ -3097,6 +3622,9 @@
         case 'sec-projects':
           location.hash = '#projects';
           break;
+        case 'sec-about':
+          location.hash = '#about';
+          break;
         case 'sec-journey':
           location.hash = '#journey';
           break;
@@ -3121,7 +3649,7 @@
       }
     }
 
-    // 7. Scrollspy Active Navigation
+    // 8. Scrollspy Navigation Indicator
     if ('IntersectionObserver' in window) {
       const sections = document.querySelectorAll('section[id], header[id], div[id="flow"]');
       const navLinks = document.querySelectorAll('.nav-links a');
