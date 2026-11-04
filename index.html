@@ -190,78 +190,13 @@
       padding: 6px;
     }
 
-    /* ── HERO (HIGH DENSITY 2-COLUMN) ── */
+    /* ── HERO ── */
     .hero {
-      padding: 56px 0 16px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 28px;
-      align-items: center;
+      padding: 54px 0 20px;
     }
 
     .hero-content {
-      max-width: 100%;
-    }
-
-    .hero-about-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 22px 24px;
-      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .about-card-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .about-card-tag {
-      font-family: var(--mono);
-      font-size: 0.76rem;
-      font-weight: 700;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .about-card-badge {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: var(--emerald);
-      background: var(--emerald-glow);
-      padding: 2px 8px;
-      border-radius: 4px;
-    }
-
-    .about-card-text {
-      font-size: 0.91rem;
-      color: var(--text-muted);
-      line-height: 1.65;
-    }
-
-    .about-card-text p {
-      margin-bottom: 10px;
-    }
-
-    .about-card-text p:last-child {
-      margin-bottom: 0;
-    }
-
-    .about-card-text strong {
-      color: var(--text);
-      font-weight: 600;
+      max-width: 820px;
     }
 
     .status-badge {
@@ -413,6 +348,88 @@
       margin-top: 6px;
       max-width: 600px;
     }
+
+    /* ── ABOUT (HORIZONTAL CARD - MATCHING PROJECTS & OPEN SOURCE) ── */
+    .about-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 26px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .about-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), transparent 80%);
+      opacity: 0.9;
+    }
+
+    .about-card:hover {
+      border-color: rgba(255, 255, 255, 0.15);
+      background: var(--bg-card-hover);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .about-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .about-tag {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-glow);
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+
+    .about-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+
+    .about-summary {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .about-summary p { margin-bottom: 12px; }
+    .about-summary p:last-child { margin-bottom: 0; }
+    .about-summary strong { color: var(--text); font-weight: 600; }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 14px;
+      margin-bottom: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    .bullet-accent { background: var(--accent); }
 
     .about-footer-badges {
       display: flex;
@@ -1005,7 +1022,7 @@
       .wrap { padding: 0 20px; }
       .hero { padding: 48px 0 16px; }
       .section { padding: 20px 0; }
-      .journey-grid, .skills-grid, .contact-cards, .project-highlights, .os-grid, .hero-grid {
+      .journey-grid, .skills-grid, .contact-cards, .project-highlights, .os-grid, .about-highlights {
         grid-template-columns: 1fr;
       }
       .os-lead { grid-column: 1; }
@@ -1063,7 +1080,7 @@
         width: 100%;
         justify-content: flex-start;
       }
-      .hero-about-card, .project-card, .os-card { padding: 16px 14px; }
+      .about-card, .project-card, .os-card { padding: 18px 16px; }
       .about-footer-badges { gap: 6px; }
       .badge-pill { font-size: 0.72rem; padding: 3px 8px; }
       .contact-cards { grid-template-columns: 1fr; }
@@ -1101,97 +1118,116 @@
     </div>
   </nav>
 
-  <!-- Hero & About Section (Unified 2-Column Layout) -->
-  <header class="hero" id="about">
+  <!-- Hero Section -->
+  <header class="hero">
     <div class="wrap">
-      <div class="hero-grid">
+      <div class="hero-content">
         
-        <!-- Left: Hero Intro -->
-        <div class="hero-content">
-          <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
-            <div class="status-badge" style="margin-bottom: 0;">
-              <span class="pulse-dot"></span>
-              AI Engineer · Available for Full-Time Roles
-            </div>
-            <div class="status-badge" style="margin-bottom: 0; color: var(--accent); background: rgba(56, 189, 248, 0.08); border-color: rgba(56, 189, 248, 0.25);">
-              ⚡ Upstream Contributor @ LangChain & OpenHands
-            </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px;">
+          <div class="status-badge" style="margin-bottom: 0;">
+            <span class="pulse-dot"></span>
+            AI Engineer · Available for Full-Time Roles
           </div>
-
-          <h1 class="hero-title">
-            Hi, I'm <span class="name-highlight">Katta Karthik</span>.
-          </h1>
-
-          <div class="hero-subtitle">
-            I build <span>autonomous AI agents</span> & contribute to <span>upstream open source</span>.
-          </div>
-
-          <p class="hero-desc">
-            Integrated M.Tech in Computer Science & Engineering from <strong>Vellore Institute of Technology</strong>. Active upstream contributor to <strong>LangChain</strong>, <strong>CopilotKit</strong>, and <strong>OpenHands</strong>. I engineer reliable, production-grade intelligence — from multi-agent research graphs to self-healing SQL analytics.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">
-              Explore My Work
-              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
-            </a>
-
-            <a href="#opensource" class="btn btn-secondary">
-              ⚡ Open Source
-            </a>
-
-            <a href="Katta_Karthik_Resume.pdf" download class="btn btn-secondary">
-              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/></svg>
-              Resume
-            </a>
-
-            <a href="https://github.com/katta-karthik" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="GitHub Profile">
-              <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              GitHub
-            </a>
-
-            <a href="https://www.linkedin.com/in/katta-karthik/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="LinkedIn Profile">
-              <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-              LinkedIn
-            </a>
-
-            <a href="https://takeuforward.org/profile/karthik0712" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="DSA Coding Profile">
-              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6M14 4l-4 16"/></svg>
-              DSA Profile
-            </a>
+          <div class="status-badge" style="margin-bottom: 0; color: var(--accent); background: rgba(56, 189, 248, 0.08); border-color: rgba(56, 189, 248, 0.25);">
+            ⚡ Upstream Contributor @ LangChain & OpenHands
           </div>
         </div>
 
-        <!-- Right: About & Background Card (In that exact space) -->
-        <div class="hero-about-card">
-          <div class="about-card-head">
-            <span class="about-card-tag">01. About & Focus</span>
-            <span class="about-card-badge">Integrated M.Tech CSE</span>
-          </div>
+        <h1 class="hero-title">
+          Hi, I'm <span class="name-highlight">Katta Karthik</span>.
+        </h1>
 
-          <div class="about-card-text">
-            <p>
-              I am a graduate with an <strong>Integrated M.Tech in Computer Science & Engineering from Vellore Institute of Technology</strong>. I specialize in architecting autonomous AI agents, enterprise-grade retrieval architectures, and intelligent software systems that solve real-world problems with reliability and precision.
-            </p>
-            <p>
-              My core capabilities center on building production AI applications: orchestrating <strong>stateful multi-agent systems</strong> with LangGraph that autonomously decompose complex workflows, designing <strong>dense-sparse hybrid RAG pipelines</strong> (ChromaDB + BM25 + FlashRank cross-encoder reranking) for zero-hallucination document intelligence, and constructing <strong>self-healing data agents</strong> that autonomously diagnose runtime SQL errors and repair queries in real time.
-            </p>
-            <p>
-              Beyond system architecture, I actively contribute to upstream open-source AI agent ecosystems—shipping merged features and runtime fixes to official repositories under <strong>LangChain</strong>, alongside active contributions to <strong>CopilotKit</strong> and <strong>OpenHands</strong>. I also bring hands-on experience in AI safety and red-teaming through freelance work at <a href="https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing" target="_blank">Soul AI (Project Shield)</a>, testing model boundaries and enforcing strict instruction compliance.
-            </p>
-          </div>
+        <div class="hero-subtitle">
+          I build <span>autonomous AI agents</span> & contribute to <span>upstream open source</span>.
+        </div>
 
-          <div class="about-footer-badges">
-            <div class="badge-pill">🎓 Degree: <strong>Integrated M.Tech CSE</strong></div>
-            <div class="badge-pill">🏛️ College: <strong>VIT Amaravati</strong></div>
-            <div class="badge-pill">⚡ Core Stack: <strong>LangGraph, Python & RAG</strong></div>
-            <div class="badge-pill">🌐 Upstream: <strong>LangChain · OpenHands · CopilotKit</strong></div>
-          </div>
+        <p class="hero-desc">
+          Integrated M.Tech in Computer Science & Engineering from <strong>Vellore Institute of Technology</strong>. Active upstream contributor to <strong>LangChain</strong>, <strong>CopilotKit</strong>, and <strong>OpenHands</strong>. I engineer reliable, production-grade intelligence — from multi-agent research graphs to self-healing SQL analytics.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            Explore My Work
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+          </a>
+
+          <a href="#opensource" class="btn btn-secondary">
+            ⚡ Open Source
+          </a>
+
+          <a href="Katta_Karthik_Resume.pdf" download class="btn btn-secondary">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/></svg>
+            Resume
+          </a>
+
+          <a href="https://github.com/katta-karthik" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="GitHub Profile">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+
+          <a href="https://www.linkedin.com/in/katta-karthik/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="LinkedIn Profile">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            LinkedIn
+          </a>
+
+          <a href="https://takeuforward.org/profile/karthik0712" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="DSA Coding Profile">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6M14 4l-4 16"/></svg>
+            DSA Profile
+          </a>
         </div>
 
       </div>
     </div>
   </header>
+
+  <!-- About Section (Horizontal Card - Consistent with Projects) -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-tag">01. About</div>
+        <h2 class="section-title">Background & Focus</h2>
+      </div>
+
+      <div class="about-card">
+        <div class="about-top">
+          <div>
+            <span class="about-tag">Integrated M.Tech in CSE</span>
+            <h3 class="about-title">Systems Engineering & Architectural Philosophy</h3>
+          </div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <span class="badge-pill">🏛️ Vellore Institute of Technology</span>
+            <span class="badge-pill">🌐 Upstream Contributor</span>
+          </div>
+        </div>
+
+        <div class="about-summary">
+          <p>
+            I am a graduate with an <strong>Integrated M.Tech in Computer Science & Engineering from Vellore Institute of Technology (VIT Amaravati)</strong>. I specialize in architecting autonomous AI agents, enterprise-grade retrieval architectures, and intelligent software systems that solve real-world problems with reliability and precision.
+          </p>
+          <p>
+            My core engineering focuses on solving failure points in modern GenAI: orchestrating <strong>stateful multi-agent systems</strong> with LangGraph that autonomously decompose and execute complex research workflows, designing <strong>dense-sparse hybrid RAG pipelines</strong> combining ChromaDB, BM25, and FlashRank cross-encoder reranking for zero-hallucination citations, and constructing <strong>self-healing data agents</strong> that automatically diagnose runtime SQL errors and repair queries in real time.
+          </p>
+          <p>
+            Beyond system architecture, I actively contribute to upstream open-source AI agent ecosystems—shipping merged features and runtime fixes to official repositories under <strong>LangChain</strong>, alongside active contributions to <strong>CopilotKit</strong> and <strong>OpenHands</strong>. I also bring hands-on experience in AI safety and red-teaming through freelance work at <a href="https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing" target="_blank">Soul AI (Project Shield)</a>, testing model boundaries and enforcing strict instruction compliance.
+          </p>
+        </div>
+
+        <div class="about-highlights">
+          <div class="highlight-item"><span class="highlight-bullet bullet-accent"></span><strong>Multi-Agent Systems:</strong> LangGraph state graphs with isolated subagent contexts and supervisor coordination.</div>
+          <div class="highlight-item"><span class="highlight-bullet bullet-accent"></span><strong>Production Hybrid RAG:</strong> Dense ChromaDB vectors + BM25 keyword search fused with Reciprocal Rank Fusion.</div>
+          <div class="highlight-item"><span class="highlight-bullet bullet-accent"></span><strong>Upstream Frameworks:</strong> Core pull requests shipped to LangChain, CopilotKit, OpenHands, and TerseAI.</div>
+          <div class="highlight-item"><span class="highlight-bullet bullet-accent"></span><strong>Safety & Reliability:</strong> Human-in-the-Loop evaluation, adversarial red-teaming, and self-healing SQL loops.</div>
+        </div>
+
+        <div class="about-footer-badges">
+          <div class="badge-pill">🎓 Degree: <strong>Integrated M.Tech CSE</strong></div>
+          <div class="badge-pill">🏛️ Alma Mater: <strong>Vellore Institute of Technology</strong></div>
+          <div class="badge-pill">⚡ Core Stack: <strong>LangGraph, Python & RAG</strong></div>
+          <div class="badge-pill">🌐 Upstream: <strong>LangChain · OpenHands · CopilotKit</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Open Source Contributions Section -->
   <section class="section" id="opensource">
