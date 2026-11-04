@@ -349,12 +349,12 @@
       max-width: 600px;
     }
 
-    /* ── ABOUT (HORIZONTAL CARD - MATCHING PROJECTS & OPEN SOURCE) ── */
+    /* ── ABOUT (COMPACT HORIZONTAL CARD) ── */
     .about-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 26px 28px;
+      padding: 20px 24px;
       position: relative;
       overflow: hidden;
       transition: all 0.25s ease;
@@ -382,9 +382,9 @@
     .about-top {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      gap: 14px;
-      margin-bottom: 14px;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
       flex-wrap: wrap;
     }
 
@@ -399,46 +399,34 @@
       padding: 3px 8px;
       border-radius: 4px;
       display: inline-block;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .about-title {
-      font-size: 1.35rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: #fff;
       letter-spacing: -0.02em;
     }
 
     .about-summary {
-      font-size: 0.94rem;
+      font-size: 0.92rem;
       color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 16px;
+      line-height: 1.65;
+      margin-bottom: 14px;
     }
 
-    .about-summary p { margin-bottom: 12px; }
-    .about-summary p:last-child { margin-bottom: 0; }
     .about-summary strong { color: var(--text); font-weight: 600; }
 
     .about-highlights {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px 14px;
-      margin-bottom: 16px;
-      padding-top: 14px;
+      gap: 8px 16px;
+      padding-top: 12px;
       border-top: 1px solid var(--border);
     }
 
     .bullet-accent { background: var(--accent); }
-
-    .about-footer-badges {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border);
-    }
 
     .badge-pill {
       display: inline-flex;
@@ -1081,7 +1069,6 @@
         justify-content: flex-start;
       }
       .about-card, .project-card, .os-card { padding: 18px 16px; }
-      .about-footer-badges { gap: 6px; }
       .badge-pill { font-size: 0.72rem; padding: 3px 8px; }
       .contact-cards { grid-template-columns: 1fr; }
       .contact-box { padding: 12px 14px; }
@@ -1180,7 +1167,7 @@
     </div>
   </header>
 
-  <!-- About Section (Horizontal Card - Consistent with Projects) -->
+  <!-- About Section (Compact Card - Balanced Density) -->
   <section class="section" id="about">
     <div class="wrap">
       <div class="section-head">
@@ -1200,30 +1187,15 @@
           </div>
         </div>
 
-        <div class="about-summary">
-          <p>
-            I am a graduate with an <strong>Integrated M.Tech in Computer Science & Engineering from Vellore Institute of Technology (VIT Amaravati)</strong>. I specialize in architecting autonomous AI agents, enterprise-grade retrieval architectures, and intelligent software systems that solve real-world problems with reliability and precision.
-          </p>
-          <p>
-            My core engineering focuses on solving failure points in modern GenAI: orchestrating <strong>stateful multi-agent systems</strong> with LangGraph that autonomously decompose and execute complex research workflows, designing <strong>dense-sparse hybrid RAG pipelines</strong> combining ChromaDB, BM25, and FlashRank cross-encoder reranking for zero-hallucination citations, and constructing <strong>self-healing data agents</strong> that automatically diagnose runtime SQL errors and repair queries in real time.
-          </p>
-          <p>
-            Beyond system architecture, I actively contribute to upstream open-source AI agent ecosystems—shipping merged features and runtime fixes to official repositories under <strong>LangChain</strong>, alongside active contributions to <strong>CopilotKit</strong> and <strong>OpenHands</strong>. I also bring hands-on experience in AI safety and red-teaming through freelance work at <a href="https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing" target="_blank">Soul AI (Project Shield)</a>, testing model boundaries and enforcing strict instruction compliance.
-          </p>
-        </div>
+        <p class="about-summary">
+          Integrated M.Tech graduate in Computer Science & Engineering from <strong>Vellore Institute of Technology</strong> specializing in autonomous multi-agent systems and production-grade retrieval architectures. My engineering focuses on eradicating GenAI failure modes—building stateful <strong>LangGraph</strong> agent graphs with context isolation, dense-sparse hybrid RAG (<strong>ChromaDB + BM25 + FlashRank</strong>) for zero-hallucination citations, and self-healing SQL execution loops. Active upstream contributor to <strong>LangChain</strong>, <strong>CopilotKit</strong>, and <strong>OpenHands</strong>, with AI safety red-teaming background at <a href="https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing" target="_blank">Soul AI</a>.
+        </p>
 
         <div class="about-highlights">
-          <div class="highlight-item"><span class="highlight-bullet bullet-accent"></span><strong>Multi-Agent Systems:</strong> LangGraph state graphs with isolated subagent contexts and supervisor coordination.</div>
-          <div class="highlight-item"><span class="highlight-bullet bullet-accent"></span><strong>Production Hybrid RAG:</strong> Dense ChromaDB vectors + BM25 keyword search fused with Reciprocal Rank Fusion.</div>
-          <div class="highlight-item"><span class="highlight-bullet bullet-accent"></span><strong>Upstream Frameworks:</strong> Core pull requests shipped to LangChain, CopilotKit, OpenHands, and TerseAI.</div>
-          <div class="highlight-item"><span class="highlight-bullet bullet-accent"></span><strong>Safety & Reliability:</strong> Human-in-the-Loop evaluation, adversarial red-teaming, and self-healing SQL loops.</div>
-        </div>
-
-        <div class="about-footer-badges">
-          <div class="badge-pill">🎓 Degree: <strong>Integrated M.Tech CSE</strong></div>
-          <div class="badge-pill">🏛️ Alma Mater: <strong>Vellore Institute of Technology</strong></div>
-          <div class="badge-pill">⚡ Core Stack: <strong>LangGraph, Python & RAG</strong></div>
-          <div class="badge-pill">🌐 Upstream: <strong>LangChain · OpenHands · CopilotKit</strong></div>
+          <div class="highlight-item"><span class="highlight-bullet bullet-accent"></span><strong>Multi-Agent Systems:</strong> LangGraph state graphs with isolated subagent memory and supervisor orchestration.</div>
+          <div class="highlight-item"><span class="highlight-bullet bullet-accent"></span><strong>Production Hybrid RAG:</strong> ChromaDB vectors + BM25 keyword matching fused via Reciprocal Rank Fusion.</div>
+          <div class="highlight-item"><span class="highlight-bullet bullet-accent"></span><strong>Upstream OSS:</strong> Merged PRs and runtime features shipped across LangChain, CopilotKit, and OpenHands.</div>
+          <div class="highlight-item"><span class="highlight-bullet bullet-accent"></span><strong>Safety & Reliability:</strong> Adversarial red-teaming, prompt injection defense, and self-healing SQL loops.</div>
         </div>
       </div>
     </div>
