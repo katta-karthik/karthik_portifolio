@@ -206,74 +206,60 @@
       max-width: 100%;
     }
 
-    .hero-hud-card {
+    .hero-about-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 20px 22px;
+      padding: 22px 24px;
       box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .hud-header {
+    .about-card-head {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       padding-bottom: 10px;
       border-bottom: 1px solid var(--border);
     }
 
-    .hud-title {
+    .about-card-tag {
       font-family: var(--mono);
-      font-size: 0.74rem;
+      font-size: 0.76rem;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
       color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
-    .hud-status {
+    .about-card-badge {
       font-family: var(--mono);
       font-size: 0.72rem;
       font-weight: 600;
       color: var(--emerald);
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
+      background: var(--emerald-glow);
+      padding: 2px 8px;
+      border-radius: 4px;
     }
 
-    .hud-items {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    .about-card-text {
+      font-size: 0.91rem;
+      color: var(--text-muted);
+      line-height: 1.65;
     }
 
-    .hud-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.84rem;
-      line-height: 1.4;
+    .about-card-text p {
+      margin-bottom: 10px;
     }
 
-    .hud-icon {
-      font-size: 1.05rem;
-      line-height: 1;
-      padding: 4px;
-      border-radius: 6px;
-      background: rgba(255, 255, 255, 0.04);
-      flex-shrink: 0;
+    .about-card-text p:last-child {
+      margin-bottom: 0;
     }
 
-    .hud-label {
-      font-size: 0.7rem;
-      font-family: var(--mono);
-      color: var(--text-faint);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .hud-val {
+    .about-card-text strong {
       color: var(--text);
       font-weight: 600;
     }
@@ -428,89 +414,13 @@
       max-width: 600px;
     }
 
-    /* ── ABOUT (2-COLUMN SPACE OPTIMIZED) ── */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.18fr 0.82fr;
-      gap: 20px;
-      align-items: stretch;
-    }
-
-    .about-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px 26px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .about-prose {
-      font-size: 0.94rem;
-      color: var(--text-muted);
-      line-height: 1.72;
-    }
-
-    .about-prose p { margin-bottom: 12px; }
-    .about-prose p:last-child { margin-bottom: 0; }
-    .about-prose strong { color: var(--text); font-weight: 600; }
-
     .about-footer-badges {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
-      margin-top: 16px;
-      padding-top: 14px;
+      margin-top: 14px;
+      padding-top: 12px;
       border-top: 1px solid var(--border);
-    }
-
-    .about-pillars {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-
-    .pillar-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 14px 16px;
-      transition: all 0.2s ease;
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-    }
-
-    .pillar-card:hover {
-      border-color: rgba(56, 189, 248, 0.35);
-      background: var(--bg-card-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-    }
-
-    .pillar-icon {
-      font-size: 1.25rem;
-      line-height: 1;
-      padding: 6px;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.04);
-      flex-shrink: 0;
-    }
-
-    .pillar-body h4 {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 2px;
-    }
-
-    .pillar-body p {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      line-height: 1.45;
-      margin: 0;
     }
 
     .badge-pill {
@@ -1095,8 +1005,7 @@
       .wrap { padding: 0 20px; }
       .hero { padding: 48px 0 16px; }
       .section { padding: 20px 0; }
-      .about-pillars { grid-template-columns: 1fr 1fr; }
-      .journey-grid, .skills-grid, .contact-cards, .project-highlights, .os-grid, .about-grid, .hero-grid {
+      .journey-grid, .skills-grid, .contact-cards, .project-highlights, .os-grid, .hero-grid {
         grid-template-columns: 1fr;
       }
       .os-lead { grid-column: 1; }
@@ -1143,7 +1052,6 @@
         font-size: 0.8rem;
       }
       .section { padding: 18px 0; }
-      .about-pillars { grid-template-columns: 1fr; }
       .section-head { margin-bottom: 18px; }
       .section-title { font-size: 1.5rem; }
       .project-top {
@@ -1155,7 +1063,7 @@
         width: 100%;
         justify-content: flex-start;
       }
-      .about-card, .project-card, .os-card, .pillar-card { padding: 16px 14px; }
+      .hero-about-card, .project-card, .os-card { padding: 16px 14px; }
       .about-footer-badges { gap: 6px; }
       .badge-pill { font-size: 0.72rem; padding: 3px 8px; }
       .contact-cards { grid-template-columns: 1fr; }
@@ -1193,11 +1101,12 @@
     </div>
   </nav>
 
-  <!-- Hero Section (High Density 2-Column Layout) -->
-  <header class="hero">
+  <!-- Hero & About Section (Unified 2-Column Layout) -->
+  <header class="hero" id="about">
     <div class="wrap">
       <div class="hero-grid">
         
+        <!-- Left: Hero Intro -->
         <div class="hero-content">
           <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
             <div class="status-badge" style="margin-bottom: 0;">
@@ -1218,7 +1127,7 @@
           </div>
 
           <p class="hero-desc">
-            Integrated M.Tech in Computer Science & Engineering from <strong>Vellore Institute of Technology</strong>. Upstream contributor to <strong>LangChain</strong>, <strong>CopilotKit</strong>, and <strong>OpenHands</strong>. I engineer reliable, production-grade intelligence — from multi-agent research graphs to self-healing SQL analytics.
+            Integrated M.Tech in Computer Science & Engineering from <strong>Vellore Institute of Technology</strong>. Active upstream contributor to <strong>LangChain</strong>, <strong>CopilotKit</strong>, and <strong>OpenHands</strong>. I engineer reliable, production-grade intelligence — from multi-agent research graphs to self-healing SQL analytics.
           </p>
 
           <div class="hero-actions">
@@ -1253,72 +1162,19 @@
           </div>
         </div>
 
-        <!-- High Density Executive Overview Bento (Fills horizontal space on Desktop & Mac) -->
-        <div class="hero-hud-card">
-          <div class="hud-header">
-            <span class="hud-title">⚡ Engineering Snapshot</span>
-            <span class="hud-status"><span class="pulse-dot"></span> Available</span>
+        <!-- Right: About & Background Card (In that exact space) -->
+        <div class="hero-about-card">
+          <div class="about-card-head">
+            <span class="about-card-tag">01. About & Focus</span>
+            <span class="about-card-badge">Integrated M.Tech CSE</span>
           </div>
-          <div class="hud-items">
-            <div class="hud-item">
-              <span class="hud-icon">🎓</span>
-              <div>
-                <div class="hud-label">Alma Mater & Degree</div>
-                <div class="hud-val">Integrated M.Tech CSE · Vellore Institute of Technology</div>
-              </div>
-            </div>
-            <div class="hud-item">
-              <span class="hud-icon">🦜</span>
-              <div>
-                <div class="hud-label">LangChain Upstream (Merged)</div>
-                <div class="hud-val">PR #50 (Gemini 2K Generation) & PR #38 (Windows Runtime)</div>
-              </div>
-            </div>
-            <div class="hud-item">
-              <span class="hud-icon">🦾</span>
-              <div>
-                <div class="hud-label">Active Ecosystem PRs</div>
-                <div class="hud-val">CopilotKit (#8042) · OpenHands (#6292) · TerseAI (#400)</div>
-              </div>
-            </div>
-            <div class="hud-item">
-              <span class="hud-icon">🔬</span>
-              <div>
-                <div class="hud-label">Flagship Deployments</div>
-                <div class="hud-val">DeepScope (Multi-Agent) · NexusRAG · E-commerce AI</div>
-              </div>
-            </div>
-            <div class="hud-item">
-              <span class="hud-icon">🛡️</span>
-              <div>
-                <div class="hud-label">Safety & Problem Solving</div>
-                <div class="hud-val">Soul AI (Project Shield) · TakeUForward DSA Profile</div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-      </div>
-    </div>
-  </header>
-
-  <!-- About Section -->
-  <section class="section" id="about">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="section-tag">01. About</div>
-        <h2 class="section-title">Background & Focus</h2>
-      </div>
-
-      <div class="about-grid">
-        <!-- Narrative Card -->
-        <div class="about-card">
-          <div class="about-prose">
+          <div class="about-card-text">
             <p>
               I am a graduate with an <strong>Integrated M.Tech in Computer Science & Engineering from Vellore Institute of Technology</strong>. I specialize in architecting autonomous AI agents, enterprise-grade retrieval architectures, and intelligent software systems that solve real-world problems with reliability and precision.
             </p>
             <p>
-              My engineering focuses on solving core failure points in modern GenAI: orchestrating <strong>stateful multi-agent systems</strong> with LangGraph that autonomously decompose complex workflows, designing <strong>dense-sparse hybrid RAG pipelines</strong> (ChromaDB + BM25 + FlashRank cross-encoder) for zero-hallucination document intelligence, and constructing <strong>self-healing data agents</strong> that autonomously diagnose and recover from runtime SQL errors.
+              My core capabilities center on building production AI applications: orchestrating <strong>stateful multi-agent systems</strong> with LangGraph that autonomously decompose complex workflows, designing <strong>dense-sparse hybrid RAG pipelines</strong> (ChromaDB + BM25 + FlashRank cross-encoder reranking) for zero-hallucination document intelligence, and constructing <strong>self-healing data agents</strong> that autonomously diagnose runtime SQL errors and repair queries in real time.
             </p>
             <p>
               Beyond system architecture, I actively contribute to upstream open-source AI agent ecosystems—shipping merged features and runtime fixes to official repositories under <strong>LangChain</strong>, alongside active contributions to <strong>CopilotKit</strong> and <strong>OpenHands</strong>. I also bring hands-on experience in AI safety and red-teaming through freelance work at <a href="https://drive.google.com/file/d/1rxj9jjCBWw_k7YBBMi82YyqKfKlP5Hup/view?usp=sharing" target="_blank">Soul AI (Project Shield)</a>, testing model boundaries and enforcing strict instruction compliance.
@@ -1327,49 +1183,15 @@
 
           <div class="about-footer-badges">
             <div class="badge-pill">🎓 Degree: <strong>Integrated M.Tech CSE</strong></div>
-            <div class="badge-pill">🏛️ Alma Mater: <strong>Vellore Institute of Technology</strong></div>
+            <div class="badge-pill">🏛️ College: <strong>VIT Amaravati</strong></div>
             <div class="badge-pill">⚡ Core Stack: <strong>LangGraph, Python & RAG</strong></div>
             <div class="badge-pill">🌐 Upstream: <strong>LangChain · OpenHands · CopilotKit</strong></div>
           </div>
         </div>
 
-        <!-- Pillars Snapshot Grid (Eliminates awkward empty whitespace on Desktop & Mac) -->
-        <div class="about-pillars">
-          <div class="pillar-card">
-            <div class="pillar-icon">🎓</div>
-            <div class="pillar-body">
-              <h4>Integrated M.Tech Graduate</h4>
-              <p>Five-year integrated master's in Computer Science & Engineering from Vellore Institute of Technology (VIT Amaravati).</p>
-            </div>
-          </div>
-
-          <div class="pillar-card">
-            <div class="pillar-icon">🌐</div>
-            <div class="pillar-body">
-              <h4>Upstream Contributor</h4>
-              <p>Merged features in LangChain (Gemini 2K image generation), plus active PRs in CopilotKit and OpenHands.</p>
-            </div>
-          </div>
-
-          <div class="pillar-card">
-            <div class="pillar-icon">⚡</div>
-            <div class="pillar-body">
-              <h4>Agentic & RAG Engineering</h4>
-              <p>LangGraph stateful orchestration, dense + sparse hybrid search, FlashRank reranking, and self-healing SQL.</p>
-            </div>
-          </div>
-
-          <div class="pillar-card">
-            <div class="pillar-icon">🛡️</div>
-            <div class="pillar-body">
-              <h4>AI Safety & Red-Teaming</h4>
-              <p>Adversarial prompt evaluation and boundary testing at Soul AI (Project Shield) for strict instruction compliance.</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
-  </section>
+  </header>
 
   <!-- Open Source Contributions Section -->
   <section class="section" id="opensource">
